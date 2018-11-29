@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="第一部分 作用域和闭包链接：https://juejin.im/post/5bfaa2e26fb9a04a0440b0e4来源：掘金 第一章 作用域是什么1.1 编译原理传统编译的三个步骤  1,分词/词法分析(Tokenizing/Lexing) : 这个过程会将由字符组成的字符串分解成(对编程语言来说)有意义的代码块，这些代码块被称为词法单元(token)。例如，考虑程序var a = 2;。">
+<meta name="description" content="链接：https://juejin.im/post/5bfaa2e26fb9a04a0440b0e4来源：掘金 第一部分 作用域和闭包第一章 作用域是什么">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[转]你不知道的JavaScript上卷读书笔记">
 <meta property="og:url" content="http://yoursite.com/2018/11/29/转-你不知道的JavaScript上卷读书笔记/index.html">
 <meta property="og:site_name" content="Peanut&#39;s blog">
-<meta property="og:description" content="第一部分 作用域和闭包链接：https://juejin.im/post/5bfaa2e26fb9a04a0440b0e4来源：掘金 第一章 作用域是什么1.1 编译原理传统编译的三个步骤  1,分词/词法分析(Tokenizing/Lexing) : 这个过程会将由字符组成的字符串分解成(对编程语言来说)有意义的代码块，这些代码块被称为词法单元(token)。例如，考虑程序var a = 2;。">
+<meta property="og:description" content="链接：https://juejin.im/post/5bfaa2e26fb9a04a0440b0e4来源：掘金 第一部分 作用域和闭包第一章 作用域是什么">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/25/1674b0e35937a479?w=1186&h=1292&f=png&s=105617">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/25/1674b17a466f8fb0?w=2020&h=814&f=png&s=173375">
@@ -95,10 +95,10 @@
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/25/1674b5a12dfc7024?w=573&h=463&f=png&s=87705">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/25/1674b5e847b943c0?w=1002&h=717&f=png&s=117669">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/11/25/1674b604328156c9?w=789&h=822&f=png&s=132960">
-<meta property="og:updated_time" content="2018-11-29T10:08:26.594Z">
+<meta property="og:updated_time" content="2018-11-29T10:16:41.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[转]你不知道的JavaScript上卷读书笔记">
-<meta name="twitter:description" content="第一部分 作用域和闭包链接：https://juejin.im/post/5bfaa2e26fb9a04a0440b0e4来源：掘金 第一章 作用域是什么1.1 编译原理传统编译的三个步骤  1,分词/词法分析(Tokenizing/Lexing) : 这个过程会将由字符组成的字符串分解成(对编程语言来说)有意义的代码块，这些代码块被称为词法单元(token)。例如，考虑程序var a = 2;。">
+<meta name="twitter:description" content="链接：https://juejin.im/post/5bfaa2e26fb9a04a0440b0e4来源：掘金 第一部分 作用域和闭包第一章 作用域是什么">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/11/25/1674b0e35937a479?w=1186&h=1292&f=png&s=105617">
 
 
@@ -392,8 +392,9 @@
       
 
       
-        <h1 id="第一部分-作用域和闭包"><a href="#第一部分-作用域和闭包" class="headerlink" title="第一部分 作用域和闭包"></a>第一部分 作用域和闭包</h1><p>链接：<a href="https://juejin.im/post/5bfaa2e26fb9a04a0440b0e4" target="_blank" rel="noopener">https://juejin.im/post/5bfaa2e26fb9a04a0440b0e4</a><br>来源：掘金</p>
-<h2 id="第一章-作用域是什么"><a href="#第一章-作用域是什么" class="headerlink" title="第一章 作用域是什么"></a>第一章 作用域是什么</h2><h3 id="1-1-编译原理"><a href="#1-1-编译原理" class="headerlink" title="1.1 编译原理"></a>1.1 编译原理</h3><p><strong>传统编译的三个步骤</strong></p>
+        <p>链接：<a href="https://juejin.im/post/5bfaa2e26fb9a04a0440b0e4" target="_blank" rel="noopener">https://juejin.im/post/5bfaa2e26fb9a04a0440b0e4</a><br>来源：掘金</p>
+<h1 id="第一部分-作用域和闭包"><a href="#第一部分-作用域和闭包" class="headerlink" title="第一部分 作用域和闭包"></a>第一部分 作用域和闭包</h1><h2 id="第一章-作用域是什么"><a href="#第一章-作用域是什么" class="headerlink" title="第一章 作用域是什么"></a>第一章 作用域是什么</h2><a id="more"></a>
+<h3 id="1-1-编译原理"><a href="#1-1-编译原理" class="headerlink" title="1.1 编译原理"></a>1.1 编译原理</h3><p><strong>传统编译的三个步骤</strong></p>
 <ul>
 <li><strong>1,分词/词法分析(Tokenizing/Lexing) :</strong> 这个过程会将由字符组成的字符串分解成(对编程语言来说)有意义的代码块，这些代码块被称为词法单元(token)。例如，考虑程序var a = 2;。这段程序通常会被分解成 为下面这些词法单元:var、a、=、2、;。空格是否会被当作词法单元，取决于空格在 这门语言中是否具有意义。</li>
 <li><strong>2,解析/语法分析(Parsing):</strong> 这个过程是将词法单元流(数组)转换成一个由元素逐级嵌套所组成的代表了程序语法结构的树。这个树被称为“<strong>抽象语法树</strong>”(Abstract Syntax Tree，AST)。var a = 2; 的抽象语法树中可能会有一个叫作 VariableDeclaration 的顶级节点，接下来是一个叫作Identifier(它的值是a)的子节点，以及一个叫作 AssignmentExpression 的子节点。AssignmentExpression 节点有一个叫作 NumericLiteral(它的值是 2)的子节点。</li>
