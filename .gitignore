@@ -1,2 +1,4 @@
-.deploy_git/
-node_modules/
+/.deploy_git
+/public  
+/_config.yml
+/db.json
