@@ -1,5 +1,2 @@
-/.deploy_git
-/public  
-/_config.yml
-/db.json
+/.deploy_git 
 package-lock.json
