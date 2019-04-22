@@ -6,7 +6,6 @@ categories: git
 # description: 
 ---
 <!-- # Git 版本规范 -->
-<!--more-->
 # 分支
 
 * **master**分支为主分支（保护分支），不能直接在master上进行修改代码或提交,通过**MR**(merge Request)或者**PR**(pull Request)的方式进行提交。
@@ -15,6 +14,7 @@ categories: git
 * **feature/xxx**分支为功能开发分支，根据不同需求创建独立的功能分支，开发完成后合并到develop或test分支
 * **hotfix**分支为bug修复分支，需要根据实际情况对已发布的版本进行漏洞修复
 
+<!--more-->
 
 # Tag
 
