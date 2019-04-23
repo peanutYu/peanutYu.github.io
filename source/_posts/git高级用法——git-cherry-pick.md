@@ -43,7 +43,7 @@ git log
 
 git reflog 可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）
 
-## 场景
+## 场景一
 首先我们通过**git log**查看所有的commit信息。
 
 ![](/uploads/git高级用法——git-cherry-pick/gitlog1.png)
@@ -82,10 +82,34 @@ git cherry-pick c8f4403
 ```
 输入好了之后feature-5的代码就找回来了。 期间可能会产生一些代码的冲突，只需要按正在的步骤解决就好了。 最后的结果如下图
 
-![](/uploads/git高级用法——git-cherry-pick/gitlog4.png)
+![](/uploads/git高级用法——git-cherry-pick/gitlog5.png)
 
 到这里feature-1到feature-5的代码就找回来了。这就是git cherry-pick的用法。
 
+
+## 场景二
+
+在一个分支branch1开发，进行多次提交，这时我们切换到branch2，想把之前的branch1分支上的commit复制过来。
+
+首先我们切换到branch1分支，然后查看提交历史记录，可以用sourceTree查看，也可以使用命令Git log
+
+例如的我branch1 git log如下图
+
+![](/uploads/git高级用法——git-cherry-pick/gitlog6.png)
+
+这时候我只想把branch-1-feature-1的提交复制到branch2里面，只需要切换到branch2分支，然后执行
+```
+git cherry-pick e8ae0307b4d2775922c0a2cbd3930ef4c4dca353
+```
+branch2 git log如下图
+
+![](/uploads/git高级用法——git-cherry-pick/gitlog7.png)
+
+git cherry-pick 也可以同时合并多个branch； 假设branch2需要合并branch1的branch-1-feature-1，branch-1-feature-2；就可以使用
+
+```
+git cherry-pick e8ae0307b4d2775922c0a2cbd3930ef4c4dca353,cc6b772ea79ecf54f9df18dd8f0ebf868dfe9170
+```
 
 # 参考链接
 * [女神的侧颜---git时光穿梭机](https://github.com/airuikun/blog/issues/5)
