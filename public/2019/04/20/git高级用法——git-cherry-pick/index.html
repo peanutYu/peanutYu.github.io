@@ -87,19 +87,19 @@
 <meta property="og:site_name" content="Peanut&#39;s blog">
 <meta property="og:description" content="前言最近正巧看了一些面试题，其中有一道令我比较好奇，也就是我们今天要说到的git cherry-pick;我们在简历当中都会写上精通或者熟练掌握git工作技巧。但绝大多数人也许只掌握一些简单的类似git status | pull | push | log等操作,又或是使用sourcetree等一些辅助工具来支持我们日常的工作需求，这篇博客主要记录和git cherry-pick与之相关的git操">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/uploads/git高级用法——git-cherry-pick/gitlog1.png">
-<meta property="og:image" content="http://yoursite.com/uploads/git高级用法——git-cherry-pick/gitlog2.png">
-<meta property="og:image" content="http://yoursite.com/uploads/git高级用法——git-cherry-pick/gitlog3.png">
-<meta property="og:image" content="http://yoursite.com/uploads/git高级用法——git-cherry-pick/gitreflog1.png">
-<meta property="og:image" content="http://yoursite.com/uploads/git高级用法——git-cherry-pick/gitlog4.png">
-<meta property="og:image" content="http://yoursite.com/uploads/git高级用法——git-cherry-pick/gitlog5.png">
-<meta property="og:image" content="http://yoursite.com/uploads/git高级用法——git-cherry-pick/gitlog6.png">
-<meta property="og:image" content="http://yoursite.com/uploads/git高级用法——git-cherry-pick/gitlog7.png">
-<meta property="og:updated_time" content="2019-04-23T02:27:45.666Z">
+<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog1.png">
+<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog2.png">
+<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog3.png">
+<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitreflog1.png">
+<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog4.png">
+<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog5.png">
+<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog6.png">
+<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog7.png">
+<meta property="og:updated_time" content="2019-06-30T16:03:14.999Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git高级用法——git cherry-pick">
 <meta name="twitter:description" content="前言最近正巧看了一些面试题，其中有一道令我比较好奇，也就是我们今天要说到的git cherry-pick;我们在简历当中都会写上精通或者熟练掌握git工作技巧。但绝大多数人也许只掌握一些简单的类似git status | pull | push | log等操作,又或是使用sourcetree等一些辅助工具来支持我们日常的工作需求，这篇博客主要记录和git cherry-pick与之相关的git操">
-<meta name="twitter:image" content="http://yoursite.com/uploads/git高级用法——git-cherry-pick/gitlog1.png">
+<meta name="twitter:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog1.png">
 
 
 
@@ -422,31 +422,31 @@
 <p>详细的git log语法如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git log [&lt;options&gt;] [&lt;since&gt;..&lt;until&gt;] [[--] &lt;path&gt;...]</span><br><span class="line">  主要参数选项如下：</span><br><span class="line">    -p：按补丁显示每个更新间的差异</span><br><span class="line">    --stat：显示每次更新的修改文件的统计信息</span><br><span class="line">    --shortstat：只显示--stat中最后的行数添加修改删除统计</span><br><span class="line">    --name-only：尽在已修改的提交信息后显示文件清单</span><br><span class="line">    --name-status：显示新增、修改和删除的文件清单</span><br><span class="line">    --abbrev-commit：仅显示SHA-1的前几个字符，而非所有的40个字符</span><br><span class="line">    --relative-date：使用较短的相对时间显示（例如：&quot;two weeks ago&quot;）</span><br><span class="line">    --graph：显示ASCII图形表示的分支合并历史</span><br><span class="line">    --pretty：使用其他格式显示历史提交信息</span><br></pre></td></tr></table></figure></p>
 <h2 id="git-reflog"><a href="#git-reflog" class="headerlink" title="git reflog"></a>git reflog</h2><p>git reflog 可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）</p>
 <h2 id="场景一"><a href="#场景一" class="headerlink" title="场景一"></a>场景一</h2><p>首先我们通过<strong>git log</strong>查看所有的commit信息。</p>
-<p><img src="/uploads/git高级用法——git-cherry-pick/gitlog1.png" alt=""></p>
+<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog1.png" alt=""></p>
 <p>commit的信息很简单，就是做了3个功能开发，每个功能对应一个commit的提交，分别是feature-1 =&gt; feature-4。假设这时候可能产品说功能2、3、4不需要上线了。我们需要将代码回滚到1上面。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard dbe570bf1bf9c5f5777b39b242f90e3eb16a1aec</span><br></pre></td></tr></table></figure>
-<p><img src="/uploads/git高级用法——git-cherry-pick/gitlog2.png" alt=""></p>
+<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog2.png" alt=""></p>
 <p>现在我们看到我们的commit信息只剩下了最开始的feature-1功能还保留在上面了；此时产品需要我们上线一个称之为功能5的commit,一个星期后产品需要我们把之前的2、3、4重新合并到代码里头上线；这时候我们需要怎么做呢？</p>
 <p>首先我们可以看到现在的git log打印出来的信息是只有feature-1和feature-5提交的代码</p>
-<p><img src="/uploads/git高级用法——git-cherry-pick/gitlog3.png" alt=""></p>
+<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog3.png" alt=""></p>
 <p>这时候我们首先通过<strong>git reflog</strong>命令查看分支上的所有操作记录</p>
-<p><img src="/uploads/git高级用法——git-cherry-pick/gitreflog1.png" alt=""></p>
+<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitreflog1.png" alt=""></p>
 <p>这时候要记好两个值：c8f4403和45ec9b1，他们分别是feature-5和feature-4的hash码。然后执行回滚，回到feature-4上。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 45ec9b1</span><br></pre></td></tr></table></figure>
 <p>现在我们回到了feature-4上，如下图</p>
-<p><img src="/uploads/git高级用法——git-cherry-pick/gitlog4.png" alt=""></p>
+<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog4.png" alt=""></p>
 <p>但是我们现在feature-5的代码丢失了，如何将它找回来呢？这时候就需要我们的git cherry-pick。刚刚我们知道git cherry-pick的hash码为c8f4403</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick c8f4403</span><br></pre></td></tr></table></figure>
 <p>输入好了之后feature-5的代码就找回来了。 期间可能会产生一些代码的冲突，只需要按正在的步骤解决就好了。 最后的结果如下图</p>
-<p><img src="/uploads/git高级用法——git-cherry-pick/gitlog5.png" alt=""></p>
+<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog5.png" alt=""></p>
 <p>到这里feature-1到feature-5的代码就找回来了。这就是git cherry-pick的用法。</p>
 <h2 id="场景二"><a href="#场景二" class="headerlink" title="场景二"></a>场景二</h2><p>在一个分支branch1开发，进行多次提交，这时我们切换到branch2，想把之前的branch1分支上的commit复制过来。</p>
 <p>首先我们切换到branch1分支，然后查看提交历史记录，可以用sourceTree查看，也可以使用命令Git log</p>
 <p>例如的我branch1 git log如下图</p>
-<p><img src="/uploads/git高级用法——git-cherry-pick/gitlog6.png" alt=""></p>
+<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog6.png" alt=""></p>
 <p>这时候我只想把branch-1-feature-1的提交复制到branch2里面，只需要切换到branch2分支，然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick e8ae0307b4d2775922c0a2cbd3930ef4c4dca353</span><br></pre></td></tr></table></figure></p>
 <p>branch2 git log如下图</p>
-<p><img src="/uploads/git高级用法——git-cherry-pick/gitlog7.png" alt=""></p>
+<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog7.png" alt=""></p>
 <p>git cherry-pick 也可以同时合并多个branch； 假设branch2需要合并branch1的branch-1-feature-1，branch-1-feature-2；就可以使用</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick e8ae0307b4d2775922c0a2cbd3930ef4c4dca353,cc6b772ea79ecf54f9df18dd8f0ebf868dfe9170</span><br></pre></td></tr></table></figure>
 <h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
@@ -578,7 +578,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -589,7 +589,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -600,7 +600,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

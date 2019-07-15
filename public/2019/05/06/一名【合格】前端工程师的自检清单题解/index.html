@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言 最近看到一名【合格】前端工程师的自检清单这么一篇文章，反观自己已经在两年的前端生涯中变得越来越迷茫，没有去系统的学习、巩固前端基础知识，身为前端工程师感觉非常的惭愧，所以写下这篇题解来解答这篇文章内的技术问题，也算对自己的前端学习做一个总结。">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一名【合格】前端工程师的自检清单题解">
+<meta property="og:url" content="http://yoursite.com/2019/05/06/一名【合格】前端工程师的自检清单题解/index.html">
+<meta property="og:site_name" content="Peanut&#39;s blog">
+<meta property="og:description" content="前言 最近看到一名【合格】前端工程师的自检清单这么一篇文章，反观自己已经在两年的前端生涯中变得越来越迷茫，没有去系统的学习、巩固前端基础知识，身为前端工程师感觉非常的惭愧，所以写下这篇题解来解答这篇文章内的技术问题，也算对自己的前端学习做一个总结。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-15T11:53:25.984Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一名【合格】前端工程师的自检清单题解">
+<meta name="twitter:description" content="前言 最近看到一名【合格】前端工程师的自检清单这么一篇文章，反观自己已经在两年的前端生涯中变得越来越迷茫，没有去系统的学习、巩固前端基础知识，身为前端工程师感觉非常的惭愧，所以写下这篇题解来解答这篇文章内的技术问题，也算对自己的前端学习做一个总结。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/06/一名【合格】前端工程师的自检清单题解/">
+
+
+
+
+
+  <title>一名【合格】前端工程师的自检清单题解 | Peanut's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a style="position:absolute;top:0;right:0;border:0;z-index:100;" href="https://github.com/peanutYu"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Peanut's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/06/一名【合格】前端工程师的自检清单题解/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Peanut">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peanut's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">一名【合格】前端工程师的自检清单题解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T17:23:05+08:00">
+                2019-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/06/一名【合格】前端工程师的自检清单题解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/06/一名【合格】前端工程师的自检清单题解/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/05/06/一名【合格】前端工程师的自检清单题解/" class="leancloud_visitors" data-flag-title="一名【合格】前端工程师的自检清单题解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>最近看到<a href="https://juejin.im/post/5cc1da82f265da036023b628" target="_blank" rel="noopener">一名【合格】前端工程师的自检清单</a>这么一篇文章，反观自己已经在两年的前端生涯中变得越来越迷茫，没有去系统的学习、巩固前端基础知识，身为前端工程师感觉非常的惭愧，所以写下这篇题解来解答这篇文章内的技术问题，也算对自己的前端学习做一个总结。<br><a id="more"></a></p>
+</blockquote>
+<h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><h2 id="变量和类型"><a href="#变量和类型" class="headerlink" title="变量和类型"></a>变量和类型</h2><h3 id="JavaScript规定了几种语言类型"><a href="#JavaScript规定了几种语言类型" class="headerlink" title="JavaScript规定了几种语言类型"></a>JavaScript规定了几种语言类型</h3><p>JavaScript 语言规定了 7 种语言类型。</p>
+<ol>
+<li>Undefined</li>
+<li>Null</li>
+<li>Boolean</li>
+<li>String</li>
+<li>Number</li>
+<li>Symbol</li>
+<li>Object</li>
+</ol>
+<h3 id="JavaScript对象的底层数据结构是什么"><a href="#JavaScript对象的底层数据结构是什么" class="headerlink" title="JavaScript对象的底层数据结构是什么"></a>JavaScript对象的底层数据结构是什么</h3><p>对象是一个属性的索引结构。</p>
+<h3 id="Symbol类型在实际开发中的应用、可手动实现一个简单的Symbol"><a href="#Symbol类型在实际开发中的应用、可手动实现一个简单的Symbol" class="headerlink" title="Symbol类型在实际开发中的应用、可手动实现一个简单的Symbol"></a>Symbol类型在实际开发中的应用、可手动实现一个简单的Symbol</h3><p>由于每一个 Symbol 值都是不相等的，这意味着 Symbol 值可以作为标识符，用于对象的属性名，就能保证不会出现同名的属性。这对于一个对象由多个模块构成的情况非常有用，能防止某一个键被不小心改写或覆盖。</p>
+<h3 id="JavaScript中的变量在内存中的具体存储形式"><a href="#JavaScript中的变量在内存中的具体存储形式" class="headerlink" title="JavaScript中的变量在内存中的具体存储形式"></a>JavaScript中的变量在内存中的具体存储形式</h3><h3 id="基本类型对应的内置对象，以及他们之间的装箱拆箱操作"><a href="#基本类型对应的内置对象，以及他们之间的装箱拆箱操作" class="headerlink" title="基本类型对应的内置对象，以及他们之间的装箱拆箱操作"></a>基本类型对应的内置对象，以及他们之间的装箱拆箱操作</h3><h3 id="理解值类型和引用类型"><a href="#理解值类型和引用类型" class="headerlink" title="理解值类型和引用类型"></a>理解值类型和引用类型</h3><h3 id="null和undefined的区别"><a href="#null和undefined的区别" class="headerlink" title="null和undefined的区别"></a>null和undefined的区别</h3><h3 id="至少可以说出三种判断JavaScript数据类型的方式，以及他们的优缺点，如何准确的判断数组类型"><a href="#至少可以说出三种判断JavaScript数据类型的方式，以及他们的优缺点，如何准确的判断数组类型" class="headerlink" title="至少可以说出三种判断JavaScript数据类型的方式，以及他们的优缺点，如何准确的判断数组类型"></a>至少可以说出三种判断JavaScript数据类型的方式，以及他们的优缺点，如何准确的判断数组类型</h3><h3 id="可能发生隐式类型转换的场景以及转换原则，应如何避免或巧妙应用"><a href="#可能发生隐式类型转换的场景以及转换原则，应如何避免或巧妙应用" class="headerlink" title="可能发生隐式类型转换的场景以及转换原则，应如何避免或巧妙应用"></a>可能发生隐式类型转换的场景以及转换原则，应如何避免或巧妙应用</h3><h3 id="出现小数精度丢失的原因，JavaScript可以存储的最大数字、最大安全数字，JavaScript处理大数字的方法、避免精度丢失的方法"><a href="#出现小数精度丢失的原因，JavaScript可以存储的最大数字、最大安全数字，JavaScript处理大数字的方法、避免精度丢失的方法" class="headerlink" title="出现小数精度丢失的原因，JavaScript可以存储的最大数字、最大安全数字，JavaScript处理大数字的方法、避免精度丢失的方法"></a>出现小数精度丢失的原因，JavaScript可以存储的最大数字、最大安全数字，JavaScript处理大数字的方法、避免精度丢失的方法</h3><h2 id="原型和原型链"><a href="#原型和原型链" class="headerlink" title="原型和原型链"></a>原型和原型链</h2><h3 id="理解原型设计模式以及JavaScript中的原型规则"><a href="#理解原型设计模式以及JavaScript中的原型规则" class="headerlink" title="理解原型设计模式以及JavaScript中的原型规则"></a>理解原型设计模式以及JavaScript中的原型规则</h3><h3 id="instanceof的底层实现原理，手动实现一个instanceof"><a href="#instanceof的底层实现原理，手动实现一个instanceof" class="headerlink" title="instanceof的底层实现原理，手动实现一个instanceof"></a>instanceof的底层实现原理，手动实现一个instanceof</h3><h3 id="实现继承的几种方式以及他们的优缺点"><a href="#实现继承的几种方式以及他们的优缺点" class="headerlink" title="实现继承的几种方式以及他们的优缺点"></a>实现继承的几种方式以及他们的优缺点</h3><h3 id="至少说出一种开源项目-如Node-中应用原型继承的案例"><a href="#至少说出一种开源项目-如Node-中应用原型继承的案例" class="headerlink" title="至少说出一种开源项目(如Node)中应用原型继承的案例"></a>至少说出一种开源项目(如Node)中应用原型继承的案例</h3><h3 id="可以描述new一个对象的详细过程，手动实现一个new操作符"><a href="#可以描述new一个对象的详细过程，手动实现一个new操作符" class="headerlink" title="可以描述new一个对象的详细过程，手动实现一个new操作符"></a>可以描述new一个对象的详细过程，手动实现一个new操作符</h3><h3 id="理解es6-class构造以及继承的底层实现原理"><a href="#理解es6-class构造以及继承的底层实现原理" class="headerlink" title="理解es6 class构造以及继承的底层实现原理"></a>理解es6 class构造以及继承的底层实现原理</h3><h2 id="作用域和闭包"><a href="#作用域和闭包" class="headerlink" title="作用域和闭包"></a>作用域和闭包</h2><h3 id="理解词法作用域和动态作用域"><a href="#理解词法作用域和动态作用域" class="headerlink" title="理解词法作用域和动态作用域"></a>理解词法作用域和动态作用域</h3><h3 id="理解-JavaScript的作用域和作用域链"><a href="#理解-JavaScript的作用域和作用域链" class="headerlink" title="理解 JavaScript的作用域和作用域链"></a>理解 <code>JavaScript</code>的作用域和作用域链</h3><h3 id="理解-JavaScript的执行上下文栈，可以应用堆栈信息快速定位问题"><a href="#理解-JavaScript的执行上下文栈，可以应用堆栈信息快速定位问题" class="headerlink" title="理解 JavaScript的执行上下文栈，可以应用堆栈信息快速定位问题"></a>理解 <code>JavaScript</code>的执行上下文栈，可以应用堆栈信息快速定位问题</h3><h3 id="this的原理以及几种不同使用场景的取值"><a href="#this的原理以及几种不同使用场景的取值" class="headerlink" title="this的原理以及几种不同使用场景的取值"></a><code>this</code>的原理以及几种不同使用场景的取值</h3><h3 id="闭包的实现原理和作用，可以列举几个开发中闭包的实际应用"><a href="#闭包的实现原理和作用，可以列举几个开发中闭包的实际应用" class="headerlink" title="闭包的实现原理和作用，可以列举几个开发中闭包的实际应用"></a>闭包的实现原理和作用，可以列举几个开发中闭包的实际应用</h3><h3 id="理解堆栈溢出和内存泄漏的原理，如何防止"><a href="#理解堆栈溢出和内存泄漏的原理，如何防止" class="headerlink" title="理解堆栈溢出和内存泄漏的原理，如何防止"></a>理解堆栈溢出和内存泄漏的原理，如何防止</h3><h3 id="如何处理循环的异步操作"><a href="#如何处理循环的异步操作" class="headerlink" title="如何处理循环的异步操作"></a>如何处理循环的异步操作</h3><h3 id="理解模块化解决的实际问题，可列举几个模块化方案并理解其中原理"><a href="#理解模块化解决的实际问题，可列举几个模块化方案并理解其中原理" class="headerlink" title="理解模块化解决的实际问题，可列举几个模块化方案并理解其中原理"></a>理解模块化解决的实际问题，可列举几个模块化方案并理解其中原理</h3><h2 id="执行机制"><a href="#执行机制" class="headerlink" title="执行机制"></a>执行机制</h2><h3 id="为何-try里面放-return，-finally还会执行，理解其内部机制"><a href="#为何-try里面放-return，-finally还会执行，理解其内部机制" class="headerlink" title="为何 try里面放 return， finally还会执行，理解其内部机制"></a>为何 <code>try</code>里面放 <code>return</code>， <code>finally</code>还会执行，理解其内部机制</h3><h3 id="JavaScript如何实现异步编程，可以详细描述-EventLoop机制"><a href="#JavaScript如何实现异步编程，可以详细描述-EventLoop机制" class="headerlink" title="JavaScript如何实现异步编程，可以详细描述 EventLoop机制"></a><code>JavaScript</code>如何实现异步编程，可以详细描述 <code>EventLoop</code>机制</h3><h3 id="宏任务和微任务分别有哪些"><a href="#宏任务和微任务分别有哪些" class="headerlink" title="宏任务和微任务分别有哪些"></a>宏任务和微任务分别有哪些</h3><h3 id="可以快速分析一个复杂的异步嵌套逻辑，并掌握分析方法"><a href="#可以快速分析一个复杂的异步嵌套逻辑，并掌握分析方法" class="headerlink" title="可以快速分析一个复杂的异步嵌套逻辑，并掌握分析方法"></a>可以快速分析一个复杂的异步嵌套逻辑，并掌握分析方法</h3><h3 id="使用-Promise实现串行"><a href="#使用-Promise实现串行" class="headerlink" title="使用 Promise实现串行"></a>使用 <code>Promise</code>实现串行</h3><h3 id="Node与浏览器-EventLoop的差异"><a href="#Node与浏览器-EventLoop的差异" class="headerlink" title="Node与浏览器 EventLoop的差异"></a><code>Node</code>与浏览器 <code>EventLoop</code>的差异</h3><h3 id="如何在保证页面运行流畅的情况下处理海量数据"><a href="#如何在保证页面运行流畅的情况下处理海量数据" class="headerlink" title="如何在保证页面运行流畅的情况下处理海量数据"></a>如何在保证页面运行流畅的情况下处理海量数据</h3><h2 id="语法和API"><a href="#语法和API" class="headerlink" title="语法和API"></a>语法和API</h2><h3 id="理解-ECMAScript和-JavaScript的关系"><a href="#理解-ECMAScript和-JavaScript的关系" class="headerlink" title="理解 ECMAScript和 JavaScript的关系"></a>理解 <code>ECMAScript</code>和 <code>JavaScript</code>的关系</h3><h3 id="熟练运用-es5、-es6提供的语法规范，"><a href="#熟练运用-es5、-es6提供的语法规范，" class="headerlink" title="熟练运用 es5、 es6提供的语法规范，"></a>熟练运用 <code>es5</code>、 <code>es6</code>提供的语法规范，</h3><h3 id="熟练掌握-JavaScript提供的全局对象（例如-Date、-Math）、全局函数（例如-decodeURI、-isNaN）、全局属性（例如-Infinity、-undefined）"><a href="#熟练掌握-JavaScript提供的全局对象（例如-Date、-Math）、全局函数（例如-decodeURI、-isNaN）、全局属性（例如-Infinity、-undefined）" class="headerlink" title="熟练掌握 JavaScript提供的全局对象（例如 Date、 Math）、全局函数（例如 decodeURI、 isNaN）、全局属性（例如 Infinity、 undefined）"></a>熟练掌握 <code>JavaScript</code>提供的全局对象（例如 <code>Date</code>、 <code>Math</code>）、全局函数（例如 <code>decodeURI</code>、 <code>isNaN</code>）、全局属性（例如 <code>Infinity</code>、 <code>undefined</code>）</h3><h3 id="熟练应用-map、-reduce、-filter-等高阶函数解决问题"><a href="#熟练应用-map、-reduce、-filter-等高阶函数解决问题" class="headerlink" title="熟练应用 map、 reduce、 filter 等高阶函数解决问题"></a>熟练应用 <code>map</code>、 <code>reduce</code>、 <code>filter</code> 等高阶函数解决问题</h3><h3 id="setInterval需要注意的点，使用-settimeout实现-setInterval"><a href="#setInterval需要注意的点，使用-settimeout实现-setInterval" class="headerlink" title="setInterval需要注意的点，使用 settimeout实现 setInterval"></a><code>setInterval</code>需要注意的点，使用 <code>settimeout</code>实现 <code>setInterval</code></h3><h3 id="JavaScript提供的正则表达式-API、可以使用正则表达式（邮箱校验、-URL解析、去重等）解决常见问题"><a href="#JavaScript提供的正则表达式-API、可以使用正则表达式（邮箱校验、-URL解析、去重等）解决常见问题" class="headerlink" title="JavaScript提供的正则表达式 API、可以使用正则表达式（邮箱校验、 URL解析、去重等）解决常见问题"></a><code>JavaScript</code>提供的正则表达式 <code>API</code>、可以使用正则表达式（邮箱校验、 <code>URL</code>解析、去重等）解决常见问题</h3><h3 id="JavaScript异常处理的方式，统一的异常处理方案"><a href="#JavaScript异常处理的方式，统一的异常处理方案" class="headerlink" title="JavaScript异常处理的方式，统一的异常处理方案"></a><code>JavaScript</code>异常处理的方式，统一的异常处理方案</h3><p>#HTML和CSS</p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>###从规范的角度理解 <code>HTML</code>，从分类和语义的角度使用标签</p>
+<p>###常用页面标签的默认样式、自带属性、不同浏览器的差异、处理浏览器兼容问题的方式</p>
+<p>###元信息类标签(<code>head</code>、 <code>title</code>、 <code>meta</code>)的使用目的和配置方法</p>
+<h3 id="HTML5离线缓存原理"><a href="#HTML5离线缓存原理" class="headerlink" title="HTML5离线缓存原理"></a><code>HTML5</code>离线缓存原理</h3><p>###可以使用 <code>Canvas API</code>、 <code>SVG</code>等绘制高性能的动画</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>###<code>CSS</code>盒模型，在不同浏览器的差异</p>
+<h3 id="CSS所有选择器及其优先级、使用场景，哪些可以继承，如何运用-at规则"><a href="#CSS所有选择器及其优先级、使用场景，哪些可以继承，如何运用-at规则" class="headerlink" title="CSS所有选择器及其优先级、使用场景，哪些可以继承，如何运用 at规则"></a><code>CSS</code>所有选择器及其优先级、使用场景，哪些可以继承，如何运用 <code>at</code>规则</h3><h3 id="CSS伪类和伪元素有哪些，它们的区别和实际应用"><a href="#CSS伪类和伪元素有哪些，它们的区别和实际应用" class="headerlink" title="CSS伪类和伪元素有哪些，它们的区别和实际应用"></a><code>CSS</code>伪类和伪元素有哪些，它们的区别和实际应用</h3><h3 id="HTML文档流的排版规则，-CSS几种定位的规则、定位参照物、对文档流的影响，如何选择最好的定位方式，雪碧图实现原理"><a href="#HTML文档流的排版规则，-CSS几种定位的规则、定位参照物、对文档流的影响，如何选择最好的定位方式，雪碧图实现原理" class="headerlink" title="HTML文档流的排版规则， CSS几种定位的规则、定位参照物、对文档流的影响，如何选择最好的定位方式，雪碧图实现原理"></a><code>HTML</code>文档流的排版规则， <code>CSS</code>几种定位的规则、定位参照物、对文档流的影响，如何选择最好的定位方式，雪碧图实现原理</h3><h3 id="水平垂直居中的方案、可以实现-6种以上并对比它们的优缺点"><a href="#水平垂直居中的方案、可以实现-6种以上并对比它们的优缺点" class="headerlink" title="水平垂直居中的方案、可以实现 6种以上并对比它们的优缺点"></a>水平垂直居中的方案、可以实现 <code>6</code>种以上并对比它们的优缺点</h3><h3 id="BFC实现原理，可以解决的问题，如何创建-BFC"><a href="#BFC实现原理，可以解决的问题，如何创建-BFC" class="headerlink" title="BFC实现原理，可以解决的问题，如何创建 BFC"></a><code>BFC</code>实现原理，可以解决的问题，如何创建 <code>BFC</code></h3><h3 id="可使用-CSS函数复用代码，实现特殊效果"><a href="#可使用-CSS函数复用代码，实现特殊效果" class="headerlink" title="可使用 CSS函数复用代码，实现特殊效果"></a>可使用 <code>CSS</code>函数复用代码，实现特殊效果</h3><h3 id="PostCSS、-Sass、-Less的异同，以及使用配置，至少掌握一种"><a href="#PostCSS、-Sass、-Less的异同，以及使用配置，至少掌握一种" class="headerlink" title="PostCSS、 Sass、 Less的异同，以及使用配置，至少掌握一种"></a><code>PostCSS</code>、 <code>Sass</code>、 <code>Less</code>的异同，以及使用配置，至少掌握一种</h3><h3 id="CSS模块化方案、如何配置按需加载、如何防止-CSS阻塞渲染"><a href="#CSS模块化方案、如何配置按需加载、如何防止-CSS阻塞渲染" class="headerlink" title="CSS模块化方案、如何配置按需加载、如何防止 CSS阻塞渲染"></a><code>CSS</code>模块化方案、如何配置按需加载、如何防止 <code>CSS</code>阻塞渲染</h3><h3 id="熟练使用-CSS实现常见动画，如渐变、移动、旋转、缩放等等"><a href="#熟练使用-CSS实现常见动画，如渐变、移动、旋转、缩放等等" class="headerlink" title="熟练使用 CSS实现常见动画，如渐变、移动、旋转、缩放等等"></a>熟练使用 <code>CSS</code>实现常见动画，如渐变、移动、旋转、缩放等等</h3><h3 id="CSS浏览器兼容性写法，了解不同-API在不同浏览器下的兼容性情况"><a href="#CSS浏览器兼容性写法，了解不同-API在不同浏览器下的兼容性情况" class="headerlink" title="CSS浏览器兼容性写法，了解不同 API在不同浏览器下的兼容性情况"></a><code>CSS</code>浏览器兼容性写法，了解不同 <code>API</code>在不同浏览器下的兼容性情况</h3><h3 id="掌握一套完整的响应式布局方案"><a href="#掌握一套完整的响应式布局方案" class="headerlink" title="掌握一套完整的响应式布局方案"></a>掌握一套完整的响应式布局方案</h3><h2 id="手写"><a href="#手写" class="headerlink" title="手写"></a>手写</h2><p>###手写图片瀑布流效果</p>
+<p>###使用 <code>CSS</code>绘制几何图形（圆形、三角形、扇形、菱形等）</p>
+<p>###使用纯 <code>CSS</code>实现曲线运动（贝塞尔曲线）</p>
+<p>###实现常用布局（三栏、圣杯、双飞翼、吸顶），可是说出多种方式并理解其优缺点</p>
+<h1 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h1><blockquote>
+<p>关于编译原理，不需要理解非常深入，但是最基本的原理和概念一定要懂，这对于学习一门编程语言非常重要</p>
+</blockquote>
+<h2 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理</h2><h3 id="理解代码到底是什么，计算机如何将代码转换为可以运行的目标程序"><a href="#理解代码到底是什么，计算机如何将代码转换为可以运行的目标程序" class="headerlink" title="理解代码到底是什么，计算机如何将代码转换为可以运行的目标程序"></a>理解代码到底是什么，计算机如何将代码转换为可以运行的目标程序</h3><h3 id="正则表达式的匹配原理和性能优化"><a href="#正则表达式的匹配原理和性能优化" class="headerlink" title="正则表达式的匹配原理和性能优化"></a>正则表达式的匹配原理和性能优化</h3><h3 id="如何将-JavaScript代码解析成抽象语法树-AST"><a href="#如何将-JavaScript代码解析成抽象语法树-AST" class="headerlink" title="如何将 JavaScript代码解析成抽象语法树(AST)"></a>如何将 <code>JavaScript</code>代码解析成抽象语法树(<code>AST</code>)</h3><h3 id="base64的编码原理"><a href="#base64的编码原理" class="headerlink" title="base64的编码原理"></a><code>base64</code>的编码原理</h3><h3 id="几种进制的相互转换计算方法，在-JavaScript中如何表示和转换"><a href="#几种进制的相互转换计算方法，在-JavaScript中如何表示和转换" class="headerlink" title="几种进制的相互转换计算方法，在 JavaScript中如何表示和转换"></a>几种进制的相互转换计算方法，在 <code>JavaScript</code>中如何表示和转换</h3><h2 id="网络协议"><a href="#网络协议" class="headerlink" title="网络协议"></a>网络协议</h2><h3 id="理解什么是协议，了解-TCP-IP网络协议族的构成，每层协议在应用程序中发挥的作用"><a href="#理解什么是协议，了解-TCP-IP网络协议族的构成，每层协议在应用程序中发挥的作用" class="headerlink" title="理解什么是协议，了解 TCP/IP网络协议族的构成，每层协议在应用程序中发挥的作用"></a>理解什么是协议，了解 <code>TCP/IP</code>网络协议族的构成，每层协议在应用程序中发挥的作用</h3><h3 id="三次握手和四次挥手详细原理，为什么要使用这种机制"><a href="#三次握手和四次挥手详细原理，为什么要使用这种机制" class="headerlink" title="三次握手和四次挥手详细原理，为什么要使用这种机制"></a>三次握手和四次挥手详细原理，为什么要使用这种机制</h3><h3 id="有哪些协议是可靠，-TCP有哪些手段保证可靠交付"><a href="#有哪些协议是可靠，-TCP有哪些手段保证可靠交付" class="headerlink" title="有哪些协议是可靠， TCP有哪些手段保证可靠交付"></a>有哪些协议是可靠， <code>TCP</code>有哪些手段保证可靠交付</h3><h3 id="DNS的作用、-DNS解析的详细过程，-DNS优化原理"><a href="#DNS的作用、-DNS解析的详细过程，-DNS优化原理" class="headerlink" title="DNS的作用、 DNS解析的详细过程， DNS优化原理"></a><code>DNS</code>的作用、 <code>DNS</code>解析的详细过程， <code>DNS</code>优化原理</h3><h3 id="CDN的作用和原理"><a href="#CDN的作用和原理" class="headerlink" title="CDN的作用和原理"></a><code>CDN</code>的作用和原理</h3><h3 id="HTTP请求报文和响应报文的具体组成，能理解常见请求头的含义，有几种请求方式，区别是什么"><a href="#HTTP请求报文和响应报文的具体组成，能理解常见请求头的含义，有几种请求方式，区别是什么" class="headerlink" title="HTTP请求报文和响应报文的具体组成，能理解常见请求头的含义，有几种请求方式，区别是什么"></a><code>HTTP</code>请求报文和响应报文的具体组成，能理解常见请求头的含义，有几种请求方式，区别是什么</h3><h3 id="HTTP所有状态码的具体含义，看到异常状态码能快速定位问题"><a href="#HTTP所有状态码的具体含义，看到异常状态码能快速定位问题" class="headerlink" title="HTTP所有状态码的具体含义，看到异常状态码能快速定位问题"></a><code>HTTP</code>所有状态码的具体含义，看到异常状态码能快速定位问题</h3><h3 id="HTTP1-1、-HTTP2-0带来的改变"><a href="#HTTP1-1、-HTTP2-0带来的改变" class="headerlink" title="HTTP1.1、 HTTP2.0带来的改变"></a><code>HTTP1.1</code>、 <code>HTTP2.0</code>带来的改变</h3><h3 id="HTTPS的加密原理，如何开启-HTTPS，如何劫持-HTTPS请求"><a href="#HTTPS的加密原理，如何开启-HTTPS，如何劫持-HTTPS请求" class="headerlink" title="HTTPS的加密原理，如何开启 HTTPS，如何劫持 HTTPS请求"></a><code>HTTPS</code>的加密原理，如何开启 <code>HTTPS</code>，如何劫持 <code>HTTPS</code>请求</h3><h3 id="理解-WebSocket协议的底层原理、与-HTTP的区别"><a href="#理解-WebSocket协议的底层原理、与-HTTP的区别" class="headerlink" title="理解 WebSocket协议的底层原理、与 HTTP的区别"></a>理解 <code>WebSocket</code>协议的底层原理、与 <code>HTTP</code>的区别</h3><h2 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h2><h3 id="熟练使用前端常用的设计模式编写代码，如单例模式、装饰器模式、代理模式等"><a href="#熟练使用前端常用的设计模式编写代码，如单例模式、装饰器模式、代理模式等" class="headerlink" title="熟练使用前端常用的设计模式编写代码，如单例模式、装饰器模式、代理模式等"></a>熟练使用前端常用的设计模式编写代码，如单例模式、装饰器模式、代理模式等</h3><h3 id="发布订阅模式和观察者模式的异同以及实际应用"><a href="#发布订阅模式和观察者模式的异同以及实际应用" class="headerlink" title="发布订阅模式和观察者模式的异同以及实际应用"></a>发布订阅模式和观察者模式的异同以及实际应用</h3><h3 id="可以说出几种设计模式在开发中的实际应用，理解框架源码中对设计模式的应用"><a href="#可以说出几种设计模式在开发中的实际应用，理解框架源码中对设计模式的应用" class="headerlink" title="可以说出几种设计模式在开发中的实际应用，理解框架源码中对设计模式的应用"></a>可以说出几种设计模式在开发中的实际应用，理解框架源码中对设计模式的应用</h3><h1 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h1><blockquote>
+<p>据我了解的大部分前端对这部分知识有些欠缺，甚至抵触，但是，如果突破更高的天花板，这部分知识是必不可少的，而且我亲身经历——非常有用！</p>
+</blockquote>
+<h2 id="JavaScript编码能力"><a href="#JavaScript编码能力" class="headerlink" title="JavaScript编码能力"></a>JavaScript编码能力</h2><h3 id="多种方式实现数组去重、扁平化、对比优缺点"><a href="#多种方式实现数组去重、扁平化、对比优缺点" class="headerlink" title="多种方式实现数组去重、扁平化、对比优缺点"></a>多种方式实现数组去重、扁平化、对比优缺点</h3><h3 id="多种方式实现深拷贝、对比优缺点"><a href="#多种方式实现深拷贝、对比优缺点" class="headerlink" title="多种方式实现深拷贝、对比优缺点"></a>多种方式实现深拷贝、对比优缺点</h3><h3 id="手写函数柯里化工具函数、并理解其应用场景和优势"><a href="#手写函数柯里化工具函数、并理解其应用场景和优势" class="headerlink" title="手写函数柯里化工具函数、并理解其应用场景和优势"></a>手写函数柯里化工具函数、并理解其应用场景和优势</h3><h3 id="手写防抖和节流工具函数、并理解其内部原理和应用场景"><a href="#手写防抖和节流工具函数、并理解其内部原理和应用场景" class="headerlink" title="手写防抖和节流工具函数、并理解其内部原理和应用场景"></a>手写防抖和节流工具函数、并理解其内部原理和应用场景</h3><h3 id="实现一个-sleep函数"><a href="#实现一个-sleep函数" class="headerlink" title="实现一个 sleep函数"></a>实现一个 <code>sleep</code>函数</h3><h2 id="手动实现前端轮子"><a href="#手动实现前端轮子" class="headerlink" title="手动实现前端轮子"></a>手动实现前端轮子</h2><h3 id="手动实现call、apply、bind"><a href="#手动实现call、apply、bind" class="headerlink" title="手动实现call、apply、bind"></a>手动实现<code>call、apply、bind</code></h3><h3 id="手动实现符合-Promise-A-规范的-Promise、手动实现-async-await"><a href="#手动实现符合-Promise-A-规范的-Promise、手动实现-async-await" class="headerlink" title="手动实现符合 Promise/A+规范的 Promise、手动实现 async await"></a>手动实现符合 <code>Promise/A+</code>规范的 <code>Promise</code>、手动实现 <code>async await</code></h3><h3 id="手写一个-EventEmitter实现事件发布、订阅"><a href="#手写一个-EventEmitter实现事件发布、订阅" class="headerlink" title="手写一个 EventEmitter实现事件发布、订阅"></a>手写一个 <code>EventEmitter</code>实现事件发布、订阅</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class EventEmitter &#123;</span><br><span class="line">  constructor() &#123;</span><br><span class="line">    this.listeners = &#123;&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  // 注册事件 </span><br><span class="line">  on(name, func) &#123;</span><br><span class="line">    if (!this.listeners[name]) &#123;</span><br><span class="line">      this.listeners[name] = [];</span><br><span class="line">    &#125;</span><br><span class="line">    this.listeners[name].push(func);</span><br><span class="line">  &#125;</span><br><span class="line">  // 触发事件</span><br><span class="line">  emit(name, ...args) &#123;</span><br><span class="line">    if (this.listeners[name]) &#123;</span><br><span class="line">      this.listeners[name].forEach(listener =&gt; listener(...args));</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  // 销毁事件</span><br><span class="line">  off(name, func) &#123;</span><br><span class="line">    if (this.listeners[name]) &#123;</span><br><span class="line">      const index = this.listeners[name].indexOf(func);</span><br><span class="line">      if (index &gt; -1) &#123;</span><br><span class="line">       this.listeners[name].splice(index, 1); </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="可以说出两种实现双向绑定的方案、可以手动实现"><a href="#可以说出两种实现双向绑定的方案、可以手动实现" class="headerlink" title="可以说出两种实现双向绑定的方案、可以手动实现"></a>可以说出两种实现双向绑定的方案、可以手动实现</h3><h3 id="手写-JSON-stringify、-JSON-parse"><a href="#手写-JSON-stringify、-JSON-parse" class="headerlink" title="手写 JSON.stringify、 JSON.parse"></a>手写 <code>JSON.stringify</code>、 <code>JSON.parse</code></h3><h3 id="手写一个模版引擎，并能解释其中原理"><a href="#手写一个模版引擎，并能解释其中原理" class="headerlink" title="手写一个模版引擎，并能解释其中原理"></a>手写一个模版引擎，并能解释其中原理</h3><h3 id="手写-懒加载、下拉刷新、上拉加载、预加载等效果"><a href="#手写-懒加载、下拉刷新、上拉加载、预加载等效果" class="headerlink" title="手写 懒加载、下拉刷新、上拉加载、预加载等效果"></a>手写 <code>懒加载、下拉刷新、上拉加载、预加载</code>等效果</h3><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="理解常见数据结构的特点，以及他们在不同场景下使用的优缺点"><a href="#理解常见数据结构的特点，以及他们在不同场景下使用的优缺点" class="headerlink" title="理解常见数据结构的特点，以及他们在不同场景下使用的优缺点"></a>理解常见数据结构的特点，以及他们在不同场景下使用的优缺点</h3><h3 id="理解-数组、字符串的存储原理，并熟练应用他们解决问题"><a href="#理解-数组、字符串的存储原理，并熟练应用他们解决问题" class="headerlink" title="理解 数组、字符串的存储原理，并熟练应用他们解决问题"></a>理解 <code>数组、字符串</code>的存储原理，并熟练应用他们解决问题</h3><h3 id="理解-二叉树、栈、队列、哈希表的基本结构和特点，并可以应用它解决问题"><a href="#理解-二叉树、栈、队列、哈希表的基本结构和特点，并可以应用它解决问题" class="headerlink" title="理解 二叉树、栈、队列、哈希表的基本结构和特点，并可以应用它解决问题"></a>理解 <code>二叉树、栈、队列、哈希表</code>的基本结构和特点，并可以应用它解决问题</h3><h3 id="了解-图、堆的基本结构和使用场景"><a href="#了解-图、堆的基本结构和使用场景" class="headerlink" title="了解 图、堆的基本结构和使用场景"></a>了解 <code>图、堆</code>的基本结构和使用场景</h3><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="可计算一个算法的时间复杂度和空间复杂度，可估计业务逻辑代码的耗时和内存消耗"><a href="#可计算一个算法的时间复杂度和空间复杂度，可估计业务逻辑代码的耗时和内存消耗" class="headerlink" title="可计算一个算法的时间复杂度和空间复杂度，可估计业务逻辑代码的耗时和内存消耗"></a>可计算一个算法的时间复杂度和空间复杂度，可估计业务逻辑代码的耗时和内存消耗</h3><h3 id="至少理解五种排序算法的实现原理、应用场景、优缺点，可快速说出时间、空间复杂度"><a href="#至少理解五种排序算法的实现原理、应用场景、优缺点，可快速说出时间、空间复杂度" class="headerlink" title="至少理解五种排序算法的实现原理、应用场景、优缺点，可快速说出时间、空间复杂度"></a>至少理解五种排序算法的实现原理、应用场景、优缺点，可快速说出时间、空间复杂度</h3><h3 id="了解递归和循环的优缺点、应用场景、并可在开发中熟练应用"><a href="#了解递归和循环的优缺点、应用场景、并可在开发中熟练应用" class="headerlink" title="了解递归和循环的优缺点、应用场景、并可在开发中熟练应用"></a>了解递归和循环的优缺点、应用场景、并可在开发中熟练应用</h3><h3 id="可应用-回溯算法、贪心算法、分治算法、动态规划等解决复杂问题"><a href="#可应用-回溯算法、贪心算法、分治算法、动态规划等解决复杂问题" class="headerlink" title="可应用 回溯算法、贪心算法、分治算法、动态规划等解决复杂问题"></a>可应用 <code>回溯算法、贪心算法、分治算法、动态规划</code>等解决复杂问题</h3><h3 id="前端处理海量数据的算法方案"><a href="#前端处理海量数据的算法方案" class="headerlink" title="前端处理海量数据的算法方案"></a>前端处理海量数据的算法方案</h3><h1 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h1><p>我们需要理清语言和环境的关系：</p>
+<blockquote>
+<p><code>ECMAScript</code>描述了 <code>JavaScript</code>语言的语法和基本对象规范</p>
+</blockquote>
+<blockquote>
+<p>浏览器作为 <code>JavaScript</code>的一种运行环境，为它提供了：文档对象模型（ <code>DOM</code>），描述处理网页内容的方法和接口、浏览器对象模型（ <code>BOM</code>），描述与浏览器进行交互的方法和接口</p>
+</blockquote>
+<blockquote>
+<p>Node也是 <code>JavaScript</code>的一种运行环境，为它提供了操作 <code>I/O</code>、网络等 <code>API</code></p>
+</blockquote>
+<h2 id="浏览器API"><a href="#浏览器API" class="headerlink" title="浏览器API"></a>浏览器API</h2><h3 id="浏览器提供的符合-W3C标准的-DOM操作-API、浏览器差异、兼容性"><a href="#浏览器提供的符合-W3C标准的-DOM操作-API、浏览器差异、兼容性" class="headerlink" title="浏览器提供的符合 W3C标准的 DOM操作 API、浏览器差异、兼容性"></a>浏览器提供的符合 <code>W3C</code>标准的 <code>DOM</code>操作 <code>API</code>、浏览器差异、兼容性</h3><h3 id="浏览器提供的浏览器对象模型-BOM-提供的所有全局-API、浏览器差异、兼容性"><a href="#浏览器提供的浏览器对象模型-BOM-提供的所有全局-API、浏览器差异、兼容性" class="headerlink" title="浏览器提供的浏览器对象模型 (BOM)提供的所有全局 API、浏览器差异、兼容性"></a>浏览器提供的浏览器对象模型 (<code>BOM</code>)提供的所有全局 <code>API</code>、浏览器差异、兼容性</h3><h3 id="大量-DOM操作、海量数据的性能优化-合并操作、-Diff、-requestAnimationFrame等"><a href="#大量-DOM操作、海量数据的性能优化-合并操作、-Diff、-requestAnimationFrame等" class="headerlink" title="大量 DOM操作、海量数据的性能优化(合并操作、 Diff、 requestAnimationFrame等)"></a>大量 <code>DOM</code>操作、海量数据的性能优化(合并操作、 <code>Diff</code>、 <code>requestAnimationFrame</code>等)</h3><h3 id="浏览器海量数据存储、操作性能优化"><a href="#浏览器海量数据存储、操作性能优化" class="headerlink" title="浏览器海量数据存储、操作性能优化"></a>浏览器海量数据存储、操作性能优化</h3><h3 id="DOM事件流的具体实现机制、不同浏览器的差异、事件代理"><a href="#DOM事件流的具体实现机制、不同浏览器的差异、事件代理" class="headerlink" title="DOM事件流的具体实现机制、不同浏览器的差异、事件代理"></a><code>DOM</code>事件流的具体实现机制、不同浏览器的差异、事件代理</h3><h3 id="前端发起网络请求的几种方式及其底层实现、可以手写原生-ajax、-fetch、可以熟练使用第三方库"><a href="#前端发起网络请求的几种方式及其底层实现、可以手写原生-ajax、-fetch、可以熟练使用第三方库" class="headerlink" title="前端发起网络请求的几种方式及其底层实现、可以手写原生 ajax、 fetch、可以熟练使用第三方库"></a>前端发起网络请求的几种方式及其底层实现、可以手写原生 <code>ajax</code>、 <code>fetch</code>、可以熟练使用第三方库</h3><h3 id="浏览器的同源策略，如何避免同源策略，几种方式的异同点以及如何选型"><a href="#浏览器的同源策略，如何避免同源策略，几种方式的异同点以及如何选型" class="headerlink" title="浏览器的同源策略，如何避免同源策略，几种方式的异同点以及如何选型"></a>浏览器的同源策略，如何避免同源策略，几种方式的异同点以及如何选型</h3><h3 id="浏览器提供的几种存储机制、优缺点、开发中正确的选择"><a href="#浏览器提供的几种存储机制、优缺点、开发中正确的选择" class="headerlink" title="浏览器提供的几种存储机制、优缺点、开发中正确的选择"></a>浏览器提供的几种存储机制、优缺点、开发中正确的选择</h3><h3 id="浏览器跨标签通信"><a href="#浏览器跨标签通信" class="headerlink" title="浏览器跨标签通信"></a>浏览器跨标签通信</h3><h2 id="浏览器原理"><a href="#浏览器原理" class="headerlink" title="浏览器原理"></a>浏览器原理</h2><h3 id="各浏览器使用的-JavaScript引擎以及它们的异同点、如何在代码中进行区分"><a href="#各浏览器使用的-JavaScript引擎以及它们的异同点、如何在代码中进行区分" class="headerlink" title="各浏览器使用的 JavaScript引擎以及它们的异同点、如何在代码中进行区分"></a>各浏览器使用的 <code>JavaScript</code>引擎以及它们的异同点、如何在代码中进行区分</h3><h3 id="请求数据到请求结束与服务器进行了几次交互"><a href="#请求数据到请求结束与服务器进行了几次交互" class="headerlink" title="请求数据到请求结束与服务器进行了几次交互"></a>请求数据到请求结束与服务器进行了几次交互</h3><h3 id="可详细描述浏览器从输入-URL到页面展现的详细过程"><a href="#可详细描述浏览器从输入-URL到页面展现的详细过程" class="headerlink" title="可详细描述浏览器从输入 URL到页面展现的详细过程"></a>可详细描述浏览器从输入 <code>URL</code>到页面展现的详细过程</h3><h3 id="浏览器解析-HTML代码的原理，以及构建-DOM树的流程"><a href="#浏览器解析-HTML代码的原理，以及构建-DOM树的流程" class="headerlink" title="浏览器解析 HTML代码的原理，以及构建 DOM树的流程"></a>浏览器解析 <code>HTML</code>代码的原理，以及构建 <code>DOM</code>树的流程</h3><h3 id="浏览器如何解析-CSS规则，并将其应用到-DOM树上"><a href="#浏览器如何解析-CSS规则，并将其应用到-DOM树上" class="headerlink" title="浏览器如何解析 CSS规则，并将其应用到 DOM树上"></a>浏览器如何解析 <code>CSS</code>规则，并将其应用到 <code>DOM</code>树上</h3><h3 id="浏览器如何将解析好的带有样式的-DOM树进行绘制"><a href="#浏览器如何将解析好的带有样式的-DOM树进行绘制" class="headerlink" title="浏览器如何将解析好的带有样式的 DOM树进行绘制"></a>浏览器如何将解析好的带有样式的 <code>DOM</code>树进行绘制</h3><h3 id="浏览器的运行机制，如何配置资源异步同步加载"><a href="#浏览器的运行机制，如何配置资源异步同步加载" class="headerlink" title="浏览器的运行机制，如何配置资源异步同步加载"></a>浏览器的运行机制，如何配置资源异步同步加载</h3><h3 id="浏览器回流与重绘的底层原理，引发原因，如何有效避免"><a href="#浏览器回流与重绘的底层原理，引发原因，如何有效避免" class="headerlink" title="浏览器回流与重绘的底层原理，引发原因，如何有效避免"></a>浏览器回流与重绘的底层原理，引发原因，如何有效避免</h3><h3 id="浏览器的垃圾回收机制，如何避免内存泄漏"><a href="#浏览器的垃圾回收机制，如何避免内存泄漏" class="headerlink" title="浏览器的垃圾回收机制，如何避免内存泄漏"></a>浏览器的垃圾回收机制，如何避免内存泄漏</h3><h3 id="浏览器采用的缓存方案，如何选择和控制合适的缓存方案"><a href="#浏览器采用的缓存方案，如何选择和控制合适的缓存方案" class="headerlink" title="浏览器采用的缓存方案，如何选择和控制合适的缓存方案"></a>浏览器采用的缓存方案，如何选择和控制合适的缓存方案</h3><h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><h3 id="理解-Node在应用程序中的作用，可以使用-Node搭建前端运行环境、使用-Node操作文件、操作数据库等等"><a href="#理解-Node在应用程序中的作用，可以使用-Node搭建前端运行环境、使用-Node操作文件、操作数据库等等" class="headerlink" title="理解 Node在应用程序中的作用，可以使用 Node搭建前端运行环境、使用 Node操作文件、操作数据库等等"></a>理解 <code>Node</code>在应用程序中的作用，可以使用 <code>Node</code>搭建前端运行环境、使用 <code>Node</code>操作文件、操作数据库等等</h3><h3 id="掌握一种-Node开发框架，如-Express，-Express和-Koa的区别"><a href="#掌握一种-Node开发框架，如-Express，-Express和-Koa的区别" class="headerlink" title="掌握一种 Node开发框架，如 Express， Express和 Koa的区别"></a>掌握一种 <code>Node</code>开发框架，如 <code>Express</code>， <code>Express</code>和 <code>Koa</code>的区别</h3><h3 id="熟练使用-Node提供的-API如-Path、-Http、-Child-Process等并理解其实现原理"><a href="#熟练使用-Node提供的-API如-Path、-Http、-Child-Process等并理解其实现原理" class="headerlink" title="熟练使用 Node提供的 API如 Path、 Http、 Child Process等并理解其实现原理"></a>熟练使用 <code>Node</code>提供的 <code>API</code>如 <code>Path</code>、 <code>Http</code>、 <code>Child Process</code>等并理解其实现原理</h3><h3 id="Node的底层运行原理、和浏览器的异同"><a href="#Node的底层运行原理、和浏览器的异同" class="headerlink" title="Node的底层运行原理、和浏览器的异同"></a><code>Node</code>的底层运行原理、和浏览器的异同</h3><h3 id="Node事件驱动、非阻塞机制的实现原理"><a href="#Node事件驱动、非阻塞机制的实现原理" class="headerlink" title="Node事件驱动、非阻塞机制的实现原理"></a><code>Node</code>事件驱动、非阻塞机制的实现原理</h3><p>#框架和类库</p>
+<blockquote>
+<p>轮子层出不穷，从原理上理解才是正道</p>
+</blockquote>
+<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><h3 id="理解-泛型、接口等面向对象的相关概念，-TypeScript对面向对象理念的实现"><a href="#理解-泛型、接口等面向对象的相关概念，-TypeScript对面向对象理念的实现" class="headerlink" title="理解 泛型、接口等面向对象的相关概念， TypeScript对面向对象理念的实现"></a>理解 <code>泛型、接口</code>等面向对象的相关概念， <code>TypeScript</code>对面向对象理念的实现</h3><h3 id="理解使用-TypeScript的好处，掌握-TypeScript基础语法"><a href="#理解使用-TypeScript的好处，掌握-TypeScript基础语法" class="headerlink" title="理解使用 TypeScript的好处，掌握 TypeScript基础语法"></a>理解使用 <code>TypeScript</code>的好处，掌握 <code>TypeScript</code>基础语法</h3><h3 id="TypeScript的规则检测原理"><a href="#TypeScript的规则检测原理" class="headerlink" title="TypeScript的规则检测原理"></a><code>TypeScript</code>的规则检测原理</h3><h3 id="可以在-React、-Vue等框架中使用-TypeScript进行开发"><a href="#可以在-React、-Vue等框架中使用-TypeScript进行开发" class="headerlink" title="可以在 React、 Vue等框架中使用 TypeScript进行开发"></a>可以在 <code>React</code>、 <code>Vue</code>等框架中使用 <code>TypeScript</code>进行开发</h3><h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="React和-vue选型和优缺点、核心架构的区别"><a href="#React和-vue选型和优缺点、核心架构的区别" class="headerlink" title="React和 vue选型和优缺点、核心架构的区别"></a><code>React</code>和 <code>vue</code>选型和优缺点、核心架构的区别</h3><h3 id="React中-setState的执行机制，如何有效的管理状态"><a href="#React中-setState的执行机制，如何有效的管理状态" class="headerlink" title="React中 setState的执行机制，如何有效的管理状态"></a><code>React</code>中 <code>setState</code>的执行机制，如何有效的管理状态</h3><h3 id="React的事件底层实现机制"><a href="#React的事件底层实现机制" class="headerlink" title="React的事件底层实现机制"></a><code>React</code>的事件底层实现机制</h3><h3 id="React的虚拟-DOM和-Diff算法的内部实现"><a href="#React的虚拟-DOM和-Diff算法的内部实现" class="headerlink" title="React的虚拟 DOM和 Diff算法的内部实现"></a><code>React</code>的虚拟 <code>DOM</code>和 <code>Diff</code>算法的内部实现</h3><h3 id="React的-Fiber工作原理，解决了什么问题"><a href="#React的-Fiber工作原理，解决了什么问题" class="headerlink" title="React的 Fiber工作原理，解决了什么问题"></a><code>React</code>的 <code>Fiber</code>工作原理，解决了什么问题</h3><h3 id="React-Router和-Vue-Router的底层实现原理、动态加载实现原理"><a href="#React-Router和-Vue-Router的底层实现原理、动态加载实现原理" class="headerlink" title="React Router和 Vue Router的底层实现原理、动态加载实现原理"></a><code>React Router</code>和 <code>Vue Router</code>的底层实现原理、动态加载实现原理</h3><h3 id="可熟练应用-React-API、生命周期等，可应用-HOC、-render-props、-Hooks等高阶用法解决问题"><a href="#可熟练应用-React-API、生命周期等，可应用-HOC、-render-props、-Hooks等高阶用法解决问题" class="headerlink" title="可熟练应用 React API、生命周期等，可应用 HOC、 render props、 Hooks等高阶用法解决问题"></a>可熟练应用 <code>React API</code>、生命周期等，可应用 <code>HOC</code>、 <code>render props</code>、 <code>Hooks</code>等高阶用法解决问题</h3><h3 id="基于-React的特性和原理，可以手动实现一个简单的-React"><a href="#基于-React的特性和原理，可以手动实现一个简单的-React" class="headerlink" title="基于 React的特性和原理，可以手动实现一个简单的 React"></a>基于 <code>React</code>的特性和原理，可以手动实现一个简单的 <code>React</code></h3><h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><h3 id="熟练使用-Vue的-API、生命周期、钩子函数"><a href="#熟练使用-Vue的-API、生命周期、钩子函数" class="headerlink" title="熟练使用 Vue的 API、生命周期、钩子函数"></a>熟练使用 <code>Vue</code>的 <code>API</code>、生命周期、钩子函数</h3><h3 id="MVVM框架设计理念"><a href="#MVVM框架设计理念" class="headerlink" title="MVVM框架设计理念"></a><code>MVVM</code>框架设计理念</h3><h3 id="Vue双向绑定实现原理、-Diff算法的内部实现"><a href="#Vue双向绑定实现原理、-Diff算法的内部实现" class="headerlink" title="Vue双向绑定实现原理、 Diff算法的内部实现"></a><code>Vue</code>双向绑定实现原理、 <code>Diff</code>算法的内部实现</h3><h3 id="Vue的事件机制"><a href="#Vue的事件机制" class="headerlink" title="Vue的事件机制"></a><code>Vue</code>的事件机制</h3><h3 id="从-template转换成真实-DOM的实现机制"><a href="#从-template转换成真实-DOM的实现机制" class="headerlink" title="从 template转换成真实 DOM的实现机制"></a>从 <code>template</code>转换成真实 <code>DOM</code>的实现机制</h3><h2 id="多端开发"><a href="#多端开发" class="headerlink" title="多端开发"></a>多端开发</h2><h3 id="单页面应用（-SPA）的原理和优缺点，掌握一种快速开发-SPA的方案"><a href="#单页面应用（-SPA）的原理和优缺点，掌握一种快速开发-SPA的方案" class="headerlink" title="单页面应用（ SPA）的原理和优缺点，掌握一种快速开发 SPA的方案"></a>单页面应用（ <code>SPA</code>）的原理和优缺点，掌握一种快速开发 <code>SPA</code>的方案</h3><h3 id="理解-Viewport、-em、-rem的原理和用法，分辨率、-px、-ppi、-dpi、-dp的区别和实际应用"><a href="#理解-Viewport、-em、-rem的原理和用法，分辨率、-px、-ppi、-dpi、-dp的区别和实际应用" class="headerlink" title="理解 Viewport、 em、 rem的原理和用法，分辨率、 px、 ppi、 dpi、 dp的区别和实际应用"></a>理解 <code>Viewport</code>、 <code>em</code>、 <code>rem</code>的原理和用法，分辨率、 <code>px</code>、 <code>ppi</code>、 <code>dpi</code>、 <code>dp</code>的区别和实际应用</h3><h3 id="移动端页面适配解决方案、不同机型适配方案"><a href="#移动端页面适配解决方案、不同机型适配方案" class="headerlink" title="移动端页面适配解决方案、不同机型适配方案"></a>移动端页面适配解决方案、不同机型适配方案</h3><h3 id="掌握一种-JavaScript移动客户端开发技术，如-React-Native：可以搭建-React-Native开发环境，熟练进行开发，可理解-React-Native的运作原理，不同端适配"><a href="#掌握一种-JavaScript移动客户端开发技术，如-React-Native：可以搭建-React-Native开发环境，熟练进行开发，可理解-React-Native的运作原理，不同端适配" class="headerlink" title="掌握一种 JavaScript移动客户端开发技术，如 React Native：可以搭建 React Native开发环境，熟练进行开发，可理解 React Native的运作原理，不同端适配"></a>掌握一种 <code>JavaScript</code>移动客户端开发技术，如 <code>React Native</code>：可以搭建 <code>React Native</code>开发环境，熟练进行开发，可理解 <code>React Native</code>的运作原理，不同端适配</h3><h3 id="掌握一种-JavaScript-PC客户端开发技术，如-Electron：可搭建-Electron开发环境，熟练进行开发，可理解-Electron的运作原理"><a href="#掌握一种-JavaScript-PC客户端开发技术，如-Electron：可搭建-Electron开发环境，熟练进行开发，可理解-Electron的运作原理" class="headerlink" title="掌握一种 JavaScript PC客户端开发技术，如 Electron：可搭建 Electron开发环境，熟练进行开发，可理解 Electron的运作原理"></a>掌握一种 <code>JavaScript</code> <code>PC</code>客户端开发技术，如 <code>Electron</code>：可搭建 <code>Electron</code>开发环境，熟练进行开发，可理解 <code>Electron</code>的运作原理</h3><h3 id="掌握一种小程序开发框架或原生小程序开发"><a href="#掌握一种小程序开发框架或原生小程序开发" class="headerlink" title="掌握一种小程序开发框架或原生小程序开发"></a>掌握一种小程序开发框架或原生小程序开发</h3><h3 id="理解多端框架的内部实现原理，至少了解一个多端框架的使用"><a href="#理解多端框架的内部实现原理，至少了解一个多端框架的使用" class="headerlink" title="理解多端框架的内部实现原理，至少了解一个多端框架的使用"></a>理解多端框架的内部实现原理，至少了解一个多端框架的使用</h3><h2 id="数据流管理"><a href="#数据流管理" class="headerlink" title="数据流管理"></a>数据流管理</h2><h3 id="掌握-React和-Vue传统的跨组件通信方案，对比采用数据流管理框架的异同"><a href="#掌握-React和-Vue传统的跨组件通信方案，对比采用数据流管理框架的异同" class="headerlink" title="掌握 React和 Vue传统的跨组件通信方案，对比采用数据流管理框架的异同"></a>掌握 <code>React</code>和 <code>Vue</code>传统的跨组件通信方案，对比采用数据流管理框架的异同</h3><h3 id="熟练使用-Redux管理数据流，并理解其实现原理，中间件实现原理"><a href="#熟练使用-Redux管理数据流，并理解其实现原理，中间件实现原理" class="headerlink" title="熟练使用 Redux管理数据流，并理解其实现原理，中间件实现原理"></a>熟练使用 <code>Redux</code>管理数据流，并理解其实现原理，中间件实现原理</h3><h3 id="熟练使用-Mobx管理数据流，并理解其实现原理，相比-Redux有什么优势"><a href="#熟练使用-Mobx管理数据流，并理解其实现原理，相比-Redux有什么优势" class="headerlink" title="熟练使用 Mobx管理数据流，并理解其实现原理，相比 Redux有什么优势"></a>熟练使用 <code>Mobx</code>管理数据流，并理解其实现原理，相比 <code>Redux</code>有什么优势</h3><h3 id="熟练使用-Vuex管理数据流，并理解其实现原理"><a href="#熟练使用-Vuex管理数据流，并理解其实现原理" class="headerlink" title="熟练使用 Vuex管理数据流，并理解其实现原理"></a>熟练使用 <code>Vuex</code>管理数据流，并理解其实现原理</h3><h3 id="以上数据流方案的异同和优缺点，不情况下的技术选型"><a href="#以上数据流方案的异同和优缺点，不情况下的技术选型" class="headerlink" title="以上数据流方案的异同和优缺点，不情况下的技术选型"></a>以上数据流方案的异同和优缺点，不情况下的技术选型</h3><h2 id="实用库"><a href="#实用库" class="headerlink" title="实用库"></a>实用库</h2><h3 id="至少掌握一种-UI组件框架，如-antd-design，理解其设计理念、底层实现"><a href="#至少掌握一种-UI组件框架，如-antd-design，理解其设计理念、底层实现" class="headerlink" title="至少掌握一种 UI组件框架，如 antd design，理解其设计理念、底层实现"></a>至少掌握一种 <code>UI</code>组件框架，如 <code>antd design</code>，理解其设计理念、底层实现</h3><h3 id="掌握一种图表绘制框架，如-Echart，理解其设计理念、底层实现，可以自己实现图表"><a href="#掌握一种图表绘制框架，如-Echart，理解其设计理念、底层实现，可以自己实现图表" class="headerlink" title="掌握一种图表绘制框架，如 Echart，理解其设计理念、底层实现，可以自己实现图表"></a>掌握一种图表绘制框架，如 <code>Echart</code>，理解其设计理念、底层实现，可以自己实现图表</h3><h3 id="掌握一种-GIS开发框架，如百度地图-API"><a href="#掌握一种-GIS开发框架，如百度地图-API" class="headerlink" title="掌握一种 GIS开发框架，如百度地图 API"></a>掌握一种 <code>GIS</code>开发框架，如百度地图 <code>API</code></h3><h3 id="掌握一种可视化开发框架，如-Three-js、-D3"><a href="#掌握一种可视化开发框架，如-Three-js、-D3" class="headerlink" title="掌握一种可视化开发框架，如 Three.js、 D3"></a>掌握一种可视化开发框架，如 <code>Three.js</code>、 <code>D3</code></h3><h3 id="工具函数库，如-lodash、-underscore、-moment等，理解使用的工具类或工具函数的具体实现原理"><a href="#工具函数库，如-lodash、-underscore、-moment等，理解使用的工具类或工具函数的具体实现原理" class="headerlink" title="工具函数库，如 lodash、 underscore、 moment等，理解使用的工具类或工具函数的具体实现原理"></a>工具函数库，如 <code>lodash</code>、 <code>underscore</code>、 <code>moment</code>等，理解使用的工具类或工具函数的具体实现原理</h3><h2 id="开发和调试"><a href="#开发和调试" class="headerlink" title="开发和调试"></a>开发和调试</h2><h3 id="熟练使用各浏览器提供的调试工具"><a href="#熟练使用各浏览器提供的调试工具" class="headerlink" title="熟练使用各浏览器提供的调试工具"></a>熟练使用各浏览器提供的调试工具</h3><h3 id="熟练使用一种代理工具实现请求代理、抓包，如-charls"><a href="#熟练使用一种代理工具实现请求代理、抓包，如-charls" class="headerlink" title="熟练使用一种代理工具实现请求代理、抓包，如 charls"></a>熟练使用一种代理工具实现请求代理、抓包，如 <code>charls</code></h3><h3 id="可以使用-Android、-IOS模拟器进行调试，并掌握一种真机调试方案"><a href="#可以使用-Android、-IOS模拟器进行调试，并掌握一种真机调试方案" class="headerlink" title="可以使用 Android、 IOS模拟器进行调试，并掌握一种真机调试方案"></a>可以使用 <code>Android</code>、 <code>IOS</code>模拟器进行调试，并掌握一种真机调试方案</h3><h3 id="了解-Vue、-React等框架调试工具的使用"><a href="#了解-Vue、-React等框架调试工具的使用" class="headerlink" title="了解 Vue、 React等框架调试工具的使用"></a>了解 <code>Vue</code>、 <code>React</code>等框架调试工具的使用</h3><h1 id="前端工程"><a href="#前端工程" class="headerlink" title="前端工程"></a>前端工程</h1><blockquote>
+<p>前端工程化：以工程化方法和工具提高开发生产效率、降低维护难度</p>
+</blockquote>
+<h2 id="项目构建"><a href="#项目构建" class="headerlink" title="项目构建"></a>项目构建</h2><h3 id="理解-npm、-yarn依赖包管理的原理，两者的区别"><a href="#理解-npm、-yarn依赖包管理的原理，两者的区别" class="headerlink" title="理解 npm、 yarn依赖包管理的原理，两者的区别"></a>理解 <code>npm</code>、 <code>yarn</code>依赖包管理的原理，两者的区别</h3><h3 id="可以使用-npm运行自定义脚本"><a href="#可以使用-npm运行自定义脚本" class="headerlink" title="可以使用 npm运行自定义脚本"></a>可以使用 <code>npm</code>运行自定义脚本</h3><h3 id="理解-Babel、-ESLint、-webpack等工具在项目中承担的作用"><a href="#理解-Babel、-ESLint、-webpack等工具在项目中承担的作用" class="headerlink" title="理解 Babel、 ESLint、 webpack等工具在项目中承担的作用"></a>理解 <code>Babel</code>、 <code>ESLint</code>、 <code>webpack</code>等工具在项目中承担的作用</h3><h3 id="ESLint规则检测原理，常用的-ESLint配置"><a href="#ESLint规则检测原理，常用的-ESLint配置" class="headerlink" title="ESLint规则检测原理，常用的 ESLint配置"></a><code>ESLint</code>规则检测原理，常用的 <code>ESLint</code>配置</h3><h3 id="Babel的核心原理，可以自己编写一个-Babel插件"><a href="#Babel的核心原理，可以自己编写一个-Babel插件" class="headerlink" title="Babel的核心原理，可以自己编写一个 Babel插件"></a><code>Babel</code>的核心原理，可以自己编写一个 <code>Babel</code>插件</h3><h3 id="可以配置一种前端代码兼容方案，如-Polyfill"><a href="#可以配置一种前端代码兼容方案，如-Polyfill" class="headerlink" title="可以配置一种前端代码兼容方案，如 Polyfill"></a>可以配置一种前端代码兼容方案，如 <code>Polyfill</code></h3><h3 id="Webpack的编译原理、构建流程、热更新原理，-chunk、-bundle和-module的区别和应用"><a href="#Webpack的编译原理、构建流程、热更新原理，-chunk、-bundle和-module的区别和应用" class="headerlink" title="Webpack的编译原理、构建流程、热更新原理， chunk、 bundle和 module的区别和应用"></a><code>Webpack</code>的编译原理、构建流程、热更新原理， <code>chunk</code>、 <code>bundle</code>和 <code>module</code>的区别和应用</h3><h3 id="可熟练配置已有的-loaders和-plugins解决问题，可以自己编写-loaders和-plugins"><a href="#可熟练配置已有的-loaders和-plugins解决问题，可以自己编写-loaders和-plugins" class="headerlink" title="可熟练配置已有的 loaders和 plugins解决问题，可以自己编写 loaders和 plugins"></a>可熟练配置已有的 <code>loaders</code>和 <code>plugins</code>解决问题，可以自己编写 <code>loaders</code>和 <code>plugins</code></h3><h2 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h2><h3 id="正向代理与反向代理的特点和实例"><a href="#正向代理与反向代理的特点和实例" class="headerlink" title="正向代理与反向代理的特点和实例"></a>正向代理与反向代理的特点和实例</h3><h3 id="可手动搭建一个简单的-nginx服务器、"><a href="#可手动搭建一个简单的-nginx服务器、" class="headerlink" title="可手动搭建一个简单的 nginx服务器、"></a>可手动搭建一个简单的 <code>nginx</code>服务器、</h3><h3 id="熟练应用常用的-nginx内置变量，掌握常用的匹配规则写法"><a href="#熟练应用常用的-nginx内置变量，掌握常用的匹配规则写法" class="headerlink" title="熟练应用常用的 nginx内置变量，掌握常用的匹配规则写法"></a>熟练应用常用的 <code>nginx</code>内置变量，掌握常用的匹配规则写法</h3><h3 id="可以用-nginx实现请求过滤、配置-gzip、负载均衡等，并能解释其内部原理"><a href="#可以用-nginx实现请求过滤、配置-gzip、负载均衡等，并能解释其内部原理" class="headerlink" title="可以用 nginx实现请求过滤、配置 gzip、负载均衡等，并能解释其内部原理"></a>可以用 <code>nginx</code>实现请求过滤、配置 <code>gzip</code>、负载均衡等，并能解释其内部原理</h3><h2 id="开发提速"><a href="#开发提速" class="headerlink" title="开发提速"></a>开发提速</h2><h3 id="熟练掌握一种接口管理、接口-mock工具的使用，如-yapi"><a href="#熟练掌握一种接口管理、接口-mock工具的使用，如-yapi" class="headerlink" title="熟练掌握一种接口管理、接口 mock工具的使用，如 yapi"></a>熟练掌握一种接口管理、接口 <code>mock</code>工具的使用，如 <code>yapi</code></h3><h3 id="掌握一种高效的日志埋点方案，可快速使用日志查询工具定位线上问题"><a href="#掌握一种高效的日志埋点方案，可快速使用日志查询工具定位线上问题" class="headerlink" title="掌握一种高效的日志埋点方案，可快速使用日志查询工具定位线上问题"></a>掌握一种高效的日志埋点方案，可快速使用日志查询工具定位线上问题</h3><h3 id="理解-TDD与-BDD模式，至少会使用一种前端单元测试框架"><a href="#理解-TDD与-BDD模式，至少会使用一种前端单元测试框架" class="headerlink" title="理解 TDD与 BDD模式，至少会使用一种前端单元测试框架"></a>理解 <code>TDD</code>与 <code>BDD</code>模式，至少会使用一种前端单元测试框架</h3><h2 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h2><h3 id="理解-Git的核心原理、工作流程、和-SVN的区别"><a href="#理解-Git的核心原理、工作流程、和-SVN的区别" class="headerlink" title="理解 Git的核心原理、工作流程、和 SVN的区别"></a>理解 <code>Git</code>的核心原理、工作流程、和 <code>SVN</code>的区别</h3><h3 id="熟练使用常规的-Git命令、-git-rebase、-git-stash等进阶命令"><a href="#熟练使用常规的-Git命令、-git-rebase、-git-stash等进阶命令" class="headerlink" title="熟练使用常规的 Git命令、 git rebase、 git stash等进阶命令"></a>熟练使用常规的 <code>Git</code>命令、 <code>git rebase</code>、 <code>git stash</code>等进阶命令</h3><h3 id="可以快速解决-线上分支回滚、线上分支错误合并等复杂问题"><a href="#可以快速解决-线上分支回滚、线上分支错误合并等复杂问题" class="headerlink" title="可以快速解决 线上分支回滚、线上分支错误合并等复杂问题"></a>可以快速解决 <code>线上分支回滚、线上分支错误合并</code>等复杂问题</h3><h2 id="持续集成"><a href="#持续集成" class="headerlink" title="持续集成"></a>持续集成</h2><h3 id="理解-CI-CD技术的意义，至少熟练掌握一种-CI-CD工具的使用，如-Jenkins"><a href="#理解-CI-CD技术的意义，至少熟练掌握一种-CI-CD工具的使用，如-Jenkins" class="headerlink" title="理解 CI/CD技术的意义，至少熟练掌握一种 CI/CD工具的使用，如 Jenkins"></a>理解 <code>CI/CD</code>技术的意义，至少熟练掌握一种 <code>CI/CD</code>工具的使用，如 <code>Jenkins</code></h3><h3 id="可以独自完成架构设计、技术选型、环境搭建、全流程开发、部署上线等一套完整的开发流程（包括-Web应用、移动客户端应用、-PC客户端应用、小程序、-H5等等）"><a href="#可以独自完成架构设计、技术选型、环境搭建、全流程开发、部署上线等一套完整的开发流程（包括-Web应用、移动客户端应用、-PC客户端应用、小程序、-H5等等）" class="headerlink" title="可以独自完成架构设计、技术选型、环境搭建、全流程开发、部署上线等一套完整的开发流程（包括 Web应用、移动客户端应用、 PC客户端应用、小程序、 H5等等）"></a>可以独自完成架构设计、技术选型、环境搭建、全流程开发、部署上线等一套完整的开发流程（包括 <code>Web</code>应用、移动客户端应用、 <code>PC</code>客户端应用、小程序、 <code>H5</code>等等）</h3><h1 id="项目和业务"><a href="#项目和业务" class="headerlink" title="项目和业务"></a>项目和业务</h1><h2 id="后端技能"><a href="#后端技能" class="headerlink" title="后端技能"></a>后端技能</h2><h3 id="了解后端的开发方式，在应用程序中的作用，至少会使用一种后端语言"><a href="#了解后端的开发方式，在应用程序中的作用，至少会使用一种后端语言" class="headerlink" title="了解后端的开发方式，在应用程序中的作用，至少会使用一种后端语言"></a>了解后端的开发方式，在应用程序中的作用，至少会使用一种后端语言</h3><h3 id="掌握数据最终在数据库中是如何落地存储的，能看懂表结构设计、表之间的关联，至少会使用一种数据库"><a href="#掌握数据最终在数据库中是如何落地存储的，能看懂表结构设计、表之间的关联，至少会使用一种数据库" class="headerlink" title="掌握数据最终在数据库中是如何落地存储的，能看懂表结构设计、表之间的关联，至少会使用一种数据库"></a>掌握数据最终在数据库中是如何落地存储的，能看懂表结构设计、表之间的关联，至少会使用一种数据库</h3><h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><h3 id="了解前端性能衡量指标、性能监控要点，掌握一种前端性能监控方案"><a href="#了解前端性能衡量指标、性能监控要点，掌握一种前端性能监控方案" class="headerlink" title="了解前端性能衡量指标、性能监控要点，掌握一种前端性能监控方案"></a>了解前端性能衡量指标、性能监控要点，掌握一种前端性能监控方案</h3><h3 id="了解常见的-Web、-App性能优化方案"><a href="#了解常见的-Web、-App性能优化方案" class="headerlink" title="了解常见的 Web、 App性能优化方案"></a>了解常见的 <code>Web</code>、 <code>App</code>性能优化方案</h3><h3 id="SEO排名规则、-SEO优化方案、前后端分离的-SEO"><a href="#SEO排名规则、-SEO优化方案、前后端分离的-SEO" class="headerlink" title="SEO排名规则、 SEO优化方案、前后端分离的 SEO"></a><code>SEO</code>排名规则、 <code>SEO</code>优化方案、前后端分离的 <code>SEO</code></h3><h3 id="SSR实现方案、优缺点、及其性能优化"><a href="#SSR实现方案、优缺点、及其性能优化" class="headerlink" title="SSR实现方案、优缺点、及其性能优化"></a><code>SSR</code>实现方案、优缺点、及其性能优化</h3><h3 id="Webpack的性能优化方案"><a href="#Webpack的性能优化方案" class="headerlink" title="Webpack的性能优化方案"></a><code>Webpack</code>的性能优化方案</h3><h3 id="Canvas性能优化方案"><a href="#Canvas性能优化方案" class="headerlink" title="Canvas性能优化方案"></a><code>Canvas</code>性能优化方案</h3><h3 id="React、-Vue等框架使用性能优化方案"><a href="#React、-Vue等框架使用性能优化方案" class="headerlink" title="React、 Vue等框架使用性能优化方案"></a><code>React</code>、 <code>Vue</code>等框架使用性能优化方案</h3><h2 id="前端安全"><a href="#前端安全" class="headerlink" title="前端安全"></a>前端安全</h2><h3 id="XSS攻击的原理、分类、具体案例，前端如何防御"><a href="#XSS攻击的原理、分类、具体案例，前端如何防御" class="headerlink" title="XSS攻击的原理、分类、具体案例，前端如何防御"></a><code>XSS</code>攻击的原理、分类、具体案例，前端如何防御</h3><h3 id="CSRF攻击的原理、具体案例，前端如何防御"><a href="#CSRF攻击的原理、具体案例，前端如何防御" class="headerlink" title="CSRF攻击的原理、具体案例，前端如何防御"></a><code>CSRF</code>攻击的原理、具体案例，前端如何防御</h3><h3 id="HTTP劫持、页面劫持的原理、防御措施"><a href="#HTTP劫持、页面劫持的原理、防御措施" class="headerlink" title="HTTP劫持、页面劫持的原理、防御措施"></a><code>HTTP</code>劫持、页面劫持的原理、防御措施</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/23/前端面试汇总-基础篇/" rel="next" title="前端面试汇总(基础概念篇)">
+                <i class="fa fa-chevron-left"></i> 前端面试汇总(基础概念篇)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/30/通过document-referrer返回前一个页面/" rel="prev" title="通过document.referrer返回前一个页面">
+                通过document.referrer返回前一个页面 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Peanut">
+            
+              <p class="site-author-name" itemprop="name">Peanut</p>
+              <p class="site-description motion-element" itemprop="description">personal blog, web, fecomponent, The front-end development</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript基础"><span class="nav-number">2.</span> <span class="nav-text">JavaScript基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和类型"><span class="nav-number">2.1.</span> <span class="nav-text">变量和类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript规定了几种语言类型"><span class="nav-number">2.1.1.</span> <span class="nav-text">JavaScript规定了几种语言类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript对象的底层数据结构是什么"><span class="nav-number">2.1.2.</span> <span class="nav-text">JavaScript对象的底层数据结构是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol类型在实际开发中的应用、可手动实现一个简单的Symbol"><span class="nav-number">2.1.3.</span> <span class="nav-text">Symbol类型在实际开发中的应用、可手动实现一个简单的Symbol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript中的变量在内存中的具体存储形式"><span class="nav-number">2.1.4.</span> <span class="nav-text">JavaScript中的变量在内存中的具体存储形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本类型对应的内置对象，以及他们之间的装箱拆箱操作"><span class="nav-number">2.1.5.</span> <span class="nav-text">基本类型对应的内置对象，以及他们之间的装箱拆箱操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解值类型和引用类型"><span class="nav-number">2.1.6.</span> <span class="nav-text">理解值类型和引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null和undefined的区别"><span class="nav-number">2.1.7.</span> <span class="nav-text">null和undefined的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#至少可以说出三种判断JavaScript数据类型的方式，以及他们的优缺点，如何准确的判断数组类型"><span class="nav-number">2.1.8.</span> <span class="nav-text">至少可以说出三种判断JavaScript数据类型的方式，以及他们的优缺点，如何准确的判断数组类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可能发生隐式类型转换的场景以及转换原则，应如何避免或巧妙应用"><span class="nav-number">2.1.9.</span> <span class="nav-text">可能发生隐式类型转换的场景以及转换原则，应如何避免或巧妙应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出现小数精度丢失的原因，JavaScript可以存储的最大数字、最大安全数字，JavaScript处理大数字的方法、避免精度丢失的方法"><span class="nav-number">2.1.10.</span> <span class="nav-text">出现小数精度丢失的原因，JavaScript可以存储的最大数字、最大安全数字，JavaScript处理大数字的方法、避免精度丢失的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型和原型链"><span class="nav-number">2.2.</span> <span class="nav-text">原型和原型链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解原型设计模式以及JavaScript中的原型规则"><span class="nav-number">2.2.1.</span> <span class="nav-text">理解原型设计模式以及JavaScript中的原型规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#instanceof的底层实现原理，手动实现一个instanceof"><span class="nav-number">2.2.2.</span> <span class="nav-text">instanceof的底层实现原理，手动实现一个instanceof</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现继承的几种方式以及他们的优缺点"><span class="nav-number">2.2.3.</span> <span class="nav-text">实现继承的几种方式以及他们的优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#至少说出一种开源项目-如Node-中应用原型继承的案例"><span class="nav-number">2.2.4.</span> <span class="nav-text">至少说出一种开源项目(如Node)中应用原型继承的案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以描述new一个对象的详细过程，手动实现一个new操作符"><span class="nav-number">2.2.5.</span> <span class="nav-text">可以描述new一个对象的详细过程，手动实现一个new操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解es6-class构造以及继承的底层实现原理"><span class="nav-number">2.2.6.</span> <span class="nav-text">理解es6 class构造以及继承的底层实现原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作用域和闭包"><span class="nav-number">2.3.</span> <span class="nav-text">作用域和闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解词法作用域和动态作用域"><span class="nav-number">2.3.1.</span> <span class="nav-text">理解词法作用域和动态作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-JavaScript的作用域和作用域链"><span class="nav-number">2.3.2.</span> <span class="nav-text">理解 JavaScript的作用域和作用域链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-JavaScript的执行上下文栈，可以应用堆栈信息快速定位问题"><span class="nav-number">2.3.3.</span> <span class="nav-text">理解 JavaScript的执行上下文栈，可以应用堆栈信息快速定位问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this的原理以及几种不同使用场景的取值"><span class="nav-number">2.3.4.</span> <span class="nav-text">this的原理以及几种不同使用场景的取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#闭包的实现原理和作用，可以列举几个开发中闭包的实际应用"><span class="nav-number">2.3.5.</span> <span class="nav-text">闭包的实现原理和作用，可以列举几个开发中闭包的实际应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解堆栈溢出和内存泄漏的原理，如何防止"><span class="nav-number">2.3.6.</span> <span class="nav-text">理解堆栈溢出和内存泄漏的原理，如何防止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何处理循环的异步操作"><span class="nav-number">2.3.7.</span> <span class="nav-text">如何处理循环的异步操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解模块化解决的实际问题，可列举几个模块化方案并理解其中原理"><span class="nav-number">2.3.8.</span> <span class="nav-text">理解模块化解决的实际问题，可列举几个模块化方案并理解其中原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行机制"><span class="nav-number">2.4.</span> <span class="nav-text">执行机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为何-try里面放-return，-finally还会执行，理解其内部机制"><span class="nav-number">2.4.1.</span> <span class="nav-text">为何 try里面放 return， finally还会执行，理解其内部机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript如何实现异步编程，可以详细描述-EventLoop机制"><span class="nav-number">2.4.2.</span> <span class="nav-text">JavaScript如何实现异步编程，可以详细描述 EventLoop机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宏任务和微任务分别有哪些"><span class="nav-number">2.4.3.</span> <span class="nav-text">宏任务和微任务分别有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以快速分析一个复杂的异步嵌套逻辑，并掌握分析方法"><span class="nav-number">2.4.4.</span> <span class="nav-text">可以快速分析一个复杂的异步嵌套逻辑，并掌握分析方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-Promise实现串行"><span class="nav-number">2.4.5.</span> <span class="nav-text">使用 Promise实现串行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node与浏览器-EventLoop的差异"><span class="nav-number">2.4.6.</span> <span class="nav-text">Node与浏览器 EventLoop的差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何在保证页面运行流畅的情况下处理海量数据"><span class="nav-number">2.4.7.</span> <span class="nav-text">如何在保证页面运行流畅的情况下处理海量数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法和API"><span class="nav-number">2.5.</span> <span class="nav-text">语法和API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-ECMAScript和-JavaScript的关系"><span class="nav-number">2.5.1.</span> <span class="nav-text">理解 ECMAScript和 JavaScript的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练运用-es5、-es6提供的语法规范，"><span class="nav-number">2.5.2.</span> <span class="nav-text">熟练运用 es5、 es6提供的语法规范，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练掌握-JavaScript提供的全局对象（例如-Date、-Math）、全局函数（例如-decodeURI、-isNaN）、全局属性（例如-Infinity、-undefined）"><span class="nav-number">2.5.3.</span> <span class="nav-text">熟练掌握 JavaScript提供的全局对象（例如 Date、 Math）、全局函数（例如 decodeURI、 isNaN）、全局属性（例如 Infinity、 undefined）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练应用-map、-reduce、-filter-等高阶函数解决问题"><span class="nav-number">2.5.4.</span> <span class="nav-text">熟练应用 map、 reduce、 filter 等高阶函数解决问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setInterval需要注意的点，使用-settimeout实现-setInterval"><span class="nav-number">2.5.5.</span> <span class="nav-text">setInterval需要注意的点，使用 settimeout实现 setInterval</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript提供的正则表达式-API、可以使用正则表达式（邮箱校验、-URL解析、去重等）解决常见问题"><span class="nav-number">2.5.6.</span> <span class="nav-text">JavaScript提供的正则表达式 API、可以使用正则表达式（邮箱校验、 URL解析、去重等）解决常见问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript异常处理的方式，统一的异常处理方案"><span class="nav-number">2.5.7.</span> <span class="nav-text">JavaScript异常处理的方式，统一的异常处理方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">2.6.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5离线缓存原理"><span class="nav-number">2.6.1.</span> <span class="nav-text">HTML5离线缓存原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">2.7.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS所有选择器及其优先级、使用场景，哪些可以继承，如何运用-at规则"><span class="nav-number">2.7.1.</span> <span class="nav-text">CSS所有选择器及其优先级、使用场景，哪些可以继承，如何运用 at规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS伪类和伪元素有哪些，它们的区别和实际应用"><span class="nav-number">2.7.2.</span> <span class="nav-text">CSS伪类和伪元素有哪些，它们的区别和实际应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML文档流的排版规则，-CSS几种定位的规则、定位参照物、对文档流的影响，如何选择最好的定位方式，雪碧图实现原理"><span class="nav-number">2.7.3.</span> <span class="nav-text">HTML文档流的排版规则， CSS几种定位的规则、定位参照物、对文档流的影响，如何选择最好的定位方式，雪碧图实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平垂直居中的方案、可以实现-6种以上并对比它们的优缺点"><span class="nav-number">2.7.4.</span> <span class="nav-text">水平垂直居中的方案、可以实现 6种以上并对比它们的优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BFC实现原理，可以解决的问题，如何创建-BFC"><span class="nav-number">2.7.5.</span> <span class="nav-text">BFC实现原理，可以解决的问题，如何创建 BFC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可使用-CSS函数复用代码，实现特殊效果"><span class="nav-number">2.7.6.</span> <span class="nav-text">可使用 CSS函数复用代码，实现特殊效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PostCSS、-Sass、-Less的异同，以及使用配置，至少掌握一种"><span class="nav-number">2.7.7.</span> <span class="nav-text">PostCSS、 Sass、 Less的异同，以及使用配置，至少掌握一种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS模块化方案、如何配置按需加载、如何防止-CSS阻塞渲染"><span class="nav-number">2.7.8.</span> <span class="nav-text">CSS模块化方案、如何配置按需加载、如何防止 CSS阻塞渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练使用-CSS实现常见动画，如渐变、移动、旋转、缩放等等"><span class="nav-number">2.7.9.</span> <span class="nav-text">熟练使用 CSS实现常见动画，如渐变、移动、旋转、缩放等等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS浏览器兼容性写法，了解不同-API在不同浏览器下的兼容性情况"><span class="nav-number">2.7.10.</span> <span class="nav-text">CSS浏览器兼容性写法，了解不同 API在不同浏览器下的兼容性情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握一套完整的响应式布局方案"><span class="nav-number">2.7.11.</span> <span class="nav-text">掌握一套完整的响应式布局方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手写"><span class="nav-number">2.8.</span> <span class="nav-text">手写</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机基础"><span class="nav-number">3.</span> <span class="nav-text">计算机基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编译原理"><span class="nav-number">3.1.</span> <span class="nav-text">编译原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解代码到底是什么，计算机如何将代码转换为可以运行的目标程序"><span class="nav-number">3.1.1.</span> <span class="nav-text">理解代码到底是什么，计算机如何将代码转换为可以运行的目标程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正则表达式的匹配原理和性能优化"><span class="nav-number">3.1.2.</span> <span class="nav-text">正则表达式的匹配原理和性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何将-JavaScript代码解析成抽象语法树-AST"><span class="nav-number">3.1.3.</span> <span class="nav-text">如何将 JavaScript代码解析成抽象语法树(AST)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base64的编码原理"><span class="nav-number">3.1.4.</span> <span class="nav-text">base64的编码原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几种进制的相互转换计算方法，在-JavaScript中如何表示和转换"><span class="nav-number">3.1.5.</span> <span class="nav-text">几种进制的相互转换计算方法，在 JavaScript中如何表示和转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络协议"><span class="nav-number">3.2.</span> <span class="nav-text">网络协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解什么是协议，了解-TCP-IP网络协议族的构成，每层协议在应用程序中发挥的作用"><span class="nav-number">3.2.1.</span> <span class="nav-text">理解什么是协议，了解 TCP/IP网络协议族的构成，每层协议在应用程序中发挥的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三次握手和四次挥手详细原理，为什么要使用这种机制"><span class="nav-number">3.2.2.</span> <span class="nav-text">三次握手和四次挥手详细原理，为什么要使用这种机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有哪些协议是可靠，-TCP有哪些手段保证可靠交付"><span class="nav-number">3.2.3.</span> <span class="nav-text">有哪些协议是可靠， TCP有哪些手段保证可靠交付</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS的作用、-DNS解析的详细过程，-DNS优化原理"><span class="nav-number">3.2.4.</span> <span class="nav-text">DNS的作用、 DNS解析的详细过程， DNS优化原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CDN的作用和原理"><span class="nav-number">3.2.5.</span> <span class="nav-text">CDN的作用和原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP请求报文和响应报文的具体组成，能理解常见请求头的含义，有几种请求方式，区别是什么"><span class="nav-number">3.2.6.</span> <span class="nav-text">HTTP请求报文和响应报文的具体组成，能理解常见请求头的含义，有几种请求方式，区别是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP所有状态码的具体含义，看到异常状态码能快速定位问题"><span class="nav-number">3.2.7.</span> <span class="nav-text">HTTP所有状态码的具体含义，看到异常状态码能快速定位问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP1-1、-HTTP2-0带来的改变"><span class="nav-number">3.2.8.</span> <span class="nav-text">HTTP1.1、 HTTP2.0带来的改变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTPS的加密原理，如何开启-HTTPS，如何劫持-HTTPS请求"><span class="nav-number">3.2.9.</span> <span class="nav-text">HTTPS的加密原理，如何开启 HTTPS，如何劫持 HTTPS请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-WebSocket协议的底层原理、与-HTTP的区别"><span class="nav-number">3.2.10.</span> <span class="nav-text">理解 WebSocket协议的底层原理、与 HTTP的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计模式"><span class="nav-number">3.3.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练使用前端常用的设计模式编写代码，如单例模式、装饰器模式、代理模式等"><span class="nav-number">3.3.1.</span> <span class="nav-text">熟练使用前端常用的设计模式编写代码，如单例模式、装饰器模式、代理模式等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布订阅模式和观察者模式的异同以及实际应用"><span class="nav-number">3.3.2.</span> <span class="nav-text">发布订阅模式和观察者模式的异同以及实际应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以说出几种设计模式在开发中的实际应用，理解框架源码中对设计模式的应用"><span class="nav-number">3.3.3.</span> <span class="nav-text">可以说出几种设计模式在开发中的实际应用，理解框架源码中对设计模式的应用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据结构和算法"><span class="nav-number">4.</span> <span class="nav-text">数据结构和算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript编码能力"><span class="nav-number">4.1.</span> <span class="nav-text">JavaScript编码能力</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多种方式实现数组去重、扁平化、对比优缺点"><span class="nav-number">4.1.1.</span> <span class="nav-text">多种方式实现数组去重、扁平化、对比优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多种方式实现深拷贝、对比优缺点"><span class="nav-number">4.1.2.</span> <span class="nav-text">多种方式实现深拷贝、对比优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手写函数柯里化工具函数、并理解其应用场景和优势"><span class="nav-number">4.1.3.</span> <span class="nav-text">手写函数柯里化工具函数、并理解其应用场景和优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手写防抖和节流工具函数、并理解其内部原理和应用场景"><span class="nav-number">4.1.4.</span> <span class="nav-text">手写防抖和节流工具函数、并理解其内部原理和应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现一个-sleep函数"><span class="nav-number">4.1.5.</span> <span class="nav-text">实现一个 sleep函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手动实现前端轮子"><span class="nav-number">4.2.</span> <span class="nav-text">手动实现前端轮子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手动实现call、apply、bind"><span class="nav-number">4.2.1.</span> <span class="nav-text">手动实现call、apply、bind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手动实现符合-Promise-A-规范的-Promise、手动实现-async-await"><span class="nav-number">4.2.2.</span> <span class="nav-text">手动实现符合 Promise/A+规范的 Promise、手动实现 async await</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手写一个-EventEmitter实现事件发布、订阅"><span class="nav-number">4.2.3.</span> <span class="nav-text">手写一个 EventEmitter实现事件发布、订阅</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以说出两种实现双向绑定的方案、可以手动实现"><span class="nav-number">4.2.4.</span> <span class="nav-text">可以说出两种实现双向绑定的方案、可以手动实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手写-JSON-stringify、-JSON-parse"><span class="nav-number">4.2.5.</span> <span class="nav-text">手写 JSON.stringify、 JSON.parse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手写一个模版引擎，并能解释其中原理"><span class="nav-number">4.2.6.</span> <span class="nav-text">手写一个模版引擎，并能解释其中原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手写-懒加载、下拉刷新、上拉加载、预加载等效果"><span class="nav-number">4.2.7.</span> <span class="nav-text">手写 懒加载、下拉刷新、上拉加载、预加载等效果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">4.3.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解常见数据结构的特点，以及他们在不同场景下使用的优缺点"><span class="nav-number">4.3.1.</span> <span class="nav-text">理解常见数据结构的特点，以及他们在不同场景下使用的优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-数组、字符串的存储原理，并熟练应用他们解决问题"><span class="nav-number">4.3.2.</span> <span class="nav-text">理解 数组、字符串的存储原理，并熟练应用他们解决问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-二叉树、栈、队列、哈希表的基本结构和特点，并可以应用它解决问题"><span class="nav-number">4.3.3.</span> <span class="nav-text">理解 二叉树、栈、队列、哈希表的基本结构和特点，并可以应用它解决问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#了解-图、堆的基本结构和使用场景"><span class="nav-number">4.3.4.</span> <span class="nav-text">了解 图、堆的基本结构和使用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法"><span class="nav-number">4.4.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可计算一个算法的时间复杂度和空间复杂度，可估计业务逻辑代码的耗时和内存消耗"><span class="nav-number">4.4.1.</span> <span class="nav-text">可计算一个算法的时间复杂度和空间复杂度，可估计业务逻辑代码的耗时和内存消耗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#至少理解五种排序算法的实现原理、应用场景、优缺点，可快速说出时间、空间复杂度"><span class="nav-number">4.4.2.</span> <span class="nav-text">至少理解五种排序算法的实现原理、应用场景、优缺点，可快速说出时间、空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#了解递归和循环的优缺点、应用场景、并可在开发中熟练应用"><span class="nav-number">4.4.3.</span> <span class="nav-text">了解递归和循环的优缺点、应用场景、并可在开发中熟练应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可应用-回溯算法、贪心算法、分治算法、动态规划等解决复杂问题"><span class="nav-number">4.4.4.</span> <span class="nav-text">可应用 回溯算法、贪心算法、分治算法、动态规划等解决复杂问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端处理海量数据的算法方案"><span class="nav-number">4.4.5.</span> <span class="nav-text">前端处理海量数据的算法方案</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行环境"><span class="nav-number">5.</span> <span class="nav-text">运行环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器API"><span class="nav-number">5.1.</span> <span class="nav-text">浏览器API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器提供的符合-W3C标准的-DOM操作-API、浏览器差异、兼容性"><span class="nav-number">5.1.1.</span> <span class="nav-text">浏览器提供的符合 W3C标准的 DOM操作 API、浏览器差异、兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器提供的浏览器对象模型-BOM-提供的所有全局-API、浏览器差异、兼容性"><span class="nav-number">5.1.2.</span> <span class="nav-text">浏览器提供的浏览器对象模型 (BOM)提供的所有全局 API、浏览器差异、兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大量-DOM操作、海量数据的性能优化-合并操作、-Diff、-requestAnimationFrame等"><span class="nav-number">5.1.3.</span> <span class="nav-text">大量 DOM操作、海量数据的性能优化(合并操作、 Diff、 requestAnimationFrame等)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器海量数据存储、操作性能优化"><span class="nav-number">5.1.4.</span> <span class="nav-text">浏览器海量数据存储、操作性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM事件流的具体实现机制、不同浏览器的差异、事件代理"><span class="nav-number">5.1.5.</span> <span class="nav-text">DOM事件流的具体实现机制、不同浏览器的差异、事件代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端发起网络请求的几种方式及其底层实现、可以手写原生-ajax、-fetch、可以熟练使用第三方库"><span class="nav-number">5.1.6.</span> <span class="nav-text">前端发起网络请求的几种方式及其底层实现、可以手写原生 ajax、 fetch、可以熟练使用第三方库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的同源策略，如何避免同源策略，几种方式的异同点以及如何选型"><span class="nav-number">5.1.7.</span> <span class="nav-text">浏览器的同源策略，如何避免同源策略，几种方式的异同点以及如何选型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器提供的几种存储机制、优缺点、开发中正确的选择"><span class="nav-number">5.1.8.</span> <span class="nav-text">浏览器提供的几种存储机制、优缺点、开发中正确的选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器跨标签通信"><span class="nav-number">5.1.9.</span> <span class="nav-text">浏览器跨标签通信</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器原理"><span class="nav-number">5.2.</span> <span class="nav-text">浏览器原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#各浏览器使用的-JavaScript引擎以及它们的异同点、如何在代码中进行区分"><span class="nav-number">5.2.1.</span> <span class="nav-text">各浏览器使用的 JavaScript引擎以及它们的异同点、如何在代码中进行区分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求数据到请求结束与服务器进行了几次交互"><span class="nav-number">5.2.2.</span> <span class="nav-text">请求数据到请求结束与服务器进行了几次交互</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可详细描述浏览器从输入-URL到页面展现的详细过程"><span class="nav-number">5.2.3.</span> <span class="nav-text">可详细描述浏览器从输入 URL到页面展现的详细过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器解析-HTML代码的原理，以及构建-DOM树的流程"><span class="nav-number">5.2.4.</span> <span class="nav-text">浏览器解析 HTML代码的原理，以及构建 DOM树的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器如何解析-CSS规则，并将其应用到-DOM树上"><span class="nav-number">5.2.5.</span> <span class="nav-text">浏览器如何解析 CSS规则，并将其应用到 DOM树上</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器如何将解析好的带有样式的-DOM树进行绘制"><span class="nav-number">5.2.6.</span> <span class="nav-text">浏览器如何将解析好的带有样式的 DOM树进行绘制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的运行机制，如何配置资源异步同步加载"><span class="nav-number">5.2.7.</span> <span class="nav-text">浏览器的运行机制，如何配置资源异步同步加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器回流与重绘的底层原理，引发原因，如何有效避免"><span class="nav-number">5.2.8.</span> <span class="nav-text">浏览器回流与重绘的底层原理，引发原因，如何有效避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器的垃圾回收机制，如何避免内存泄漏"><span class="nav-number">5.2.9.</span> <span class="nav-text">浏览器的垃圾回收机制，如何避免内存泄漏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器采用的缓存方案，如何选择和控制合适的缓存方案"><span class="nav-number">5.2.10.</span> <span class="nav-text">浏览器采用的缓存方案，如何选择和控制合适的缓存方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node"><span class="nav-number">5.3.</span> <span class="nav-text">Node</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-Node在应用程序中的作用，可以使用-Node搭建前端运行环境、使用-Node操作文件、操作数据库等等"><span class="nav-number">5.3.1.</span> <span class="nav-text">理解 Node在应用程序中的作用，可以使用 Node搭建前端运行环境、使用 Node操作文件、操作数据库等等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握一种-Node开发框架，如-Express，-Express和-Koa的区别"><span class="nav-number">5.3.2.</span> <span class="nav-text">掌握一种 Node开发框架，如 Express， Express和 Koa的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练使用-Node提供的-API如-Path、-Http、-Child-Process等并理解其实现原理"><span class="nav-number">5.3.3.</span> <span class="nav-text">熟练使用 Node提供的 API如 Path、 Http、 Child Process等并理解其实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node的底层运行原理、和浏览器的异同"><span class="nav-number">5.3.4.</span> <span class="nav-text">Node的底层运行原理、和浏览器的异同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node事件驱动、非阻塞机制的实现原理"><span class="nav-number">5.3.5.</span> <span class="nav-text">Node事件驱动、非阻塞机制的实现原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TypeScript"><span class="nav-number">5.4.</span> <span class="nav-text">TypeScript</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-泛型、接口等面向对象的相关概念，-TypeScript对面向对象理念的实现"><span class="nav-number">5.4.1.</span> <span class="nav-text">理解 泛型、接口等面向对象的相关概念， TypeScript对面向对象理念的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解使用-TypeScript的好处，掌握-TypeScript基础语法"><span class="nav-number">5.4.2.</span> <span class="nav-text">理解使用 TypeScript的好处，掌握 TypeScript基础语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TypeScript的规则检测原理"><span class="nav-number">5.4.3.</span> <span class="nav-text">TypeScript的规则检测原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以在-React、-Vue等框架中使用-TypeScript进行开发"><span class="nav-number">5.4.4.</span> <span class="nav-text">可以在 React、 Vue等框架中使用 TypeScript进行开发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React"><span class="nav-number">5.5.</span> <span class="nav-text">React</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React和-vue选型和优缺点、核心架构的区别"><span class="nav-number">5.5.1.</span> <span class="nav-text">React和 vue选型和优缺点、核心架构的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React中-setState的执行机制，如何有效的管理状态"><span class="nav-number">5.5.2.</span> <span class="nav-text">React中 setState的执行机制，如何有效的管理状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React的事件底层实现机制"><span class="nav-number">5.5.3.</span> <span class="nav-text">React的事件底层实现机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React的虚拟-DOM和-Diff算法的内部实现"><span class="nav-number">5.5.4.</span> <span class="nav-text">React的虚拟 DOM和 Diff算法的内部实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React的-Fiber工作原理，解决了什么问题"><span class="nav-number">5.5.5.</span> <span class="nav-text">React的 Fiber工作原理，解决了什么问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-Router和-Vue-Router的底层实现原理、动态加载实现原理"><span class="nav-number">5.5.6.</span> <span class="nav-text">React Router和 Vue Router的底层实现原理、动态加载实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可熟练应用-React-API、生命周期等，可应用-HOC、-render-props、-Hooks等高阶用法解决问题"><span class="nav-number">5.5.7.</span> <span class="nav-text">可熟练应用 React API、生命周期等，可应用 HOC、 render props、 Hooks等高阶用法解决问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于-React的特性和原理，可以手动实现一个简单的-React"><span class="nav-number">5.5.8.</span> <span class="nav-text">基于 React的特性和原理，可以手动实现一个简单的 React</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue"><span class="nav-number">5.6.</span> <span class="nav-text">Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练使用-Vue的-API、生命周期、钩子函数"><span class="nav-number">5.6.1.</span> <span class="nav-text">熟练使用 Vue的 API、生命周期、钩子函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVVM框架设计理念"><span class="nav-number">5.6.2.</span> <span class="nav-text">MVVM框架设计理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue双向绑定实现原理、-Diff算法的内部实现"><span class="nav-number">5.6.3.</span> <span class="nav-text">Vue双向绑定实现原理、 Diff算法的内部实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vue的事件机制"><span class="nav-number">5.6.4.</span> <span class="nav-text">Vue的事件机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从-template转换成真实-DOM的实现机制"><span class="nav-number">5.6.5.</span> <span class="nav-text">从 template转换成真实 DOM的实现机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多端开发"><span class="nav-number">5.7.</span> <span class="nav-text">多端开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单页面应用（-SPA）的原理和优缺点，掌握一种快速开发-SPA的方案"><span class="nav-number">5.7.1.</span> <span class="nav-text">单页面应用（ SPA）的原理和优缺点，掌握一种快速开发 SPA的方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-Viewport、-em、-rem的原理和用法，分辨率、-px、-ppi、-dpi、-dp的区别和实际应用"><span class="nav-number">5.7.2.</span> <span class="nav-text">理解 Viewport、 em、 rem的原理和用法，分辨率、 px、 ppi、 dpi、 dp的区别和实际应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端页面适配解决方案、不同机型适配方案"><span class="nav-number">5.7.3.</span> <span class="nav-text">移动端页面适配解决方案、不同机型适配方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握一种-JavaScript移动客户端开发技术，如-React-Native：可以搭建-React-Native开发环境，熟练进行开发，可理解-React-Native的运作原理，不同端适配"><span class="nav-number">5.7.4.</span> <span class="nav-text">掌握一种 JavaScript移动客户端开发技术，如 React Native：可以搭建 React Native开发环境，熟练进行开发，可理解 React Native的运作原理，不同端适配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握一种-JavaScript-PC客户端开发技术，如-Electron：可搭建-Electron开发环境，熟练进行开发，可理解-Electron的运作原理"><span class="nav-number">5.7.5.</span> <span class="nav-text">掌握一种 JavaScript PC客户端开发技术，如 Electron：可搭建 Electron开发环境，熟练进行开发，可理解 Electron的运作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握一种小程序开发框架或原生小程序开发"><span class="nav-number">5.7.6.</span> <span class="nav-text">掌握一种小程序开发框架或原生小程序开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解多端框架的内部实现原理，至少了解一个多端框架的使用"><span class="nav-number">5.7.7.</span> <span class="nav-text">理解多端框架的内部实现原理，至少了解一个多端框架的使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据流管理"><span class="nav-number">5.8.</span> <span class="nav-text">数据流管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握-React和-Vue传统的跨组件通信方案，对比采用数据流管理框架的异同"><span class="nav-number">5.8.1.</span> <span class="nav-text">掌握 React和 Vue传统的跨组件通信方案，对比采用数据流管理框架的异同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练使用-Redux管理数据流，并理解其实现原理，中间件实现原理"><span class="nav-number">5.8.2.</span> <span class="nav-text">熟练使用 Redux管理数据流，并理解其实现原理，中间件实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练使用-Mobx管理数据流，并理解其实现原理，相比-Redux有什么优势"><span class="nav-number">5.8.3.</span> <span class="nav-text">熟练使用 Mobx管理数据流，并理解其实现原理，相比 Redux有什么优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练使用-Vuex管理数据流，并理解其实现原理"><span class="nav-number">5.8.4.</span> <span class="nav-text">熟练使用 Vuex管理数据流，并理解其实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以上数据流方案的异同和优缺点，不情况下的技术选型"><span class="nav-number">5.8.5.</span> <span class="nav-text">以上数据流方案的异同和优缺点，不情况下的技术选型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实用库"><span class="nav-number">5.9.</span> <span class="nav-text">实用库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#至少掌握一种-UI组件框架，如-antd-design，理解其设计理念、底层实现"><span class="nav-number">5.9.1.</span> <span class="nav-text">至少掌握一种 UI组件框架，如 antd design，理解其设计理念、底层实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握一种图表绘制框架，如-Echart，理解其设计理念、底层实现，可以自己实现图表"><span class="nav-number">5.9.2.</span> <span class="nav-text">掌握一种图表绘制框架，如 Echart，理解其设计理念、底层实现，可以自己实现图表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握一种-GIS开发框架，如百度地图-API"><span class="nav-number">5.9.3.</span> <span class="nav-text">掌握一种 GIS开发框架，如百度地图 API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握一种可视化开发框架，如-Three-js、-D3"><span class="nav-number">5.9.4.</span> <span class="nav-text">掌握一种可视化开发框架，如 Three.js、 D3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具函数库，如-lodash、-underscore、-moment等，理解使用的工具类或工具函数的具体实现原理"><span class="nav-number">5.9.5.</span> <span class="nav-text">工具函数库，如 lodash、 underscore、 moment等，理解使用的工具类或工具函数的具体实现原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发和调试"><span class="nav-number">5.10.</span> <span class="nav-text">开发和调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练使用各浏览器提供的调试工具"><span class="nav-number">5.10.1.</span> <span class="nav-text">熟练使用各浏览器提供的调试工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练使用一种代理工具实现请求代理、抓包，如-charls"><span class="nav-number">5.10.2.</span> <span class="nav-text">熟练使用一种代理工具实现请求代理、抓包，如 charls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以使用-Android、-IOS模拟器进行调试，并掌握一种真机调试方案"><span class="nav-number">5.10.3.</span> <span class="nav-text">可以使用 Android、 IOS模拟器进行调试，并掌握一种真机调试方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#了解-Vue、-React等框架调试工具的使用"><span class="nav-number">5.10.4.</span> <span class="nav-text">了解 Vue、 React等框架调试工具的使用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端工程"><span class="nav-number">6.</span> <span class="nav-text">前端工程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目构建"><span class="nav-number">6.1.</span> <span class="nav-text">项目构建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-npm、-yarn依赖包管理的原理，两者的区别"><span class="nav-number">6.1.1.</span> <span class="nav-text">理解 npm、 yarn依赖包管理的原理，两者的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以使用-npm运行自定义脚本"><span class="nav-number">6.1.2.</span> <span class="nav-text">可以使用 npm运行自定义脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-Babel、-ESLint、-webpack等工具在项目中承担的作用"><span class="nav-number">6.1.3.</span> <span class="nav-text">理解 Babel、 ESLint、 webpack等工具在项目中承担的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ESLint规则检测原理，常用的-ESLint配置"><span class="nav-number">6.1.4.</span> <span class="nav-text">ESLint规则检测原理，常用的 ESLint配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Babel的核心原理，可以自己编写一个-Babel插件"><span class="nav-number">6.1.5.</span> <span class="nav-text">Babel的核心原理，可以自己编写一个 Babel插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以配置一种前端代码兼容方案，如-Polyfill"><span class="nav-number">6.1.6.</span> <span class="nav-text">可以配置一种前端代码兼容方案，如 Polyfill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack的编译原理、构建流程、热更新原理，-chunk、-bundle和-module的区别和应用"><span class="nav-number">6.1.7.</span> <span class="nav-text">Webpack的编译原理、构建流程、热更新原理， chunk、 bundle和 module的区别和应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可熟练配置已有的-loaders和-plugins解决问题，可以自己编写-loaders和-plugins"><span class="nav-number">6.1.8.</span> <span class="nav-text">可熟练配置已有的 loaders和 plugins解决问题，可以自己编写 loaders和 plugins</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx"><span class="nav-number">6.2.</span> <span class="nav-text">nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#正向代理与反向代理的特点和实例"><span class="nav-number">6.2.1.</span> <span class="nav-text">正向代理与反向代理的特点和实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可手动搭建一个简单的-nginx服务器、"><span class="nav-number">6.2.2.</span> <span class="nav-text">可手动搭建一个简单的 nginx服务器、</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练应用常用的-nginx内置变量，掌握常用的匹配规则写法"><span class="nav-number">6.2.3.</span> <span class="nav-text">熟练应用常用的 nginx内置变量，掌握常用的匹配规则写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以用-nginx实现请求过滤、配置-gzip、负载均衡等，并能解释其内部原理"><span class="nav-number">6.2.4.</span> <span class="nav-text">可以用 nginx实现请求过滤、配置 gzip、负载均衡等，并能解释其内部原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发提速"><span class="nav-number">6.3.</span> <span class="nav-text">开发提速</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练掌握一种接口管理、接口-mock工具的使用，如-yapi"><span class="nav-number">6.3.1.</span> <span class="nav-text">熟练掌握一种接口管理、接口 mock工具的使用，如 yapi</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握一种高效的日志埋点方案，可快速使用日志查询工具定位线上问题"><span class="nav-number">6.3.2.</span> <span class="nav-text">掌握一种高效的日志埋点方案，可快速使用日志查询工具定位线上问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-TDD与-BDD模式，至少会使用一种前端单元测试框架"><span class="nav-number">6.3.3.</span> <span class="nav-text">理解 TDD与 BDD模式，至少会使用一种前端单元测试框架</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本控制"><span class="nav-number">6.4.</span> <span class="nav-text">版本控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-Git的核心原理、工作流程、和-SVN的区别"><span class="nav-number">6.4.1.</span> <span class="nav-text">理解 Git的核心原理、工作流程、和 SVN的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熟练使用常规的-Git命令、-git-rebase、-git-stash等进阶命令"><span class="nav-number">6.4.2.</span> <span class="nav-text">熟练使用常规的 Git命令、 git rebase、 git stash等进阶命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以快速解决-线上分支回滚、线上分支错误合并等复杂问题"><span class="nav-number">6.4.3.</span> <span class="nav-text">可以快速解决 线上分支回滚、线上分支错误合并等复杂问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#持续集成"><span class="nav-number">6.5.</span> <span class="nav-text">持续集成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理解-CI-CD技术的意义，至少熟练掌握一种-CI-CD工具的使用，如-Jenkins"><span class="nav-number">6.5.1.</span> <span class="nav-text">理解 CI/CD技术的意义，至少熟练掌握一种 CI/CD工具的使用，如 Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可以独自完成架构设计、技术选型、环境搭建、全流程开发、部署上线等一套完整的开发流程（包括-Web应用、移动客户端应用、-PC客户端应用、小程序、-H5等等）"><span class="nav-number">6.5.2.</span> <span class="nav-text">可以独自完成架构设计、技术选型、环境搭建、全流程开发、部署上线等一套完整的开发流程（包括 Web应用、移动客户端应用、 PC客户端应用、小程序、 H5等等）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目和业务"><span class="nav-number">7.</span> <span class="nav-text">项目和业务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#后端技能"><span class="nav-number">7.1.</span> <span class="nav-text">后端技能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#了解后端的开发方式，在应用程序中的作用，至少会使用一种后端语言"><span class="nav-number">7.1.1.</span> <span class="nav-text">了解后端的开发方式，在应用程序中的作用，至少会使用一种后端语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掌握数据最终在数据库中是如何落地存储的，能看懂表结构设计、表之间的关联，至少会使用一种数据库"><span class="nav-number">7.1.2.</span> <span class="nav-text">掌握数据最终在数据库中是如何落地存储的，能看懂表结构设计、表之间的关联，至少会使用一种数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能优化"><span class="nav-number">7.2.</span> <span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#了解前端性能衡量指标、性能监控要点，掌握一种前端性能监控方案"><span class="nav-number">7.2.1.</span> <span class="nav-text">了解前端性能衡量指标、性能监控要点，掌握一种前端性能监控方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#了解常见的-Web、-App性能优化方案"><span class="nav-number">7.2.2.</span> <span class="nav-text">了解常见的 Web、 App性能优化方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SEO排名规则、-SEO优化方案、前后端分离的-SEO"><span class="nav-number">7.2.3.</span> <span class="nav-text">SEO排名规则、 SEO优化方案、前后端分离的 SEO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSR实现方案、优缺点、及其性能优化"><span class="nav-number">7.2.4.</span> <span class="nav-text">SSR实现方案、优缺点、及其性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Webpack的性能优化方案"><span class="nav-number">7.2.5.</span> <span class="nav-text">Webpack的性能优化方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Canvas性能优化方案"><span class="nav-number">7.2.6.</span> <span class="nav-text">Canvas性能优化方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React、-Vue等框架使用性能优化方案"><span class="nav-number">7.2.7.</span> <span class="nav-text">React、 Vue等框架使用性能优化方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端安全"><span class="nav-number">7.3.</span> <span class="nav-text">前端安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS攻击的原理、分类、具体案例，前端如何防御"><span class="nav-number">7.3.1.</span> <span class="nav-text">XSS攻击的原理、分类、具体案例，前端如何防御</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF攻击的原理、具体案例，前端如何防御"><span class="nav-number">7.3.2.</span> <span class="nav-text">CSRF攻击的原理、具体案例，前端如何防御</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP劫持、页面劫持的原理、防御措施"><span class="nav-number">7.3.3.</span> <span class="nav-text">HTTP劫持、页面劫持的原理、防御措施</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+    <!-- <div id="music-163-player">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=26524290&auto=1&height=66"></iframe>
+    </div> -->
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Peanut</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '1Ssdo8xcXUxIAanEsIGct7VQ-gzGzoHsz',
+        appKey: 'jIYjMMjxJhwkpIazITgqr6x3',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("1Ssdo8xcXUxIAanEsIGct7VQ-gzGzoHsz", "jIYjMMjxJhwkpIazITgqr6x3");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
