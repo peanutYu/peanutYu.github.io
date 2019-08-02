@@ -2,7 +2,7 @@ body {
   z-index: 10;
 }
 .post {
-  margin-bottom: 100px;
+  margin-bottom: 60px;
   padding: 25px;
   -webkit-box-shadow: 0 0 14px rgba(202, 203, 203, 1);
   -moz-box-shadow: 0 0 14px rgba(202, 203, 203, 1);
@@ -15,4 +15,25 @@ body {
 .post-button .btn {
   background-color: #fff;
   color: #222;
+}
+
+.github-tags {
+  +mobile(){display:none;}  
+}
+
+.indicator {
+  position: absolute;
+  top: 0; right: 0; left: 0; bottom: 0;
+  background: linear-gradient(to right top,#33CCCC 50%, transparent 50%) no-repeat -10px 0;
+  background-size: calc(100% + 20px) calc(100% - 100vh + 5px);
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: darken;
+}
+.indicator::after {
+  content: '';
+  position: fixed;
+  top: 5px; bottom: 0; right: 0; left: 0;
+  background: #fff;
+  z-index: 1;
 }

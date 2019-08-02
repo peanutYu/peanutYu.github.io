@@ -3,6 +3,7 @@ title: 通过document.referrer返回前一个页面
 date: 2019-06-30 22:47:07
 tags: [JavaScript, 实战经验]
 categories: 实战经验
+copyright: true
 ---
 
 # 前言

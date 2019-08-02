@@ -13,15 +13,15 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
-
   {% set container_class = "container " %}
   {% if theme.sidebar.position %}
     {% set container_class = container_class + 'sidebar-position-' + theme.sidebar.position %}
   {% endif %}
 
   <div class="{{ container_class }} {% block page_class %}{% endblock %}">
+    <div class="indicator"></div>
     <div class="headband"></div>
-    <a style="position:absolute;top:0;right:0;border:0;z-index:100;" href="https://github.com/peanutYu"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    <a class="github-tags" style="position:absolute;top:0;right:0;border:0;z-index:100;" href="https://github.com/peanutYu"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"> {%- include '_partials/header.swig' %} </div>
