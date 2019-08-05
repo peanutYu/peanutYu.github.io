@@ -88,27 +88,20 @@
 
 
 
-<meta name="description" content="前言最近正巧看了一些面试题，其中有一道令我比较好奇，也就是我们今天要说到的git cherry-pick;我们在简历当中都会写上精通或者熟练掌握git工作技巧。但绝大多数人也许只掌握一些简单的类似git status | pull | push | log等操作,又或是使用sourcetree等一些辅助工具来支持我们日常的工作需求，这篇博客主要记录和git cherry-pick与之相关的git操">
+<meta name="description" content="分支 master分支为主分支（保护分支），不能直接在master上进行修改代码或提交,通过MR(merge Request)或者PR(pull Request)的方式进行提交。 preview分支为预发分支， 所有测试完成需要上线的功能合并到该分支 develop、 test分支为测试分支，所有开发完成需要提交测试的功能合并到该分支 feature/xxx分支为功能开发分支，根据不同需求创建独">
 <meta name="keywords" content="git,实战经验">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git高级用法——git cherry-pick">
-<meta property="og:url" content="http://www.peanutyu.site/2019/04/20/git高级用法——git-cherry-pick/index.html">
+<meta property="og:title" content="Git Commit 规范以及 emoji 列表">
+<meta property="og:url" content="http://www.peanutyu.site/git/Git commit 规范以及 emoji 列表/index.html">
 <meta property="og:site_name" content="Peanut&#39;s blog">
-<meta property="og:description" content="前言最近正巧看了一些面试题，其中有一道令我比较好奇，也就是我们今天要说到的git cherry-pick;我们在简历当中都会写上精通或者熟练掌握git工作技巧。但绝大多数人也许只掌握一些简单的类似git status | pull | push | log等操作,又或是使用sourcetree等一些辅助工具来支持我们日常的工作需求，这篇博客主要记录和git cherry-pick与之相关的git操">
+<meta property="og:description" content="分支 master分支为主分支（保护分支），不能直接在master上进行修改代码或提交,通过MR(merge Request)或者PR(pull Request)的方式进行提交。 preview分支为预发分支， 所有测试完成需要上线的功能合并到该分支 develop、 test分支为测试分支，所有开发完成需要提交测试的功能合并到该分支 feature/xxx分支为功能开发分支，根据不同需求创建独">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog1.png">
-<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog2.png">
-<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog3.png">
-<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitreflog1.png">
-<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog4.png">
-<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog5.png">
-<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog6.png">
-<meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog7.png">
-<meta property="og:updated_time" content="2019-08-02T03:23:36.846Z">
+<meta property="og:image" content="http://www.peanutyu.site/uploads/Git%20commit%20规范以及%20emoji%20列表/terminal.png">
+<meta property="og:updated_time" content="2019-08-02T03:23:41.445Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git高级用法——git cherry-pick">
-<meta name="twitter:description" content="前言最近正巧看了一些面试题，其中有一道令我比较好奇，也就是我们今天要说到的git cherry-pick;我们在简历当中都会写上精通或者熟练掌握git工作技巧。但绝大多数人也许只掌握一些简单的类似git status | pull | push | log等操作,又或是使用sourcetree等一些辅助工具来支持我们日常的工作需求，这篇博客主要记录和git cherry-pick与之相关的git操">
-<meta name="twitter:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog1.png">
+<meta name="twitter:title" content="Git Commit 规范以及 emoji 列表">
+<meta name="twitter:description" content="分支 master分支为主分支（保护分支），不能直接在master上进行修改代码或提交,通过MR(merge Request)或者PR(pull Request)的方式进行提交。 preview分支为预发分支， 所有测试完成需要上线的功能合并到该分支 develop、 test分支为测试分支，所有开发完成需要提交测试的功能合并到该分支 feature/xxx分支为功能开发分支，根据不同需求创建独">
+<meta name="twitter:image" content="http://www.peanutyu.site/uploads/Git%20commit%20规范以及%20emoji%20列表/terminal.png">
 
 
 
@@ -118,7 +111,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -138,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://www.peanutyu.site/2019/04/20/git高级用法——git-cherry-pick/">
+  <link rel="canonical" href="http://www.peanutyu.site/git/Git commit 规范以及 emoji 列表/">
 
 
 
 
 
-  <title>git高级用法——git cherry-pick | Peanut's blog</title>
+  <title>Git Commit 规范以及 emoji 列表 | Peanut's blog</title>
   
 
 
@@ -314,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/2019/04/20/git高级用法——git-cherry-pick/">
+    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/git/Git commit 规范以及 emoji 列表/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Peanut">
@@ -331,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git高级用法——git cherry-pick</h1>
+          <h1 class="post-title" itemprop="name headline">Git Commit 规范以及 emoji 列表</h1>
         
 
         <div class="post-meta">
@@ -343,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-20T15:47:12+08:00">
-                2019-04-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-10T16:19:42+08:00">
+                2019-04-10
               </time>
             
 
@@ -384,8 +377,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/20/git高级用法——git-cherry-pick/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/20/git高级用法——git-cherry-pick/" itemprop="commentCount"></span>
+                <a href="/git/Git commit 规范以及 emoji 列表/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/git/Git commit 规范以及 emoji 列表/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -393,7 +386,7 @@
 
           
           
-             <span id="/2019/04/20/git高级用法——git-cherry-pick/" class="leancloud_visitors" data-flag-title="git高级用法——git cherry-pick">
+             <span id="/git/Git commit 规范以及 emoji 列表/" class="leancloud_visitors" data-flag-title="Git Commit 规范以及 emoji 列表">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -418,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.8k
                 </span>
               
 
@@ -434,7 +427,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  7
                 </span>
               
             </div>
@@ -455,43 +448,256 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近正巧看了一些面试题，其中有一道令我比较好奇，也就是我们今天要说到的<strong>git cherry-pick</strong>;我们在简历当中都会写上精通或者熟练掌握git工作技巧。但绝大多数人也许只掌握一些简单的类似<strong>git status | pull | push | log</strong>等操作,又或是使用<strong>sourcetree</strong>等一些辅助工具来支持我们日常的工作需求，这篇博客主要记录和<strong>git cherry-pick</strong>与之相关的git操作。</p>
+        <!-- # Git 版本规范 -->
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><ul>
+<li><strong>master</strong>分支为主分支（保护分支），不能直接在master上进行修改代码或提交,通过<strong>MR</strong>(merge Request)或者<strong>PR</strong>(pull Request)的方式进行提交。</li>
+<li><strong>preview</strong>分支为预发分支， 所有测试完成需要上线的功能合并到该分支</li>
+<li><strong>develop、 test</strong>分支为测试分支，所有开发完成需要提交测试的功能合并到该分支</li>
+<li><strong>feature/xxx</strong>分支为功能开发分支，根据不同需求创建独立的功能分支，开发完成后合并到develop或test分支</li>
+<li><strong>hotfix</strong>分支为bug修复分支，需要根据实际情况对已发布的版本进行漏洞修复</li>
+</ul>
 <a id="more"></a>
-<h1 id="使用场景及其作用"><a href="#使用场景及其作用" class="headerlink" title="使用场景及其作用"></a>使用场景及其作用</h1><p>git cherry-pick可以选择某一个分支的一个或几个commit(s)来进行操作（操作的对象就是commit）。假设这样一个场景，产品提出某个功能需求，你开发完毕，然后commit了；第二天，产品通知你那个功能可能不要了，于是你把代码reset回去；又过了几天，产品告诉你说，之前reset的功能我们要重新加回来；这时候应该怎么办？代码在reset之后又进行开发了其他的功能，已经修改过并且有了新的commit，你是应该重新开发还是回退呢？</p>
-<p>这种时候就是git cherry-pick发挥效果的时候了。</p>
-<h2 id="git-log"><a href="#git-log" class="headerlink" title="git log"></a>git log</h2><p>查询commit id 的查询可以使用git log查询（查询版本的历史），最简单的语法就是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure></p>
-<p>详细的git log语法如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git log [&lt;options&gt;] [&lt;since&gt;..&lt;until&gt;] [[--] &lt;path&gt;...]</span><br><span class="line">  主要参数选项如下：</span><br><span class="line">    -p：按补丁显示每个更新间的差异</span><br><span class="line">    --stat：显示每次更新的修改文件的统计信息</span><br><span class="line">    --shortstat：只显示--stat中最后的行数添加修改删除统计</span><br><span class="line">    --name-only：尽在已修改的提交信息后显示文件清单</span><br><span class="line">    --name-status：显示新增、修改和删除的文件清单</span><br><span class="line">    --abbrev-commit：仅显示SHA-1的前几个字符，而非所有的40个字符</span><br><span class="line">    --relative-date：使用较短的相对时间显示（例如：&quot;two weeks ago&quot;）</span><br><span class="line">    --graph：显示ASCII图形表示的分支合并历史</span><br><span class="line">    --pretty：使用其他格式显示历史提交信息</span><br></pre></td></tr></table></figure></p>
-<h2 id="git-reflog"><a href="#git-reflog" class="headerlink" title="git reflog"></a>git reflog</h2><p>git reflog 可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）</p>
-<h2 id="场景一"><a href="#场景一" class="headerlink" title="场景一"></a>场景一</h2><p>首先我们通过<strong>git log</strong>查看所有的commit信息。</p>
-<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog1.png" alt=""></p>
-<p>commit的信息很简单，就是做了3个功能开发，每个功能对应一个commit的提交，分别是feature-1 =&gt; feature-4。假设这时候可能产品说功能2、3、4不需要上线了。我们需要将代码回滚到1上面。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard dbe570bf1bf9c5f5777b39b242f90e3eb16a1aec</span><br></pre></td></tr></table></figure>
-<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog2.png" alt=""></p>
-<p>现在我们看到我们的commit信息只剩下了最开始的feature-1功能还保留在上面了；此时产品需要我们上线一个称之为功能5的commit,一个星期后产品需要我们把之前的2、3、4重新合并到代码里头上线；这时候我们需要怎么做呢？</p>
-<p>首先我们可以看到现在的git log打印出来的信息是只有feature-1和feature-5提交的代码</p>
-<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog3.png" alt=""></p>
-<p>这时候我们首先通过<strong>git reflog</strong>命令查看分支上的所有操作记录</p>
-<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitreflog1.png" alt=""></p>
-<p>这时候要记好两个值：c8f4403和45ec9b1，他们分别是feature-5和feature-4的hash码。然后执行回滚，回到feature-4上。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 45ec9b1</span><br></pre></td></tr></table></figure>
-<p>现在我们回到了feature-4上，如下图</p>
-<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog4.png" alt=""></p>
-<p>但是我们现在feature-5的代码丢失了，如何将它找回来呢？这时候就需要我们的git cherry-pick。刚刚我们知道git cherry-pick的hash码为c8f4403</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick c8f4403</span><br></pre></td></tr></table></figure>
-<p>输入好了之后feature-5的代码就找回来了。 期间可能会产生一些代码的冲突，只需要按正在的步骤解决就好了。 最后的结果如下图</p>
-<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog5.png" alt=""></p>
-<p>到这里feature-1到feature-5的代码就找回来了。这就是git cherry-pick的用法。</p>
-<h2 id="场景二"><a href="#场景二" class="headerlink" title="场景二"></a>场景二</h2><p>在一个分支branch1开发，进行多次提交，这时我们切换到branch2，想把之前的branch1分支上的commit复制过来。</p>
-<p>首先我们切换到branch1分支，然后查看提交历史记录，可以用sourceTree查看，也可以使用命令Git log</p>
-<p>例如的我branch1 git log如下图</p>
-<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog6.png" alt=""></p>
-<p>这时候我只想把branch-1-feature-1的提交复制到branch2里面，只需要切换到branch2分支，然后执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick e8ae0307b4d2775922c0a2cbd3930ef4c4dca353</span><br></pre></td></tr></table></figure></p>
-<p>branch2 git log如下图</p>
-<p><img src="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog7.png" alt=""></p>
-<p>git cherry-pick 也可以同时合并多个branch； 假设branch2需要合并branch1的branch-1-feature-1，branch-1-feature-2；就可以使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick e8ae0307b4d2775922c0a2cbd3930ef4c4dca353,cc6b772ea79ecf54f9df18dd8f0ebf868dfe9170</span><br></pre></td></tr></table></figure>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
-<li><a href="https://github.com/airuikun/blog/issues/5" target="_blank" rel="noopener">女神的侧颜—git时光穿梭机</a></li>
+<h1 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h1><h2 id="采用三段式，v版本-里程碑-序号，例如v1-0-0"><a href="#采用三段式，v版本-里程碑-序号，例如v1-0-0" class="headerlink" title="采用三段式，v版本.里程碑.序号，例如v1.0.0"></a>采用三段式，v版本.里程碑.序号，例如<strong>v1.0.0</strong></h2><ul>
+<li>架构升级或架构重大调整，修改第1位</li>
+<li>新功能上线或者模块大的调整，修改第2位</li>
+<li>bug修复上线，修改第3位</li>
+</ul>
+<h1 id="Commit-message的格式"><a href="#Commit-message的格式" class="headerlink" title="Commit message的格式"></a>Commit message的格式</h1><p>每次提交，Commit message 都包括三个部分：header，body 和 footer。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;</span><br><span class="line">// 空一行</span><br><span class="line">&lt;body&gt;</span><br><span class="line">// 空一行</span><br><span class="line">&lt;footer&gt;</span><br></pre></td></tr></table></figure>
+<p>其中，Header 是必需的，Body 和 Footer 可以省略。<br>不管是哪一个部分，任何一行都不得超过72个字符（或100个字符）。这是为了避免自动换行影响美观。</p>
+<h2 id="Header"><a href="#Header" class="headerlink" title="Header"></a>Header</h2><p>Header部分只有一行，包括三个字段：<strong>type</strong>（必需）、<strong>scope</strong>（可选）和<strong>subject</strong>（必需）。</p>
+<ol>
+<li>type<br><strong>type</strong>用于说明 commit 的类别，只允许使用下面7个标识。<ul>
+<li>feat：新功能（feature）</li>
+<li>fix：修补bug</li>
+<li>docs：文档（documentation）</li>
+<li>style： 格式（不影响代码运行的变动）</li>
+<li>refactor：重构（即不是新增功能，也不是修改bug的代码变动）</li>
+<li>test：增加测试</li>
+<li>chore：构建过程或辅助工具的变动<br>如果type为feat和fix，则该 commit 将肯定出现在 Change log 之中。其他情况（docs、chore、style、refactor、test）由你决定，要不要放入 Change log，建议是不要。</li>
+</ul>
+</li>
+<li>scope<br><strong>scope</strong>用于说明 commit 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同。</li>
+<li>subject<br><strong>subject</strong>是 commit 目的的简短描述，不超过50个字符。</li>
+</ol>
+<ul>
+<li>以动词开头，使用第一人称现在时，比如change，而不是changed或changes</li>
+<li>第一个字母小写</li>
+<li>结尾不加句号（.）</li>
+</ul>
+<h2 id="Body"><a href="#Body" class="headerlink" title="Body"></a>Body</h2><p>Body 部分是对本次 commit 的详细描述，可以分成多行。下面是一个范例。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">More detailed explanatory text, if necessary.  Wrap it to </span><br><span class="line">about 72 characters or so. </span><br><span class="line"></span><br><span class="line">Further paragraphs come after blank lines.</span><br><span class="line"></span><br><span class="line">- Bullet points are okay, too</span><br><span class="line">- Use a hanging indent</span><br></pre></td></tr></table></figure></p>
+<p>有两个注意点。<br>（1）使用第一人称现在时，比如使用<strong>change</strong>而不是<strong>changed</strong>或<strong>changes</strong>。<br>（2）应该说明代码变动的动机，以及与以前行为的对比。</p>
+<h2 id="Footer"><a href="#Footer" class="headerlink" title="Footer"></a>Footer</h2><p>Footer 部分只用于两种情况。</p>
+<ol>
+<li><p>不兼容变动<br>如果当前代码与上一个版本不兼容，则 Footer 部分以<strong><em>BREAKING CHANGE</em></strong>开头，后面是对变动的描述、以及变动理由和迁移方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">BREAKING CHANGE: isolate scope bindings definition has changed.</span><br><span class="line">    To migrate the code follow the example below:</span><br><span class="line"></span><br><span class="line">    Before:</span><br><span class="line"></span><br><span class="line">    scope: &#123;</span><br><span class="line">      myAttr: &apos;attribute&apos;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    After:</span><br><span class="line"></span><br><span class="line">    scope: &#123;</span><br><span class="line">      myAttr: &apos;@&apos;,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    The removed `inject` wasn&apos;t generaly useful for directives so there should be no code using it</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>关闭 Issue<br>如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Closes #234</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Revert"><a href="#Revert" class="headerlink" title="Revert"></a>Revert</h2><p>还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以<strong>revert:</strong>开头，后面跟着被撤销 Commit 的 Header。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">revert: feat(pencil): add &apos;graphiteWidth&apos; option</span><br><span class="line"></span><br><span class="line">This reverts commit 667ecc1654a317a13331b17617d973392f415f02.</span><br></pre></td></tr></table></figure></p>
+<p>Body部分的格式是固定的，必须写成<strong>This reverts commit &lt;hash&gt;.</strong>，其中的<strong>hash</strong>是被撤销 commit 的 SHA 标识符。</p>
+<p>如果当前 commit 与被撤销的 commit，在同一个发布（release）里面，那么它们都不会出现在 Change log 里面。如果两者在不同的发布，那么当前 commit，会出现在 Change log 的<strong>Reverts</strong>小标题下面。</p>
+<h1 id="Commitizen"><a href="#Commitizen" class="headerlink" title="Commitizen"></a>Commitizen</h1><p><a href="https://github.com/commitizen/cz-cli" target="_blank" rel="noopener">Commitizen</a>是一个撰写合格 Commit message 的工具。</p>
+<p>安装命令如下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g commitizen</span><br></pre></td></tr></table></figure>
+<p>然后，在项目目录里，运行下面的命令，使其支持 Angular 的 Commit message 格式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ commitizen init cz-conventional-changelog --save --save-exact</span><br></pre></td></tr></table></figure>
+<p>以后，凡是用到<strong>git commit</strong>命令，一律改为使用<strong>git cz</strong>。这时，就会出现选项，用来生成符合格式的 Commit message。</p>
+<p><img src="/uploads/Git commit 规范以及 emoji 列表/terminal.png" alt="terminal"></p>
+<h1 id="validate-commit-msg"><a href="#validate-commit-msg" class="headerlink" title="validate-commit-msg"></a>validate-commit-msg</h1><p><a href="https://github.com/conventional-changelog-archived-repos/validate-commit-msg" target="_blank" rel="noopener">validate-commit-msg</a> 用于检查 Node 项目的 Commit message 是否符合格式。</p>
+<p>它的安装是手动的。首先，拷贝下面这个JS文件，放入你的代码库。文件名可以取为<strong>validate-commit-msg.js</strong>。</p>
+<p>接着，把这个脚本加入 Git 的 hook。下面是在<strong>package.json</strong>里面使用 ghooks，把这个脚本加为<strong>commit-msg</strong>时运行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;config&quot;: &#123;</span><br><span class="line">  &quot;ghooks&quot;: &#123;</span><br><span class="line">    &quot;commit-msg&quot;: &quot;./validate-commit-msg.js&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，每次<strong>git commit</strong>的时候，这个脚本就会自动检查 Commit message 是否合格。如果不合格，就会报错。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add -A </span><br><span class="line">$ git commit -m &quot;edit markdown&quot; </span><br><span class="line">INVALID COMMIT MSG: does not match &quot;&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;&quot; ! was: edit markdown</span><br></pre></td></tr></table></figure>
+<h1 id="生成-Change-log"><a href="#生成-Change-log" class="headerlink" title="生成 Change log"></a>生成 Change log</h1><p>如果你的所有 Commit 都符合 Angular 格式，那么发布新版本时， Change log 就可以用脚本自动生成</p>
+<p>生成的文档包括以下三个部分。</p>
+<ul>
+<li>New features</li>
+<li>Bug fixes</li>
+<li>Breaking changes.</li>
+</ul>
+<p>每个部分都会罗列相关的 commit ，并且有指向这些 commit 的链接。当然，生成的文档允许手动修改，所以发布前，你还可以添加其他内容。</p>
+<p><a href="https://github.com/conventional-changelog/conventional-changelog" target="_blank" rel="noopener">conventional-changelog</a> 就是生成 Change log 的工具，运行下面的命令即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g conventional-changelog</span><br><span class="line">$ cd my-project</span><br><span class="line">$ conventional-changelog -p angular -i CHANGELOG.md -w</span><br></pre></td></tr></table></figure>
+<p>上面命令不会覆盖以前的 Change log，只会在<strong>CHANGELOG.md</strong>的头部加上自从上次发布以来的变动。</p>
+<p>如果你想生成所有发布的 Change log，要改为运行下面的命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ conventional-changelog -p angular -i CHANGELOG.md -w -r 0</span><br></pre></td></tr></table></figure>
+<p>为了方便使用，可以将其写入<strong>package.json</strong>的<strong>scripts</strong>字段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;changelog&quot;: &quot;conventional-changelog -p angular -i CHANGELOG.md -w -r 0&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以后，直接运行下面的命令即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run changelog</span><br></pre></td></tr></table></figure></p>
+<h1 id="git-commit中使用emoji"><a href="#git-commit中使用emoji" class="headerlink" title="git commit中使用emoji"></a>git commit中使用emoji</h1><h2 id="emoji规范格式"><a href="#emoji规范格式" class="headerlink" title="emoji规范格式"></a>emoji规范格式</h2><p><strong>git commit</strong> 时，提交信息遵循以下格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">:emoji1: :emoji2: 主题</span><br><span class="line"></span><br><span class="line">提交信息主体</span><br><span class="line"></span><br><span class="line">Ref &lt;###&gt;</span><br></pre></td></tr></table></figure></p>
+<p>初次提交示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;:tada: Initialize Repo&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="emoji指南"><a href="#emoji指南" class="headerlink" title="emoji指南"></a>emoji指南</h2><table>
+<thead>
+<tr>
+<th>emoji</th>
+<th>emoji代码</th>
+<th>Commit说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎨 (调色板)</td>
+<td>:art:</td>
+<td>改进代码结构/代码格式</td>
+</tr>
+<tr>
+<td>⚡️ (闪电)</td>
+<td>:zap:</td>
+<td>提升性能</td>
+</tr>
+<tr>
+<td>🐎 (赛马)</td>
+<td>:racehorse:</td>
+<td>提升性能</td>
+</tr>
+<tr>
+<td>🔥 (火焰)</td>
+<td>:fire:</td>
+<td>移除代码或文件</td>
+</tr>
+<tr>
+<td>🐛 (bug)</td>
+<td>:bug:</td>
+<td>修复 bug</td>
+</tr>
+<tr>
+<td>🚑 (急救车)</td>
+<td>:ambulance:</td>
+<td>重要补丁</td>
+</tr>
+<tr>
+<td>✨ (火花)</td>
+<td>:sparkles:</td>
+<td>引入新功能</td>
+</tr>
+<tr>
+<td>📝 (铅笔)</td>
+<td>:pencil:</td>
+<td>撰写文档</td>
+</tr>
+<tr>
+<td>🚀 (火箭)</td>
+<td>:rocket:</td>
+<td>部署功能</td>
+</tr>
+<tr>
+<td>💄 (口红)</td>
+<td>:lipstick:</td>
+<td>更新 UI 和样式文件</td>
+</tr>
+<tr>
+<td>🎉 (庆祝)</td>
+<td>:tada:</td>
+<td>初次提交</td>
+</tr>
+<tr>
+<td>✅ (白色复选框)</td>
+<td>:white_check_mark:</td>
+<td>增加测试</td>
+</tr>
+<tr>
+<td>🔒 (锁)</td>
+<td>:lock:</td>
+<td>修复安全问题</td>
+</tr>
+<tr>
+<td>🍎 (苹果)</td>
+<td>:apple:</td>
+<td>修复 macOS 下的问题</td>
+</tr>
+<tr>
+<td>🐧 (企鹅)</td>
+<td>:penguin:</td>
+<td>修复 Linux 下的问题</td>
+</tr>
+<tr>
+<td>🏁 (旗帜)</td>
+<td>:checked_flag:</td>
+<td>修复 Windows 下的问题</td>
+</tr>
+<tr>
+<td>🔖 (书签)</td>
+<td>:bookmark:</td>
+<td>发行/版本标签</td>
+</tr>
+<tr>
+<td>🚨 (警车灯)</td>
+<td>:rotating_light:</td>
+<td>移除 linter警告</td>
+</tr>
+<tr>
+<td>🚧 (施工)</td>
+<td>:construction:</td>
+<td>工作进行中</td>
+</tr>
+<tr>
+<td>💚 (绿心)</td>
+<td>:green_heart:</td>
+<td>修复 CI 构建问题</td>
+</tr>
+<tr>
+<td>⬇️ (下降箭头)</td>
+<td>:arrow_down:</td>
+<td>降级依赖</td>
+</tr>
+<tr>
+<td>⬆️ (上升箭头)</td>
+<td>:arrow_up:</td>
+<td>升级依赖</td>
+</tr>
+<tr>
+<td>👷 (工人)</td>
+<td>:construction_worker:</td>
+<td>添加 CI 构建系统</td>
+</tr>
+<tr>
+<td>📈 (上升趋势图)</td>
+<td>:chart_with_upwards_trend:</td>
+<td>添加分析或跟踪代码</td>
+</tr>
+<tr>
+<td>🔨 (锤子)</td>
+<td>:hammer:</td>
+<td>重大重构</td>
+</tr>
+<tr>
+<td>➖ (减号)</td>
+<td>:heavy_minus_sign:</td>
+<td>减少一个依赖</td>
+</tr>
+<tr>
+<td>🐳 (鲸鱼)</td>
+<td>:whale:</td>
+<td>Docker 相关工作</td>
+</tr>
+<tr>
+<td>➕ (加号)</td>
+<td>:heavy_plus_sign:</td>
+<td>增加一个依赖</td>
+</tr>
+<tr>
+<td>🔧 (扳手)</td>
+<td>:wrench:</td>
+<td>修改配置文件</td>
+</tr>
+<tr>
+<td>🌐 (地球)</td>
+<td>:globe_with_meridians:</td>
+<td>国际化与本地化</td>
+</tr>
+<tr>
+<td>✏️ (铅笔)</td>
+<td>:pencil2:</td>
+<td>修复 typo</td>
+</tr>
+</tbody>
+</table>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html" target="_blank" rel="noopener">Commit message 和 Change log 编写指南</a></li>
 </ul>
 
       
@@ -510,12 +716,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>git高级用法——git cherry-pick</p>
+  <p><span>本文标题:</span>Git Commit 规范以及 emoji 列表</p>
   <p><span>文章作者:</span>Peanut</p>
-  <p><span>发布时间:</span>2019年04月20日 - 15:47:12</p>
-  <p><span>最后更新:</span>2019年08月02日 - 11:23:36</p>
-  <p><span>原始链接:</span><a href="/2019/04/20/git高级用法——git-cherry-pick/" title="git高级用法——git cherry-pick">http://www.peanutyu.site/2019/04/20/git高级用法——git-cherry-pick/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/2019/04/20/git高级用法——git-cherry-pick/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年04月10日 - 16:19:42</p>
+  <p><span>最后更新:</span>2019年08月02日 - 11:23:41</p>
+  <p><span>原始链接:</span><a href="/git/Git commit 规范以及 emoji 列表/" title="Git Commit 规范以及 emoji 列表">http://www.peanutyu.site/git/Git commit 规范以及 emoji 列表/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/git/Git commit 规范以及 emoji 列表/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -562,8 +768,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/10/Git commit 规范以及 emoji 列表/" rel="next" title="Git Commit 规范以及 emoji 列表">
-                <i class="fa fa-chevron-left"></i> Git Commit 规范以及 emoji 列表
+              <a href="/Weex/weex常见问题解析/" rel="next" title="Weex常见问题解析">
+                <i class="fa fa-chevron-left"></i> Weex常见问题解析
               </a>
             
           </div>
@@ -572,8 +778,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/04/23/前端面试汇总-基础篇/" rel="prev" title="前端面试汇总(基础概念篇)">
-                前端面试汇总(基础概念篇) <i class="fa fa-chevron-right"></i>
+              <a href="/git/git高级用法——git-cherry-pick/" rel="prev" title="git高级用法——git cherry-pick">
+                git高级用法——git cherry-pick <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -701,13 +907,25 @@
                   <span class="links-of-author-item">
                     <a href="https://github.com/peanutYu" target="_blank" title="GitHub">
                       
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a href="mailto:287130319@qq.com" target="_blank" title="E-Mail">
                       
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3755396494" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/meng-meng-da-de-xiao-zheng-zi/activities" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>zhihu</a>
                   </span>
                 
             </div>
@@ -734,7 +952,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用场景及其作用"><span class="nav-number">2.</span> <span class="nav-text">使用场景及其作用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-log"><span class="nav-number">2.1.</span> <span class="nav-text">git log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-reflog"><span class="nav-number">2.2.</span> <span class="nav-text">git reflog</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#场景一"><span class="nav-number">2.3.</span> <span class="nav-text">场景一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#场景二"><span class="nav-number">2.4.</span> <span class="nav-text">场景二</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">3.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">1.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tag"><span class="nav-number">2.</span> <span class="nav-text">Tag</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#采用三段式，v版本-里程碑-序号，例如v1-0-0"><span class="nav-number">2.1.</span> <span class="nav-text">采用三段式，v版本.里程碑.序号，例如v1.0.0</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Commit-message的格式"><span class="nav-number">3.</span> <span class="nav-text">Commit message的格式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Header"><span class="nav-number">3.1.</span> <span class="nav-text">Header</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Body"><span class="nav-number">3.2.</span> <span class="nav-text">Body</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Footer"><span class="nav-number">3.3.</span> <span class="nav-text">Footer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Revert"><span class="nav-number">3.4.</span> <span class="nav-text">Revert</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Commitizen"><span class="nav-number">4.</span> <span class="nav-text">Commitizen</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#validate-commit-msg"><span class="nav-number">5.</span> <span class="nav-text">validate-commit-msg</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成-Change-log"><span class="nav-number">6.</span> <span class="nav-text">生成 Change log</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-commit中使用emoji"><span class="nav-number">7.</span> <span class="nav-text">git commit中使用emoji</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#emoji规范格式"><span class="nav-number">7.1.</span> <span class="nav-text">emoji规范格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#emoji指南"><span class="nav-number">7.2.</span> <span class="nav-text">emoji指南</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文献"><span class="nav-number">8.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
@@ -792,8 +1010,6 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     

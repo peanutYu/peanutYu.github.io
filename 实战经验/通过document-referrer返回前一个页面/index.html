@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="实战经验,">
+  <meta name="keywords" content="实战经验,JavaScript,">
 
 
 
@@ -88,20 +88,18 @@
 
 
 
-<meta name="description" content="在实际开发过程中，我们经常会遇到各种不同的浏览器内核以及不同的手机型号导致的一些前端兼容性问题。其中在H5页面中，由于移动端键盘的多样性，导致很多时候我们在唤起小键盘时，我们的页面经常会遇到一些错乱的问题。">
-<meta name="keywords" content="实战经验">
+<meta name="description" content="前言 在JavaScript中，document对象有很多属性，其中有3个与对网页的请求有关的属性，它们分别是URL、domain和referrer。URL属性包含页面完整的URL，domain属性中只包含页面的域名，而referrer属性中则保存着链接到当前页面的那个页面的URL。  JS获取前一个访问页面的URL地址document.referrer要获取前一个访问页面的URL地址前后端语言都">
+<meta name="keywords" content="实战经验,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记录移动端键盘弹起导致底部上浮解决方案">
-<meta property="og:url" content="http://www.peanutyu.site/2019/07/15/记录移动端键盘弹起导致底部上浮解决方案/index.html">
+<meta property="og:title" content="通过document.referrer返回前一个页面">
+<meta property="og:url" content="http://www.peanutyu.site/实战经验/通过document-referrer返回前一个页面/index.html">
 <meta property="og:site_name" content="Peanut&#39;s blog">
-<meta property="og:description" content="在实际开发过程中，我们经常会遇到各种不同的浏览器内核以及不同的手机型号导致的一些前端兼容性问题。其中在H5页面中，由于移动端键盘的多样性，导致很多时候我们在唤起小键盘时，我们的页面经常会遇到一些错乱的问题。">
+<meta property="og:description" content="前言 在JavaScript中，document对象有很多属性，其中有3个与对网页的请求有关的属性，它们分别是URL、domain和referrer。URL属性包含页面完整的URL，domain属性中只包含页面的域名，而referrer属性中则保存着链接到当前页面的那个页面的URL。  JS获取前一个访问页面的URL地址document.referrer要获取前一个访问页面的URL地址前后端语言都">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.peanutyu.site/uploads/记录移动端键盘弹起导致底部上浮解决方案/wechat.jpeg">
-<meta property="og:updated_time" content="2019-08-02T03:25:37.092Z">
+<meta property="og:updated_time" content="2019-08-02T03:23:51.759Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记录移动端键盘弹起导致底部上浮解决方案">
-<meta name="twitter:description" content="在实际开发过程中，我们经常会遇到各种不同的浏览器内核以及不同的手机型号导致的一些前端兼容性问题。其中在H5页面中，由于移动端键盘的多样性，导致很多时候我们在唤起小键盘时，我们的页面经常会遇到一些错乱的问题。">
-<meta name="twitter:image" content="http://www.peanutyu.site/uploads/记录移动端键盘弹起导致底部上浮解决方案/wechat.jpeg">
+<meta name="twitter:title" content="通过document.referrer返回前一个页面">
+<meta name="twitter:description" content="前言 在JavaScript中，document对象有很多属性，其中有3个与对网页的请求有关的属性，它们分别是URL、domain和referrer。URL属性包含页面完整的URL，domain属性中只包含页面的域名，而referrer属性中则保存着链接到当前页面的那个页面的URL。  JS获取前一个访问页面的URL地址document.referrer要获取前一个访问页面的URL地址前后端语言都">
 
 
 
@@ -111,7 +109,7 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -131,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://www.peanutyu.site/2019/07/15/记录移动端键盘弹起导致底部上浮解决方案/">
+  <link rel="canonical" href="http://www.peanutyu.site/实战经验/通过document-referrer返回前一个页面/">
 
 
 
 
 
-  <title>记录移动端键盘弹起导致底部上浮解决方案 | Peanut's blog</title>
+  <title>通过document.referrer返回前一个页面 | Peanut's blog</title>
   
 
 
@@ -307,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/2019/07/15/记录移动端键盘弹起导致底部上浮解决方案/">
+    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/实战经验/通过document-referrer返回前一个页面/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Peanut">
@@ -324,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">记录移动端键盘弹起导致底部上浮解决方案</h1>
+          <h1 class="post-title" itemprop="name headline">通过document.referrer返回前一个页面</h1>
         
 
         <div class="post-meta">
@@ -336,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-15T20:08:23+08:00">
-                2019-07-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-30T22:47:07+08:00">
+                2019-06-30
               </time>
             
 
@@ -377,8 +375,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/07/15/记录移动端键盘弹起导致底部上浮解决方案/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/15/记录移动端键盘弹起导致底部上浮解决方案/" itemprop="commentCount"></span>
+                <a href="/实战经验/通过document-referrer返回前一个页面/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/实战经验/通过document-referrer返回前一个页面/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,7 +384,7 @@
 
           
           
-             <span id="/2019/07/15/记录移动端键盘弹起导致底部上浮解决方案/" class="leancloud_visitors" data-flag-title="记录移动端键盘弹起导致底部上浮解决方案">
+             <span id="/实战经验/通过document-referrer返回前一个页面/" class="leancloud_visitors" data-flag-title="通过document.referrer返回前一个页面">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -411,7 +409,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  625
+                  129
                 </span>
               
 
@@ -427,7 +425,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -448,16 +446,10 @@
       
 
       
-        <blockquote>
-<p>在实际开发过程中，我们经常会遇到各种不同的浏览器内核以及不同的手机型号导致的一些前端兼容性问题。其中在H5页面中，由于移动端键盘的多样性，导致很多时候我们在唤起小键盘时，我们的页面经常会遇到一些错乱的问题。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>在JavaScript中，document对象有很多属性，其中有3个与对网页的请求有关的属性，它们分别是URL、domain和referrer。URL属性包含页面完整的URL，domain属性中只包含页面的域名，而referrer属性中则保存着链接到当前页面的那个页面的URL。</p>
 </blockquote>
-<a id="more"></a>
-<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>在最近的一次微信H5页面开发过程中，由于我们的整体页面是通过Header, Main, Footer三个组件拼接起来的；整体的高度是适配屏幕的百分之百，Main组件做内部的滚动，Header、以及Footer页面分别位于页面的最上方以及最下方。这时候我们focus到输入框中，一些小键盘是整体覆盖在H5页面上，所以并没有造成很大的影响；而一部分机型则是会将页面整体往上顶，这样会让我们的可视距离变得非常的少，并且我们的Footer也会被键盘整体顶上来；Main组件可以显示的内容变得几乎没有，这样显然是不行的，所以我们要做出调整。</p>
-<p><img src="/uploads/记录移动端键盘弹起导致底部上浮解决方案/wechat.jpeg" alt="wechat"></p>
-<h1 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h1><p>在键盘弹起时，不让原本固定在底部的Footer被撑起，监听屏幕此时的实时高度,控制Footer的显示与否，达到将底部栏固定在底部的效果。</p>
-<h1 id="解决方案-framework-weex-vue-js"><a href="#解决方案-framework-weex-vue-js" class="headerlink" title="解决方案 (framework: weex vue.js)"></a>解决方案 (framework: weex vue.js)</h1><h2 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;yoga-footer v-if=&quot;showFooter&quot;</span><br><span class="line">  name=&quot;talent-circle&quot;</span><br><span class="line">&gt;&lt;/yoga-footer&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import Footer from &apos;components/weex-footer&apos;;</span><br><span class="line">export default &#123;</span><br><span class="line">  ...</span><br><span class="line">  components: &#123;</span><br><span class="line">    &apos;yoga-footer&apos;: Footer,</span><br><span class="line">  &#125;,</span><br><span class="line">  // data数据</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      domHeight: document.documentElement.clientHeight || document.body.clientHeight,</span><br><span class="line">      showHeight: document.documentElement.clientHeight || document.body.clientHeight,</span><br><span class="line">      showFooter: true,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 监听showHeight变化 检测是否显示Footer</span><br><span class="line">  watch: &#123;</span><br><span class="line">    showHeight() &#123;</span><br><span class="line">      if (this.domHeight &gt; this.showHeight) &#123;</span><br><span class="line">        this.showFooter = false;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        this.showFooter = true;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 绑定页面resize事件改变showHeight</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    window.onresize = () =&gt; (() =&gt; &#123;</span><br><span class="line">      this.showHeight = document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">    &#125;)();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>解决移动端键盘弹起导致底部上浮的最佳方案就是监听我们的resize事件，由于一些环境下的键盘是破坏了我们原有的页面结构，所以我们的resize事件也发生了改变，可以快速的响应页面高度改变发生的一些问题；而在一些IOS机型，小键盘弹起是不会影响页面布局触发resize事件的，所以也不会有其他副作用的出现。</p>
+<h1 id="JS获取前一个访问页面的URL地址document-referrer"><a href="#JS获取前一个访问页面的URL地址document-referrer" class="headerlink" title="JS获取前一个访问页面的URL地址document.referrer"></a>JS获取前一个访问页面的URL地址document.referrer</h1><p>要获取前一个访问页面的URL地址前后端语言都可以，例如PHP的是$_SERVER[‘HTTP_REFERER’]，JavaScript的就是<strong>document.referrer</strong>。</p>
 
       
     </div>
@@ -475,12 +467,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>记录移动端键盘弹起导致底部上浮解决方案</p>
+  <p><span>本文标题:</span>通过document.referrer返回前一个页面</p>
   <p><span>文章作者:</span>Peanut</p>
-  <p><span>发布时间:</span>2019年07月15日 - 20:08:23</p>
-  <p><span>最后更新:</span>2019年08月02日 - 11:25:37</p>
-  <p><span>原始链接:</span><a href="/2019/07/15/记录移动端键盘弹起导致底部上浮解决方案/" title="记录移动端键盘弹起导致底部上浮解决方案">http://www.peanutyu.site/2019/07/15/记录移动端键盘弹起导致底部上浮解决方案/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/2019/07/15/记录移动端键盘弹起导致底部上浮解决方案/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年06月30日 - 22:47:07</p>
+  <p><span>最后更新:</span>2019年08月02日 - 11:23:51</p>
+  <p><span>原始链接:</span><a href="/实战经验/通过document-referrer返回前一个页面/" title="通过document.referrer返回前一个页面">http://www.peanutyu.site/实战经验/通过document-referrer返回前一个页面/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/实战经验/通过document-referrer返回前一个页面/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -514,6 +506,8 @@
           
             <a href="/tags/实战经验/" rel="tag"># 实战经验</a>
           
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
         </div>
       
 
@@ -525,8 +519,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/30/通过document-referrer返回前一个页面/" rel="next" title="通过document.referrer返回前一个页面">
-                <i class="fa fa-chevron-left"></i> 通过document.referrer返回前一个页面
+              <a href="/uncategorized/一名【合格】前端工程师的自检清单题解/" rel="next" title="一名【合格】前端工程师的自检清单题解">
+                <i class="fa fa-chevron-left"></i> 一名【合格】前端工程师的自检清单题解
               </a>
             
           </div>
@@ -535,8 +529,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/22/Set和Map数据结构及区别/" rel="prev" title="Set和Map数据结构及区别">
-                Set和Map数据结构及区别 <i class="fa fa-chevron-right"></i>
+              <a href="/实战经验/记录移动端键盘弹起导致底部上浮解决方案/" rel="prev" title="记录移动端键盘弹起导致底部上浮解决方案">
+                记录移动端键盘弹起导致底部上浮解决方案 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -664,13 +658,25 @@
                   <span class="links-of-author-item">
                     <a href="https://github.com/peanutYu" target="_blank" title="GitHub">
                       
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
                   </span>
                 
                   <span class="links-of-author-item">
                     <a href="mailto:287130319@qq.com" target="_blank" title="E-Mail">
                       
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                        <i class="fa fa-fw fa-globe"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3755396494" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/meng-meng-da-de-xiao-zheng-zi/activities" target="_blank" title="zhihu">
+                      
+                        <i class="fa fa-fw fa-globe"></i>zhihu</a>
                   </span>
                 
             </div>
@@ -697,7 +703,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决思路"><span class="nav-number">2.</span> <span class="nav-text">解决思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方案-framework-weex-vue-js"><span class="nav-number">3.</span> <span class="nav-text">解决方案 (framework: weex vue.js)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Html"><span class="nav-number">3.1.</span> <span class="nav-text">Html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript"><span class="nav-number">3.2.</span> <span class="nav-text">JavaScript</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JS获取前一个访问页面的URL地址document-referrer"><span class="nav-number">2.</span> <span class="nav-text">JS获取前一个访问页面的URL地址document.referrer</span></a></li></ol></div>
             
 
           </div>
@@ -755,8 +761,6 @@
     
       <div class="back-to-top">
         <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
         
       </div>
     
