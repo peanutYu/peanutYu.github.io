@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.peanutyu.site/"/>
-  <updated>2019-09-09T11:44:58.263Z</updated>
+  <updated>2019-09-09T11:46:54.149Z</updated>
   <id>http://www.peanutyu.site/</id>
   
   <author>
@@ -21,15 +21,13 @@
     <link href="http://www.peanutyu.site/Css/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BABFC/"/>
     <id>http://www.peanutyu.site/Css/深入浅出BFC/</id>
     <published>2019-09-06T08:36:39.000Z</published>
-    <updated>2019-09-09T11:44:58.263Z</updated>
+    <updated>2019-09-09T11:46:54.149Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;BFC是什么？&quot;&gt;&lt;a href=&quot;#BFC是什么？&quot; class=&quot;headerlink&quot; title=&quot;BFC是什么？&quot;&gt;&lt;/a&gt;BFC是什么？&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;BFC全称（Block Formatting Context）块级格式化上
-      
+      &lt;h1 id=&quot;BFC是什么？&quot;&gt;&lt;a href=&quot;#BFC是什么？&quot; class=&quot;headerlink&quot; title=&quot;BFC是什么？&quot;&gt;&lt;/a&gt;BFC是什么？&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;BFC全称（Block Formatting Context）块级格式化上下文是Web页面的可视化CSS渲染的一部分，它是块级盒子布局过程产生的区域，也是浮动层元素进行交互的区域，可以让处于BFC内部的元素与外部的元素相互隔离，使内外的元素不会相互影响。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
