@@ -126,8 +126,10 @@ scheme: Mist
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/peanutYu || github
-  E-Mail: mailto:287130319@qq.com || envelope
+  GitHub: https://github.com/peanutYu
+  E-Mail: mailto:287130319@qq.com
+  Weibo: https://weibo.com/u/3755396494
+  zhihu: https://www.zhihu.com/people/meng-meng-da-de-xiao-zheng-zi/activities
   # Google: https://plus.google.com/yourname || google
   # Twitter: https://twitter.com/yourname || twitter
   # FB Page: https://www.facebook.com/yourname || facebook
@@ -194,7 +196,7 @@ sidebar:
   b2t: false
 
   # Scroll percent label in b2t button.
-  scrollpercent: true
+  scrollpercent: false
 
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
@@ -695,13 +697,13 @@ pace: true
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: true
+canvas_nest: false
 
 # three_waves
 three_waves: false
 
 # canvas_lines
-canvas_lines: false
+canvas_lines: true
 
 # canvas_sphere
 canvas_sphere: false

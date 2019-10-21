@@ -1063,7 +1063,7 @@ pre .javascript .function {
   right: 30px;
   z-index: 1050;
   padding: 0 6px;
-  width: initial;
+  width: 24px;
   background: #222;
   font-size: 12px;
   opacity: 1;
@@ -1879,7 +1879,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d56aff;
+  background: #bb7d65;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2975,9 +2975,14 @@ body {
 .post-footer {
   display: none;
 }
-.post-button .btn {
+.post-button {
+  text-align: center;
+}
+.post-button a.btn {
   background-color: #fff;
   color: #222;
+  border: 1px solid #222;
+  padding: 5px 10px;
 }
 @media (max-width: 767px) {
   .github-tags {
@@ -2990,7 +2995,7 @@ body {
   right: 0;
   left: 0;
   bottom: 0;
-  background: linear-gradient(to right top, #3cc 50%, transparent 50%) no-repeat -10px 0;
+  background: linear-gradient(to right top, #2e3a1f 50%, transparent 50%) no-repeat -10px 0;
   background-size: calc(100% + 20px) calc(100% - 100vh + 5px);
   z-index: 1;
   pointer-events: none;

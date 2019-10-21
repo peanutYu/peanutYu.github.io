@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.peanutyu.site/"/>
-  <updated>2019-08-02T03:23:33.769Z</updated>
+  <updated>2019-10-21T08:14:24.515Z</updated>
   <id>http://www.peanutyu.site/</id>
   
   <author>
@@ -17,29 +17,120 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Set和Map数据结构及区别</title>
-    <link href="http://www.peanutyu.site/2019/07/22/Set%E5%92%8CMap%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E5%8C%BA%E5%88%AB/"/>
-    <id>http://www.peanutyu.site/2019/07/22/Set和Map数据结构及区别/</id>
-    <published>2019-07-22T08:28:15.000Z</published>
-    <updated>2019-08-02T03:23:33.769Z</updated>
+    <title>跨域的正确打开方式</title>
+    <link href="http://www.peanutyu.site/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%B7%A8%E5%9F%9F%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/"/>
+    <id>http://www.peanutyu.site/学习笔记/跨域的正确打开方式/</id>
+    <published>2019-10-13T16:09:40.000Z</published>
+    <updated>2019-10-21T08:14:24.515Z</updated>
     
     <summary type="html">
     
+      &lt;blockquote&gt;
+&lt;p&gt;跨域是前端开发日常工作中经常会面对的一个问题。日常工作中我们都会使用像webpack-dev-server构建我们的开发环境的接口代理、亦或是使用Charles等接口代理工具。上线后可以通过运维同学配合nginx或是cors等方案来解决。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
     </summary>
     
-      <category term="数据结构" scheme="http://www.peanutyu.site/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="学习笔记" scheme="http://www.peanutyu.site/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="数据结构" scheme="http://www.peanutyu.site/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="学习笔记" scheme="http://www.peanutyu.site/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入浅出BFC</title>
+    <link href="http://www.peanutyu.site/Css/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BABFC/"/>
+    <id>http://www.peanutyu.site/Css/深入浅出BFC/</id>
+    <published>2019-09-06T08:36:39.000Z</published>
+    <updated>2019-09-09T11:46:54.149Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;BFC是什么？&quot;&gt;&lt;a href=&quot;#BFC是什么？&quot; class=&quot;headerlink&quot; title=&quot;BFC是什么？&quot;&gt;&lt;/a&gt;BFC是什么？&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;BFC全称（Block Formatting Context）块级格式化上下文是Web页面的可视化CSS渲染的一部分，它是块级盒子布局过程产生的区域，也是浮动层元素进行交互的区域，可以让处于BFC内部的元素与外部的元素相互隔离，使内外的元素不会相互影响。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Css" scheme="http://www.peanutyu.site/categories/Css/"/>
+    
+    
+      <category term="Css" scheme="http://www.peanutyu.site/tags/Css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从输入URL回车之后发生了什么</title>
+    <link href="http://www.peanutyu.site/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%9B%9E%E8%BD%A6%E4%B9%8B%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/"/>
+    <id>http://www.peanutyu.site/学习笔记/从输入URL回车之后发生了什么/</id>
+    <published>2019-08-26T11:13:00.000Z</published>
+    <updated>2019-08-26T17:23:02.694Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;从输入URL回车之后发生了什么&quot;&gt;&lt;a href=&quot;#从输入URL回车之后发生了什么&quot; class=&quot;headerlink&quot; title=&quot;从输入URL回车之后发生了什么&quot;&gt;&lt;/a&gt;从输入URL回车之后发生了什么&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://www.peanutyu.site/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="学习笔记" scheme="http://www.peanutyu.site/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈Object.defineProperty</title>
+    <link href="http://www.peanutyu.site/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%B5%85%E8%B0%88object.defineProperty/"/>
+    <id>http://www.peanutyu.site/学习笔记/浅谈object.defineProperty/</id>
+    <published>2019-08-09T06:10:40.000Z</published>
+    <updated>2019-08-26T17:22:33.895Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Object属性描述符&quot;&gt;&lt;a href=&quot;#Object属性描述符&quot; class=&quot;headerlink&quot; title=&quot;Object属性描述符&quot;&gt;&lt;/a&gt;Object属性描述符&lt;/h1&gt;&lt;p&gt;js对象内部有两种属性描述符 数据描述符和存取描述符（访问描述符）;描述符必须是两种形式之一；不能同时是两者。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意事项&lt;br&gt;数据描述符和存取描述符都具备configurable、enumerable属性。&lt;br&gt;描述符不具备value，writetable，set和get任意一个关键字都被认作一个数据描述符。&lt;br&gt;（value或writetable）和（get和set）不能同时存在，然后只要定义了set和get或其中一个都是一个存取描述符（描述符只能是其中一种）。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://www.peanutyu.site/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="学习笔记" scheme="http://www.peanutyu.site/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>纯Css(Scroll Indicator)滚动指示器实现</title>
+    <link href="http://www.peanutyu.site/css/%E7%BA%AFcss%E6%BB%9A%E5%8A%A8%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://www.peanutyu.site/css/纯css滚动进度条实现/</id>
+    <published>2019-08-05T11:11:52.000Z</published>
+    <updated>2019-10-15T15:56:24.866Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Scroll Indicator称之为滚动指示器,是web页面中我们经常见到的一个效果。用户触发垂直方向上的滚动时，页面顶部会有一个类似进度条的效果，当内容滚动到页面最底部，则进度条填满页面的整个页面宽度。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="css" scheme="http://www.peanutyu.site/categories/css/"/>
+    
+    
+      <category term="css" scheme="http://www.peanutyu.site/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>记录移动端键盘弹起导致底部上浮解决方案</title>
-    <link href="http://www.peanutyu.site/2019/07/15/%E8%AE%B0%E5%BD%95%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%94%AE%E7%9B%98%E5%BC%B9%E8%B5%B7%E5%AF%BC%E8%87%B4%E5%BA%95%E9%83%A8%E4%B8%8A%E6%B5%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
-    <id>http://www.peanutyu.site/2019/07/15/记录移动端键盘弹起导致底部上浮解决方案/</id>
+    <link href="http://www.peanutyu.site/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/%E8%AE%B0%E5%BD%95%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%94%AE%E7%9B%98%E5%BC%B9%E8%B5%B7%E5%AF%BC%E8%87%B4%E5%BA%95%E9%83%A8%E4%B8%8A%E6%B5%AE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://www.peanutyu.site/问题记录/记录移动端键盘弹起导致底部上浮解决方案/</id>
     <published>2019-07-15T12:08:23.000Z</published>
-    <updated>2019-08-02T03:25:37.092Z</updated>
+    <updated>2019-08-26T11:13:59.217Z</updated>
     
     <summary type="html">
     
@@ -49,83 +140,17 @@
     
     </summary>
     
-      <category term="实战经验" scheme="http://www.peanutyu.site/categories/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C/"/>
+      <category term="问题记录" scheme="http://www.peanutyu.site/categories/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
     
     
-      <category term="实战经验" scheme="http://www.peanutyu.site/tags/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>通过document.referrer返回前一个页面</title>
-    <link href="http://www.peanutyu.site/2019/06/30/%E9%80%9A%E8%BF%87document-referrer%E8%BF%94%E5%9B%9E%E5%89%8D%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2/"/>
-    <id>http://www.peanutyu.site/2019/06/30/通过document-referrer返回前一个页面/</id>
-    <published>2019-06-30T14:47:07.000Z</published>
-    <updated>2019-08-02T03:23:51.759Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;在JavaScript中，document对象有很多属性，其中有3个与对网页的请求有关的属性，它们分别是URL、d
-      
-    
-    </summary>
-    
-      <category term="实战经验" scheme="http://www.peanutyu.site/categories/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C/"/>
-    
-    
-      <category term="实战经验" scheme="http://www.peanutyu.site/tags/%E5%AE%9E%E6%88%98%E7%BB%8F%E9%AA%8C/"/>
-    
-      <category term="JavaScript" scheme="http://www.peanutyu.site/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一名【合格】前端工程师的自检清单题解</title>
-    <link href="http://www.peanutyu.site/2019/05/06/%E4%B8%80%E5%90%8D%E3%80%90%E5%90%88%E6%A0%BC%E3%80%91%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E8%87%AA%E6%A3%80%E6%B8%85%E5%8D%95%E9%A2%98%E8%A7%A3/"/>
-    <id>http://www.peanutyu.site/2019/05/06/一名【合格】前端工程师的自检清单题解/</id>
-    <published>2019-05-06T09:23:05.000Z</published>
-    <updated>2019-08-02T03:23:48.217Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;最近看到&lt;a href=&quot;https://juejin.im/post/5cc1da82f265da036023b628&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;一名【合格】前端工程师的自检清单&lt;/a&gt;这么一篇文章，反观自己已经在两年的前端生涯中变得越来越迷茫，没有去系统的学习、巩固前端基础知识，身为前端工程师感觉非常的惭愧，所以写下这篇题解来解答这篇文章内的技术问题，也算对自己的前端学习做一个总结。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="http://www.peanutyu.site/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端面试汇总(基础概念篇)</title>
-    <link href="http://www.peanutyu.site/2019/04/23/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%B1%87%E6%80%BB-%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
-    <id>http://www.peanutyu.site/2019/04/23/前端面试汇总-基础篇/</id>
-    <published>2019-04-23T03:53:15.000Z</published>
-    <updated>2019-08-02T03:23:55.064Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Doctype作用？标准模式与兼容模式各有什么区别&quot;&gt;&lt;a href=&quot;#Doctype作用？标准模式与兼容模式各有什么区别&quot; class=&quot;headerlink&quot; title=&quot;Doctype作用？标准模式与兼容模式各有什么区别?&quot;&gt;&lt;/a&gt;Doctype作用？标准模式与兼容模式各有什么区别?&lt;/h1&gt;&lt;p&gt;&amp;lt;!DOCTYPE&amp;gt;声明位于位于HTML文档中的第一行，处于&lt;strong&gt;html&lt;/strong&gt;标签之前。告知浏览器的解析器用什么文档标准解析这个文档。DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。&lt;/p&gt;
-&lt;p&gt;标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="面试" scheme="http://www.peanutyu.site/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-      <category term="面试" scheme="http://www.peanutyu.site/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="问题记录" scheme="http://www.peanutyu.site/tags/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>git高级用法——git cherry-pick</title>
-    <link href="http://www.peanutyu.site/2019/04/20/git%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95%E2%80%94%E2%80%94git-cherry-pick/"/>
-    <id>http://www.peanutyu.site/2019/04/20/git高级用法——git-cherry-pick/</id>
+    <link href="http://www.peanutyu.site/git/git%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95%E2%80%94%E2%80%94git-cherry-pick/"/>
+    <id>http://www.peanutyu.site/git/git高级用法——git-cherry-pick/</id>
     <published>2019-04-20T07:47:12.000Z</published>
     <updated>2019-08-02T03:23:36.846Z</updated>
     
@@ -146,8 +171,8 @@
   
   <entry>
     <title>Git Commit 规范以及 emoji 列表</title>
-    <link href="http://www.peanutyu.site/2019/04/10/Git%20commit%20%E8%A7%84%E8%8C%83%E4%BB%A5%E5%8F%8A%20emoji%20%E5%88%97%E8%A1%A8/"/>
-    <id>http://www.peanutyu.site/2019/04/10/Git commit 规范以及 emoji 列表/</id>
+    <link href="http://www.peanutyu.site/git/Git%20commit%20%E8%A7%84%E8%8C%83%E4%BB%A5%E5%8F%8A%20emoji%20%E5%88%97%E8%A1%A8/"/>
+    <id>http://www.peanutyu.site/git/Git commit 规范以及 emoji 列表/</id>
     <published>2019-04-10T08:19:42.000Z</published>
     <updated>2019-08-02T03:23:41.445Z</updated>
     
@@ -175,10 +200,10 @@
   
   <entry>
     <title>Weex常见问题解析</title>
-    <link href="http://www.peanutyu.site/2019/03/29/weex%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E6%9E%90/"/>
-    <id>http://www.peanutyu.site/2019/03/29/weex常见问题解析/</id>
+    <link href="http://www.peanutyu.site/Weex/weex%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E6%9E%90/"/>
+    <id>http://www.peanutyu.site/Weex/weex常见问题解析/</id>
     <published>2019-03-29T05:56:07.000Z</published>
-    <updated>2019-08-02T03:23:30.444Z</updated>
+    <updated>2019-08-06T06:24:19.135Z</updated>
     
     <summary type="html">
     
@@ -197,8 +222,8 @@
   
   <entry>
     <title>[转]你不知道的JavaScript上卷读书笔记</title>
-    <link href="http://www.peanutyu.site/2018/11/29/%E8%BD%AC-%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JavaScript%E4%B8%8A%E5%8D%B7%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://www.peanutyu.site/2018/11/29/转-你不知道的JavaScript上卷读书笔记/</id>
+    <link href="http://www.peanutyu.site/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%BD%AC-%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JavaScript%E4%B8%8A%E5%8D%B7%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://www.peanutyu.site/学习笔记/转-你不知道的JavaScript上卷读书笔记/</id>
     <published>2018-11-29T10:05:24.000Z</published>
     <updated>2019-08-02T03:28:57.722Z</updated>
     

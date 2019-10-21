@@ -1,5 +1,7 @@
 #!/user/bin/env bash
 
+set -e
+
 echo ''
 echo ''
 
@@ -21,11 +23,17 @@ echo "[publishing] now we are in $branch branch"
 #   exit 1
 # fi
 
-hexo clean 
+# hexo clean
 
-hexo g
+# hexo g
 
-hexo d
+# hexo d
 
 echo "[publishing success] 已成功替换线上服务内容"
+
+git add .
+
+git commit -m "[publish]"
+
+git push origin $branch
 

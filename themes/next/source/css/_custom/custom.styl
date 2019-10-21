@@ -12,9 +12,14 @@ body {
 .post-footer {
   display: none;
 }
-.post-button .btn {
+.post-button {
+  text-align: center;
+}
+.post-button a.btn {
   background-color: #fff;
   color: #222;
+  border: 1px solid #222;
+  padding: 5px 10px;
 }
 
 .github-tags {
@@ -24,7 +29,7 @@ body {
 .indicator {
   position: absolute;
   top: 0; right: 0; left: 0; bottom: 0;
-  background: linear-gradient(to right top,#33CCCC 50%, transparent 50%) no-repeat -10px 0;
+  background: linear-gradient(to right top,#2e3a1f 50%, transparent 50%) no-repeat -10px 0;
   background-size: calc(100% + 20px) calc(100% - 100vh + 5px);
   z-index: 1;
   pointer-events: none;
