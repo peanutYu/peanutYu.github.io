@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.peanutyu.site/"/>
-  <updated>2019-09-09T11:46:54.149Z</updated>
+  <updated>2019-10-21T08:14:24.515Z</updated>
   <id>http://www.peanutyu.site/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>跨域的正确打开方式</title>
+    <link href="http://www.peanutyu.site/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E8%B7%A8%E5%9F%9F%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F/"/>
+    <id>http://www.peanutyu.site/学习笔记/跨域的正确打开方式/</id>
+    <published>2019-10-13T16:09:40.000Z</published>
+    <updated>2019-10-21T08:14:24.515Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;跨域是前端开发日常工作中经常会面对的一个问题。日常工作中我们都会使用像webpack-dev-server构建我们的开发环境的接口代理、亦或是使用Charles等接口代理工具。上线后可以通过运维同学配合nginx或是cors等方案来解决。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://www.peanutyu.site/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="学习笔记" scheme="http://www.peanutyu.site/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>深入浅出BFC</title>
@@ -86,7 +108,7 @@
     <link href="http://www.peanutyu.site/css/%E7%BA%AFcss%E6%BB%9A%E5%8A%A8%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%AE%9E%E7%8E%B0/"/>
     <id>http://www.peanutyu.site/css/纯css滚动进度条实现/</id>
     <published>2019-08-05T11:11:52.000Z</published>
-    <updated>2019-08-26T15:48:40.008Z</updated>
+    <updated>2019-10-15T15:56:24.866Z</updated>
     
     <summary type="html">
     
