@@ -127,9 +127,9 @@ scheme: Mist
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
   GitHub: https://github.com/peanutYu
-  E-Mail: mailto:287130319@qq.com
-  Weibo: https://weibo.com/u/3755396494
-  zhihu: https://www.zhihu.com/people/meng-meng-da-de-xiao-zheng-zi/activities
+  邮箱: mailto:287130319@qq.com
+  微博: https://weibo.com/u/3755396494
+  知乎: https://www.zhihu.com/people/meng-meng-da-de-xiao-zheng-zi/activities
   # Google: https://plus.google.com/yourname || google
   # Twitter: https://twitter.com/yourname || twitter
   # FB Page: https://www.facebook.com/yourname || facebook
@@ -141,6 +141,7 @@ social:
 
 social_icons:
   enable: true
+  Github: '',
   icons_only: false
   transition: false
 
