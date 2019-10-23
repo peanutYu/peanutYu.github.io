@@ -97,7 +97,7 @@
 <meta property="og:description" content="在实际开发过程中，我们经常会遇到各种不同的浏览器内核以及不同的手机型号导致的一些前端兼容性问题。其中在H5页面中，由于移动端键盘的多样性，导致很多时候我们在唤起小键盘时，我们的页面经常会遇到一些错乱的问题。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.peanutyu.site/uploads/记录移动端键盘弹起导致底部上浮解决方案/wechat.jpeg">
-<meta property="og:updated_time" content="2019-08-26T11:13:59.217Z">
+<meta property="og:updated_time" content="2019-10-23T01:42:28.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录移动端键盘弹起导致底部上浮解决方案">
 <meta name="twitter:description" content="在实际开发过程中，我们经常会遇到各种不同的浏览器内核以及不同的手机型号导致的一些前端兼容性问题。其中在H5页面中，由于移动端键盘的多样性，导致很多时候我们在唤起小键盘时，我们的页面经常会遇到一些错乱的问题。">
@@ -411,7 +411,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  625
+                  638
                 </span>
               
 
@@ -458,6 +458,9 @@
 <h1 id="解决方案-framework-weex-vue-js"><a href="#解决方案-framework-weex-vue-js" class="headerlink" title="解决方案 (framework: weex vue.js)"></a>解决方案 (framework: weex vue.js)</h1><h2 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;yoga-footer v-if=&quot;showFooter&quot;</span><br><span class="line">  name=&quot;talent-circle&quot;</span><br><span class="line">&gt;&lt;/yoga-footer&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import Footer from &apos;components/weex-footer&apos;;</span><br><span class="line">export default &#123;</span><br><span class="line">  ...</span><br><span class="line">  components: &#123;</span><br><span class="line">    &apos;yoga-footer&apos;: Footer,</span><br><span class="line">  &#125;,</span><br><span class="line">  // data数据</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      domHeight: document.documentElement.clientHeight || document.body.clientHeight,</span><br><span class="line">      showHeight: document.documentElement.clientHeight || document.body.clientHeight,</span><br><span class="line">      showFooter: true,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 监听showHeight变化 检测是否显示Footer</span><br><span class="line">  watch: &#123;</span><br><span class="line">    showHeight() &#123;</span><br><span class="line">      if (this.domHeight &gt; this.showHeight) &#123;</span><br><span class="line">        this.showFooter = false;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        this.showFooter = true;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 绑定页面resize事件改变showHeight</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    window.onresize = () =&gt; (() =&gt; &#123;</span><br><span class="line">      this.showHeight = document.documentElement.clientHeight || document.body.clientHeight;</span><br><span class="line">    &#125;)();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>解决移动端键盘弹起导致底部上浮的最佳方案就是监听我们的resize事件，由于一些环境下的键盘是破坏了我们原有的页面结构，所以我们的resize事件也发生了改变，可以快速的响应页面高度改变发生的一些问题；而在一些IOS机型，小键盘弹起是不会影响页面布局触发resize事件的，所以也不会有其他副作用的出现。</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">跨域资源共享 CORS 详解</a></li>
+</ul>
 
       
     </div>
@@ -478,7 +481,7 @@
   <p><span>本文标题:</span>记录移动端键盘弹起导致底部上浮解决方案</p>
   <p><span>文章作者:</span>Peanut</p>
   <p><span>发布时间:</span>2019年07月15日 - 20:08:23</p>
-  <!-- <p><span>最后更新:</span>2019年08月26日 - 19:13:59</p> -->
+  <!-- <p><span>最后更新:</span>2019年10月23日 - 09:42:28</p> -->
   <p><span>原始链接:</span><a href="/问题记录/记录移动端键盘弹起导致底部上浮解决方案/" title="记录移动端键盘弹起导致底部上浮解决方案">http://www.peanutyu.site/问题记录/记录移动端键盘弹起导致底部上浮解决方案/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/问题记录/记录移动端键盘弹起导致底部上浮解决方案/" aria-label="复制成功！"></i></span>
   </p>
@@ -709,7 +712,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决思路"><span class="nav-number">2.</span> <span class="nav-text">解决思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方案-framework-weex-vue-js"><span class="nav-number">3.</span> <span class="nav-text">解决方案 (framework: weex vue.js)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Html"><span class="nav-number">3.1.</span> <span class="nav-text">Html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript"><span class="nav-number">3.2.</span> <span class="nav-text">JavaScript</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决思路"><span class="nav-number">2.</span> <span class="nav-text">解决思路</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方案-framework-weex-vue-js"><span class="nav-number">3.</span> <span class="nav-text">解决方案 (framework: weex vue.js)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Html"><span class="nav-number">3.1.</span> <span class="nav-text">Html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript"><span class="nav-number">3.2.</span> <span class="nav-text">JavaScript</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
