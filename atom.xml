@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.peanutyu.site/"/>
-  <updated>2019-10-30T02:40:27.917Z</updated>
+  <updated>2019-10-30T02:48:25.194Z</updated>
   <id>http://www.peanutyu.site/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>解析vue内组件通信方式</title>
-    <link href="http://www.peanutyu.site/Vue/%E8%A7%A3%E6%9E%90vue%E5%86%85%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F/"/>
-    <id>http://www.peanutyu.site/Vue/解析vue内组件通信方式/</id>
+    <title>Vue组件内通信方式整理</title>
+    <link href="http://www.peanutyu.site/Vue/Vue%E7%BB%84%E4%BB%B6%E5%86%85%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E6%95%B4%E7%90%86/"/>
+    <id>http://www.peanutyu.site/Vue/Vue组件内通信方式整理/</id>
     <published>2019-10-23T12:07:11.000Z</published>
-    <updated>2019-10-30T02:40:27.917Z</updated>
+    <updated>2019-10-30T02:48:25.194Z</updated>
     
     <summary type="html">
     
@@ -247,9 +247,9 @@
       <category term="Weex" scheme="http://www.peanutyu.site/categories/Weex/"/>
     
     
-      <category term="Weex" scheme="http://www.peanutyu.site/tags/Weex/"/>
-    
       <category term="Vue" scheme="http://www.peanutyu.site/tags/Vue/"/>
+    
+      <category term="Weex" scheme="http://www.peanutyu.site/tags/Weex/"/>
     
   </entry>
   

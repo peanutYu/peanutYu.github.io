@@ -91,14 +91,14 @@
 <meta name="description" content="props和$emit父组件向子组件传递数据是通过props来传递的,子组件传递数据给父组件是通过$emit触发事件来做到的,父组件中使用v-on（@）的方式来实现。">
 <meta name="keywords" content="Vue,JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解析vue内组件通信方式">
-<meta property="og:url" content="http://www.peanutyu.site/Vue/解析vue内组件通信方式/index.html">
+<meta property="og:title" content="Vue组件内通信方式整理">
+<meta property="og:url" content="http://www.peanutyu.site/Vue/Vue组件内通信方式整理/index.html">
 <meta property="og:site_name" content="Peanut&#39;s blog">
 <meta property="og:description" content="props和$emit父组件向子组件传递数据是通过props来传递的,子组件传递数据给父组件是通过$emit触发事件来做到的,父组件中使用v-on（@）的方式来实现。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-30T02:40:27.917Z">
+<meta property="og:updated_time" content="2019-10-30T02:48:25.194Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解析vue内组件通信方式">
+<meta name="twitter:title" content="Vue组件内通信方式整理">
 <meta name="twitter:description" content="props和$emit父组件向子组件传递数据是通过props来传递的,子组件传递数据给父组件是通过$emit触发事件来做到的,父组件中使用v-on（@）的方式来实现。">
 
 
@@ -129,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://www.peanutyu.site/Vue/解析vue内组件通信方式/">
+  <link rel="canonical" href="http://www.peanutyu.site/Vue/Vue组件内通信方式整理/">
 
 
 
 
 
-  <title>解析vue内组件通信方式 | Peanut's blog</title>
+  <title>Vue组件内通信方式整理 | Peanut's blog</title>
   
 
 
@@ -305,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/Vue/解析vue内组件通信方式/">
+    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/Vue/Vue组件内通信方式整理/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Peanut">
@@ -322,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">解析vue内组件通信方式</h1>
+          <h1 class="post-title" itemprop="name headline">Vue组件内通信方式整理</h1>
         
 
         <div class="post-meta">
@@ -375,8 +375,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/Vue/解析vue内组件通信方式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Vue/解析vue内组件通信方式/" itemprop="commentCount"></span>
+                <a href="/Vue/Vue组件内通信方式整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Vue/Vue组件内通信方式整理/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -384,7 +384,7 @@
 
           
           
-             <span id="/Vue/解析vue内组件通信方式/" class="leancloud_visitors" data-flag-title="解析vue内组件通信方式">
+             <span id="/Vue/Vue组件内通信方式整理/" class="leancloud_visitors" data-flag-title="Vue组件内通信方式整理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -546,12 +546,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>解析vue内组件通信方式</p>
+  <p><span>本文标题:</span>Vue组件内通信方式整理</p>
   <p><span>文章作者:</span>Peanut</p>
   <p><span>发布时间:</span>2019年10月23日 - 20:07:11</p>
-  <!-- <p><span>最后更新:</span>2019年10月30日 - 10:40:27</p> -->
-  <p><span>原始链接:</span><a href="/Vue/解析vue内组件通信方式/" title="解析vue内组件通信方式">http://www.peanutyu.site/Vue/解析vue内组件通信方式/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/Vue/解析vue内组件通信方式/" aria-label="复制成功！"></i></span>
+  <!-- <p><span>最后更新:</span>2019年10月30日 - 10:48:25</p> -->
+  <p><span>原始链接:</span><a href="/Vue/Vue组件内通信方式整理/" title="Vue组件内通信方式整理">http://www.peanutyu.site/Vue/Vue组件内通信方式整理/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/Vue/Vue组件内通信方式整理/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
