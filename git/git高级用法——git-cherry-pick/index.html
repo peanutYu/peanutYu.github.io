@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="git,实战经验,">
+  <meta name="keywords" content="Git,实战经验,">
 
 
 
@@ -89,10 +89,10 @@
 
 
 <meta name="description" content="前言最近正巧看了一些面试题，其中有一道令我比较好奇，也就是我们今天要说到的git cherry-pick;我们在简历当中都会写上精通或者熟练掌握git工作技巧。但绝大多数人也许只掌握一些简单的类似git status | pull | push | log等操作,又或是使用sourcetree等一些辅助工具来支持我们日常的工作需求，这篇博客主要记录和git cherry-pick与之相关的git操">
-<meta name="keywords" content="git,实战经验">
+<meta name="keywords" content="Git,实战经验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git高级用法——git cherry-pick">
-<meta property="og:url" content="http://www.peanutyu.site/git/git高级用法——git-cherry-pick/index.html">
+<meta property="og:url" content="http://www.peanutyu.site/Git/git高级用法——git-cherry-pick/index.html">
 <meta property="og:site_name" content="Peanut&#39;s blog">
 <meta property="og:description" content="前言最近正巧看了一些面试题，其中有一道令我比较好奇，也就是我们今天要说到的git cherry-pick;我们在简历当中都会写上精通或者熟练掌握git工作技巧。但绝大多数人也许只掌握一些简单的类似git status | pull | push | log等操作,又或是使用sourcetree等一些辅助工具来支持我们日常的工作需求，这篇博客主要记录和git cherry-pick与之相关的git操">
 <meta property="og:locale" content="zh-Hans">
@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog5.png">
 <meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog6.png">
 <meta property="og:image" content="http://www.peanutyu.site/uploads/git高级用法——git-cherry-pick/gitlog7.png">
-<meta property="og:updated_time" content="2019-08-02T03:23:36.846Z">
+<meta property="og:updated_time" content="2019-10-31T09:09:13.884Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git高级用法——git cherry-pick">
 <meta name="twitter:description" content="前言最近正巧看了一些面试题，其中有一道令我比较好奇，也就是我们今天要说到的git cherry-pick;我们在简历当中都会写上精通或者熟练掌握git工作技巧。但绝大多数人也许只掌握一些简单的类似git status | pull | push | log等操作,又或是使用sourcetree等一些辅助工具来支持我们日常的工作需求，这篇博客主要记录和git cherry-pick与之相关的git操">
@@ -138,7 +138,7 @@
 
 
 
-  <link rel="canonical" href="http://www.peanutyu.site/git/git高级用法——git-cherry-pick/">
+  <link rel="canonical" href="http://www.peanutyu.site/Git/git高级用法——git-cherry-pick/">
 
 
 
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/git/git高级用法——git-cherry-pick/">
+    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/Git/git高级用法——git-cherry-pick/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Peanut">
@@ -366,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/git/" itemprop="url" rel="index">
-                    <span itemprop="name">git</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/git/git高级用法——git-cherry-pick/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/git/git高级用法——git-cherry-pick/" itemprop="commentCount"></span>
+                <a href="/Git/git高级用法——git-cherry-pick/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/Git/git高级用法——git-cherry-pick/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -393,7 +393,7 @@
 
           
           
-             <span id="/git/git高级用法——git-cherry-pick/" class="leancloud_visitors" data-flag-title="git高级用法——git cherry-pick">
+             <span id="/Git/git高级用法——git-cherry-pick/" class="leancloud_visitors" data-flag-title="git高级用法——git cherry-pick">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -513,9 +513,9 @@
   <p><span>本文标题:</span>git高级用法——git cherry-pick</p>
   <p><span>文章作者:</span>Peanut</p>
   <p><span>发布时间:</span>2019年04月20日 - 15:47:12</p>
-  <!-- <p><span>最后更新:</span>2019年08月02日 - 11:23:36</p> -->
-  <p><span>原始链接:</span><a href="/git/git高级用法——git-cherry-pick/" title="git高级用法——git cherry-pick">http://www.peanutyu.site/git/git高级用法——git-cherry-pick/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/git/git高级用法——git-cherry-pick/" aria-label="复制成功！"></i></span>
+  <!-- <p><span>最后更新:</span>2019年10月31日 - 17:09:13</p> -->
+  <p><span>原始链接:</span><a href="/Git/git高级用法——git-cherry-pick/" title="git高级用法——git cherry-pick">http://www.peanutyu.site/Git/git高级用法——git-cherry-pick/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/Git/git高级用法——git-cherry-pick/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -547,7 +547,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/Git/" rel="tag"># Git</a>
           
             <a href="/tags/实战经验/" rel="tag"># 实战经验</a>
           
@@ -562,7 +562,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/git/Git commit 规范以及 emoji 列表/" rel="next" title="Git Commit 规范以及 emoji 列表">
+              <a href="/Git/Git commit 规范以及 emoji 列表/" rel="next" title="Git Commit 规范以及 emoji 列表">
                 <i class="fa fa-chevron-left"></i> Git Commit 规范以及 emoji 列表
               </a>
             
@@ -656,7 +656,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -667,7 +667,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -678,7 +678,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
