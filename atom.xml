@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.peanutyu.site/"/>
-  <updated>2019-11-04T07:50:07.453Z</updated>
+  <updated>2019-11-04T07:51:35.680Z</updated>
   <id>http://www.peanutyu.site/</id>
   
   <author>
@@ -21,15 +21,13 @@
     <link href="http://www.peanutyu.site/Css/%E4%BD%A0%E6%83%B3%E7%9F%A5%E9%81%93%E7%9A%84%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95%E9%83%BD%E5%9C%A8%E8%BF%99%E4%BA%86/"/>
     <id>http://www.peanutyu.site/Css/你想知道的清除浮动的方法都在这了/</id>
     <published>2019-10-30T06:49:23.000Z</published>
-    <updated>2019-11-04T07:50:07.453Z</updated>
+    <updated>2019-11-04T07:51:35.680Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;浮动的产生&quot;&gt;&lt;a href=&quot;#浮动的产生&quot; class=&quot;headerlink&quot; title=&quot;浮动的产生&quot;&gt;&lt;/a&gt;浮动的产生&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;浮动float的产生原本是实现简单的布局，包括在一列文本中浮动的图像，文字环绕在它的左边或
-      
+      &lt;h2 id=&quot;浮动的产生&quot;&gt;&lt;a href=&quot;#浮动的产生&quot; class=&quot;headerlink&quot; title=&quot;浮动的产生&quot;&gt;&lt;/a&gt;浮动的产生&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;浮动float的产生原本是实现简单的布局，包括在一列文本中浮动的图像，文字环绕在它的左边或右边。你可能在报纸版面上看到过;包括有时候我们会希望几个div标签可以并排的出现在一行。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     

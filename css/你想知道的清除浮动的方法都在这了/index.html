@@ -88,20 +88,20 @@
 
 
 
-<meta name="description" content="浮动的产生 浮动float的产生原本是实现简单的布局，包括在一列文本中浮动的图像，文字环绕在它的左边或右边。你可能在报纸版面上看到过;包括有时候我们会希望几个div标签可以并排的出现在一行。  1234567891011121314151617181920&amp;lt;style&amp;gt;.wrapper1 &amp;#123;  width: 100%;  background-color: lightgree">
+<meta name="description" content="浮动的产生 浮动float的产生原本是实现简单的布局，包括在一列文本中浮动的图像，文字环绕在它的左边或右边。你可能在报纸版面上看到过;包括有时候我们会希望几个div标签可以并排的出现在一行。">
 <meta name="keywords" content="Css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="你想知道的清除浮动的方法都在这了">
 <meta property="og:url" content="http://www.peanutyu.site/Css/你想知道的清除浮动的方法都在这了/index.html">
 <meta property="og:site_name" content="Peanut&#39;s blog">
-<meta property="og:description" content="浮动的产生 浮动float的产生原本是实现简单的布局，包括在一列文本中浮动的图像，文字环绕在它的左边或右边。你可能在报纸版面上看到过;包括有时候我们会希望几个div标签可以并排的出现在一行。  1234567891011121314151617181920&amp;lt;style&amp;gt;.wrapper1 &amp;#123;  width: 100%;  background-color: lightgree">
+<meta property="og:description" content="浮动的产生 浮动float的产生原本是实现简单的布局，包括在一列文本中浮动的图像，文字环绕在它的左边或右边。你可能在报纸版面上看到过;包括有时候我们会希望几个div标签可以并排的出现在一行。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.peanutyu.site/uploads/你想知道的清除浮动的方法都在这了/1.png">
 <meta property="og:image" content="http://www.peanutyu.site/uploads/你想知道的清除浮动的方法都在这了/2.png">
-<meta property="og:updated_time" content="2019-11-04T07:50:07.453Z">
+<meta property="og:updated_time" content="2019-11-04T07:51:35.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="你想知道的清除浮动的方法都在这了">
-<meta name="twitter:description" content="浮动的产生 浮动float的产生原本是实现简单的布局，包括在一列文本中浮动的图像，文字环绕在它的左边或右边。你可能在报纸版面上看到过;包括有时候我们会希望几个div标签可以并排的出现在一行。  1234567891011121314151617181920&amp;lt;style&amp;gt;.wrapper1 &amp;#123;  width: 100%;  background-color: lightgree">
+<meta name="twitter:description" content="浮动的产生 浮动float的产生原本是实现简单的布局，包括在一列文本中浮动的图像，文字环绕在它的左边或右边。你可能在报纸版面上看到过;包括有时候我们会希望几个div标签可以并排的出现在一行。">
 <meta name="twitter:image" content="http://www.peanutyu.site/uploads/你想知道的清除浮动的方法都在这了/1.png">
 
 
@@ -452,6 +452,7 @@
         <h2 id="浮动的产生"><a href="#浮动的产生" class="headerlink" title="浮动的产生"></a>浮动的产生</h2><blockquote>
 <p>浮动float的产生原本是实现简单的布局，包括在一列文本中浮动的图像，文字环绕在它的左边或右边。你可能在报纸版面上看到过;包括有时候我们会希望几个div标签可以并排的出现在一行。</p>
 </blockquote>
+<a id="more"></a>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">.wrapper1 &#123;</span></span><br><span class="line"><span class="undefined">  width: 100%;</span></span><br><span class="line"><span class="undefined">  background-color: lightgreen;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">.wrapper2 &#123;</span></span><br><span class="line"><span class="undefined">  width: 100%;</span></span><br><span class="line"><span class="undefined">  height: 100px;</span></span><br><span class="line"><span class="undefined">  background-color: red;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">.box1 &#123;</span></span><br><span class="line"><span class="undefined">  width: 100px;</span></span><br><span class="line"><span class="undefined">  height: 100px;</span></span><br><span class="line"><span class="undefined">  background-color: pink;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper1"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrapper2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><img src="/uploads/你想知道的清除浮动的方法都在这了/1.png" alt=""></p>
 <p>我们最简单的在上面的box1里面加上一条浮动的样式。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box1</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -526,7 +527,7 @@
   <p><span>本文标题:</span>你想知道的清除浮动的方法都在这了</p>
   <p><span>文章作者:</span>Peanut</p>
   <p><span>发布时间:</span>2019年10月30日 - 14:49:23</p>
-  <!-- <p><span>最后更新:</span>2019年11月04日 - 15:50:07</p> -->
+  <!-- <p><span>最后更新:</span>2019年11月04日 - 15:51:35</p> -->
   <p><span>原始链接:</span><a href="/Css/你想知道的清除浮动的方法都在这了/" title="你想知道的清除浮动的方法都在这了">http://www.peanutyu.site/Css/你想知道的清除浮动的方法都在这了/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/Css/你想知道的清除浮动的方法都在这了/" aria-label="复制成功！"></i></span>
   </p>
