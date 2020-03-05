@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.peanutyu.site/"/>
-  <updated>2020-03-05T06:31:10.922Z</updated>
+  <updated>2020-03-05T06:40:03.946Z</updated>
   <id>http://www.peanutyu.site/</id>
   
   <author>
@@ -21,14 +21,11 @@
     <link href="http://www.peanutyu.site/uncategorized/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98%E7%9B%AE/"/>
     <id>http://www.peanutyu.site/uncategorized/记录一些基础面试题目/</id>
     <published>2020-03-04T14:12:04.000Z</published>
-    <updated>2020-03-05T06:31:10.922Z</updated>
+    <updated>2020-03-05T06:40:03.946Z</updated>
     
     <summary type="html">
     
-      
-      
-        &lt;h2 id=&quot;如何获取某个元素的CSS样式呢&quot;&gt;&lt;a href=&quot;#如何获取某个元素的CSS样式呢&quot; class=&quot;headerlink&quot; title=&quot;如何获取某个元素的CSS样式呢&quot;&gt;&lt;/a&gt;如何获取某个元素的CSS样式呢&lt;/h2&gt;&lt;figure class=&quot;highli
-      
+      &lt;h2 id=&quot;如何获取某个元素的CSS样式呢&quot;&gt;&lt;a href=&quot;#如何获取某个元素的CSS样式呢&quot; class=&quot;headerlink&quot; title=&quot;如何获取某个元素的CSS样式呢&quot;&gt;&lt;/a&gt;如何获取某个元素的CSS样式呢&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; ele = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementById(&lt;span class=&quot;string&quot;&gt;&#39;ele&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// IE兼容 ele.getCurrentStyle[&#39;attr&#39;]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ele.getCurrentStyle[&lt;span class=&quot;string&quot;&gt;&#39;width&#39;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// firefox、chrome&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.getComputedStyle(ele, &lt;span class=&quot;literal&quot;&gt;null&lt;/span&gt;) &lt;span class=&quot;comment&quot;&gt;// 第二个参数为伪类, result为style对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -312,9 +309,9 @@
       <category term="Weex" scheme="http://www.peanutyu.site/categories/Weex/"/>
     
     
-      <category term="Weex" scheme="http://www.peanutyu.site/tags/Weex/"/>
-    
       <category term="Vue" scheme="http://www.peanutyu.site/tags/Vue/"/>
+    
+      <category term="Weex" scheme="http://www.peanutyu.site/tags/Weex/"/>
     
   </entry>
   
