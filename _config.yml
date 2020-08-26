@@ -113,6 +113,6 @@ live2d:
 deploy:
   type: git
   repo: 
-    # server: git@47.96.186.116:/home/git/blog.git
+    server: git@47.96.186.116:/home/git/blog.git
     github: https://github.com/peanutYu/peanutYu.github.io.git
   branch: master
