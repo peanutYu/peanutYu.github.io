@@ -2,8 +2,8 @@
 title: 纯Css(Scroll Indicator)滚动指示器实现
 copyright: true
 date: 2019-08-05 19:11:52
-tags: css
-category: css
+tags: Css
+category: Css
 ---
 
 >Scroll Indicator称之为滚动指示器,是web页面中我们经常见到的一个效果。用户触发垂直方向上的滚动时，页面顶部会有一个类似进度条的效果，当内容滚动到页面最底部，则进度条填满页面的整个页面宽度。
@@ -24,7 +24,7 @@ Scroll Indicator：滚动指示器。通俗来说，就是当前可视区域距�
 2. 监听页面scroll事件，通过当前的scrollTop / scrollHeight * 100%, 即为进度条的百分比。
 
 代码如下
-```
+```javascript
 var $window = $(window);
 var domHeight = $(document).height();
 var winHeight = $window.height();
@@ -37,7 +37,7 @@ $window.on('scroll', function() {
 
 阮一峰老师es6官网的实现源码
 
-```
+```javascript
 (function() {
   var $w = $(window);
   var $prog2 = $('.progress-indicator-2');
@@ -63,7 +63,7 @@ $window.on('scroll', function() {
 # Css的实现方法
 
 Css的实现方法主要是运用线性渐变来实现这个功能。首先假设我们的页面被包裹在**body**内，并且**body**是可以滚动的，我们可以给它添加一个从左下角到右上角的线性渐变。
-```
+```css
 body {
   background-image: linear-gradient(to right top, #ffcc00 50%, #eee 50%);
   background-repeat: no-repeat;
@@ -73,7 +73,7 @@ body {
 <img width="70%" src="http://www.peanutyu.site/uploads/纯css滚动进度条实现/test1.gif">
 
 浅蓝色块的颜色变化已经可以展示出我们进度条的一些形状了。我们继续加上一个伪元素，把多余的部分遮住。加上之后的效果如下图：
-```
+```css
 body::after {
   content: "";
   position: fixed;
@@ -89,7 +89,7 @@ body::after {
 
 这里我们可以发现其实当页面滑到最底部的时候，我们的进度条并没有到达最底部。因为body的线性渐变高度设置了整个 body 的大小，我们调整一下渐变的高度：
 
-```
+```css
 body {
   background-image: linear-gradient(to right top, #ffcc00 50%, #eee 50%);
   background-repeat: no-repeat;
@@ -110,12 +110,12 @@ body {
 由于对角线性渐变不能写在body上，我们可以假设将他写在一个div上。[张鑫旭](https://www.zhangxinxu.com)大神给我们提供了一套更好的实现方案。
 
 1. 在<body>标签内插入指示器元素：
-```
+```html
 <div class="indicator"></div>
 ```
 
 2. 粘贴如下所示的CSS代码：
-```
+```css
 body {
   position: relative;
 }

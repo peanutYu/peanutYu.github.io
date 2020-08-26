@@ -1,8 +1,8 @@
 ---
 title: Git Commit 规范以及 emoji 列表
 date: 2019-04-10 16:19:42
-tags: [git,实战经验] 
-categories: git
+tags: [Git,实战经验] 
+categories: Git
 copyright: true
 # description: 
 ---

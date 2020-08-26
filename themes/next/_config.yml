@@ -141,7 +141,6 @@ social:
 
 social_icons:
   enable: true
-  Github: '',
   icons_only: false
   transition: false
 
@@ -389,7 +388,7 @@ valine:
   placeholder: ヾﾉ≧∀≦)o来啊，快活啊! # comment box placeholder
   avatar: wavatar # gravatar style
   guest_info: nick,mail,link # custom comment header
-  pageSize: 10 # pagination size
+  pageSize: 8 # pagination size
 
 
 # Support for youyan comments system.
