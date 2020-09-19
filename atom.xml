@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.peanutyu.site/"/>
-  <updated>2019-11-08T02:49:31.136Z</updated>
+  <updated>2020-09-19T05:21:36.315Z</updated>
   <id>http://www.peanutyu.site/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单元测试框架-karma</title>
+    <link href="http://www.peanutyu.site/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6-karma/"/>
+    <id>http://www.peanutyu.site/学习笔记/单元测试框架-karma/</id>
+    <published>2020-09-18T07:47:47.000Z</published>
+    <updated>2020-09-19T05:21:36.315Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;什么是karma&quot;&gt;&lt;a href=&quot;#什么是karma&quot; class=&quot;headerlink&quot; title=&quot;什么是karma&quot;&gt;&lt;/a&gt;什么是karma&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;karma是一个基于Node.js的JavaScript测试执行过程管理工具（Test Runner）。&lt;/strong&gt;换句话说，karma为测试框架准备宿主环境，可以让测试用例在真正的浏览器中运行。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://www.peanutyu.site/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="学习笔记" scheme="http://www.peanutyu.site/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>一次弄懂Event Loop</title>
@@ -133,7 +153,7 @@
     <link href="http://www.peanutyu.site/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%9B%9E%E8%BD%A6%E4%B9%8B%E5%90%8E%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/"/>
     <id>http://www.peanutyu.site/学习笔记/从输入URL回车之后发生了什么/</id>
     <published>2019-08-26T11:13:00.000Z</published>
-    <updated>2019-10-22T16:34:42.243Z</updated>
+    <updated>2020-09-19T03:48:38.591Z</updated>
     
     <summary type="html">
     
@@ -293,9 +313,9 @@
       <category term="Weex" scheme="http://www.peanutyu.site/categories/Weex/"/>
     
     
-      <category term="Vue" scheme="http://www.peanutyu.site/tags/Vue/"/>
-    
       <category term="Weex" scheme="http://www.peanutyu.site/tags/Weex/"/>
+    
+      <category term="Vue" scheme="http://www.peanutyu.site/tags/Vue/"/>
     
   </entry>
   
