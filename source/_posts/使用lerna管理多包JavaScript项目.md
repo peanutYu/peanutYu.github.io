@@ -121,7 +121,11 @@ lerna exec -- < command > [..args] # runs the command in all packages
 lerna exec -- rm -rf ./node_modules
 lerna exec --scope cli-util -- ls -la
 ```
-
+## lerna import
+导入指定git仓库的包作为lerna管理的包
+```
+lerna import <path-to-external-repository>
+```
 ## lerna link
 项目包建立软链，类似npm link
 
@@ -134,6 +138,9 @@ lerna exec --scope cli-util -- ls -la
 原理：
 需要先git add,git commit 提交。
 然后内部会运行git diff --name-only v版本号 ，搜集改动的包，就是下次要发布的。
+
+## lerna diff
+显示自上次relase tag以来有修改的包的差异， 执行 git diff
 
 ## lerna publish
 会打tag，上传git,上传npm。
