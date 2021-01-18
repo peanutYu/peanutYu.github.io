@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="学习笔记,JavaScript,npm,">
 
 
 
@@ -88,16 +88,18 @@
 
 
 
-<meta name="description" content="personal blog, web, fecomponent, The front-end development">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Peanut&#39;s blog">
-<meta property="og:url" content="http://www.peanutyu.site/archives/2019/09/index.html">
+<meta name="description" content="最近由于业务架构的调整我从公司业务前端组调到中台前端组，今年开始拥抱变化在新的部门可以取得更好的结果;言归正传由于我们这边中台架构使用的是微应用架构体系，基础代码都是从qiankun(蚂蚁金服微应用体系架构)源码fork出来跟着我们自己的业务来进行一些定制化改造的,随着库代码量慢慢增加之后，单个包的管理就显得比较麻烦，为了方便库代码的共享，需要将代码库拆分成独立的包，比如qiankun、qian">
+<meta name="keywords" content="学习笔记,JavaScript,npm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用lerna管理多包JavaScript项目">
+<meta property="og:url" content="http://www.peanutyu.site/学习笔记/使用lerna管理多包JavaScript项目/index.html">
 <meta property="og:site_name" content="Peanut&#39;s blog">
-<meta property="og:description" content="personal blog, web, fecomponent, The front-end development">
+<meta property="og:description" content="最近由于业务架构的调整我从公司业务前端组调到中台前端组，今年开始拥抱变化在新的部门可以取得更好的结果;言归正传由于我们这边中台架构使用的是微应用架构体系，基础代码都是从qiankun(蚂蚁金服微应用体系架构)源码fork出来跟着我们自己的业务来进行一些定制化改造的,随着库代码量慢慢增加之后，单个包的管理就显得比较麻烦，为了方便库代码的共享，需要将代码库拆分成独立的包，比如qiankun、qian">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-18T06:58:05.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Peanut&#39;s blog">
-<meta name="twitter:description" content="personal blog, web, fecomponent, The front-end development">
+<meta name="twitter:title" content="使用lerna管理多包JavaScript项目">
+<meta name="twitter:description" content="最近由于业务架构的调整我从公司业务前端组调到中台前端组，今年开始拥抱变化在新的部门可以取得更好的结果;言归正传由于我们这边中台架构使用的是微应用架构体系，基础代码都是从qiankun(蚂蚁金服微应用体系架构)源码fork出来跟着我们自己的业务来进行一些定制化改造的,随着库代码量慢慢增加之后，单个包的管理就显得比较麻烦，为了方便库代码的共享，需要将代码库拆分成独立的包，比如qiankun、qian">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://www.peanutyu.site/archives/2019/09/">
+  <link rel="canonical" href="http://www.peanutyu.site/学习笔记/使用lerna管理多包JavaScript项目/">
 
 
 
 
 
-  <title>归档 | Peanut's blog</title>
+  <title>使用lerna管理多包JavaScript项目 | Peanut's blog</title>
   
 
 
@@ -151,7 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="indicator"></div>
     <div class="headband"></div>
     <a class="github-tags" style="position:absolute;top:0;right:0;border:0;z-index:100;" href="https://github.com/peanutYu"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
@@ -289,72 +291,312 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/学习笔记/使用lerna管理多包JavaScript项目/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Peanut">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peanut's blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/Css/深入浅出BFC/" itemprop="url">
-              
-                <span itemprop="name">深入浅出BFC</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">使用lerna管理多包JavaScript项目</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-06T16:36:39+08:00" content="2019-09-06">
-          09-06
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-07T17:04:50+08:00">
+                2021-01-07
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/学习笔记/使用lerna管理多包JavaScript项目/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/学习笔记/使用lerna管理多包JavaScript项目/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/学习笔记/使用lerna管理多包JavaScript项目/" class="leancloud_visitors" data-flag-title="使用lerna管理多包JavaScript项目">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <blockquote>
+<p>最近由于业务架构的调整我从公司业务前端组调到中台前端组，今年开始拥抱变化在新的部门可以取得更好的结果;言归正传由于我们这边中台架构使用的是微应用架构体系，基础代码都是从<a href="https://github.com/umijs/qiankun" target="_blank" rel="noopener">qiankun</a>(<strong>蚂蚁金服微应用体系架构</strong>)源码fork出来跟着我们自己的业务来进行一些定制化改造的,随着库代码量慢慢增加之后，单个包的管理就显得比较麻烦，为了方便库代码的共享，需要将代码库拆分成独立的包，比如qiankun、qiankun-router、qiankun-config、qiankun-micro-app、qiankun-micro-main(<strong>这里不暴露公司信息，统一以qiankun代替</strong>)等包模块，于是我们就需要<a href="https://github.com/lerna/lerna" target="_blank" rel="noopener">lerna</a>来优化以及管理多包项目。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="lerna入门"><a href="#lerna入门" class="headerlink" title="lerna入门"></a>lerna入门</h1><p>首先为了使用lerna，我们需要去全局安装lerna</p>
+<blockquote>
+<p>npm i -g lerna</p>
+</blockquote>
+<p>或</p>
+<blockquote>
+<p>yarn global add lerna</p>
+</blockquote>
+<p>lerna安装完之后，我们需要去创建一个简单的代码仓库并进入其中</p>
+<blockquote>
+<p>mkdir lerna-repo &amp;&amp; cd lerna-repo</p>
+</blockquote>
+<p>进入仓库后我们将该仓库转变为一个lerna仓库</p>
+<blockquote>
+<p>lerna init</p>
+</blockquote>
+<p>现在你的代码仓库目前结构应该是这样的</p>
+<blockquote>
+<p>lerna-repo<br>├── lerna.json<br>├── package.json<br>└── packages</p>
+</blockquote>
+<p>我们看到这个时候lerna在我们的项目仓库内自动生成packages文件夹和lerna.json,并在package.json文件中的devDependencies字段中生成lerna对应的依赖信息</p>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><h2 id="lerna-init"><a href="#lerna-init" class="headerlink" title="lerna init"></a>lerna init</h2><p><strong>lerna</strong>管理项目的时候可以选择两种模式。默认的为固定模式（Fixed mode），当使用<strong>lerna init</strong>命令初始化项目时，就默认为固定模式，也可以手动输入命令<strong>lerna init –independent/-i</strong>来设置。固定模式中，packages下的所有包共用一个版本号，会自动将所有的包绑定到一个版本号上。所以任意一个包发生了更新，这个共用的版本号就会发生改变。而独立模式允许每一个包有自己独立的版本号，在使用lerna publish命令时，可以为每个包单独制定具体的操作，同时可以只更新某一个包的版本号。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"packages"</span>: [</span><br><span class="line">    <span class="string">"packages/*"</span></span><br><span class="line">  ],</span><br><span class="line">  // 该版本号也就是lerna.json中的version字段</span><br><span class="line">  // 独立模式下为"version": "independent"</span><br><span class="line">  "version": "0.0.0"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="lerna-create-loc"><a href="#lerna-create-loc" class="headerlink" title="lerna create  [loc]"></a>lerna create <name> [loc]</name></h2><blockquote>
+<p>创建一个由lerna管理的包，name为包的名称，loc为可选内容表示包的位置。</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 根目录的package.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"packages"</span>: [</span><br><span class="line">    <span class="string">"packages/*"</span>,</span><br><span class="line">    <span class="string">"packages/peanutYu/*"</span>,</span><br><span class="line">  ],</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 创建一个包cli默认放在packages[0]所指位置</span><br><span class="line">lerna create cli</span><br><span class="line"></span><br><span class="line">// 创建一个包cli-util指定放在packages/peanutYu文件夹下，必须先在packages里先写入packages/peanutYu/*</span><br><span class="line">lerna create cli-util packages/peanutYu</span><br></pre></td></tr></table></figure>
+<p>这里的话packages内的数组调换位置也是可以的，但是命令不额外增加loc的话，安装的位置默认就会使packages数组的第一个目录内。</p>
+<h2 id="lerna-add-version-–dev-–exact"><a href="#lerna-add-version-–dev-–exact" class="headerlink" title="lerna add [@version] [–dev] [–exact]"></a>lerna add <package>[@version] [–dev] [–exact]</package></h2><blockquote>
+<p>新增本地或远程的package作为当前项目内包的依赖</p>
+</blockquote>
+<ul>
+<li>–dev devDependencies 替代 dependencies</li>
+<li>–exact 安装准确版本，就是安装的包版本前面不带^</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 为所有 package 添加babel模块</span><br><span class="line">lerna add babel</span><br><span class="line">// 为cli-util 添加lodash模块</span><br><span class="line">lerna add lodash --scope cli-util</span><br><span class="line">// 新增模块内部之间的依赖</span><br><span class="line">lerna add cli-util --scope cli</span><br></pre></td></tr></table></figure>
+<h2 id="lerna-bootstrap"><a href="#lerna-bootstrap" class="headerlink" title="lerna bootstrap"></a>lerna bootstrap</h2><p>默认是使用npm install，我们也可以手动指定，例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lerna bootstrap --npm-client=yarn</span><br></pre></td></tr></table></figure></p>
+<p>也可以在lerna.json内直接修改配置<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"packages"</span>: [</span><br><span class="line">    <span class="string">"packages/*"</span>,</span><br><span class="line">    <span class="string">"packages/peanutYu/*"</span>,</span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"npmClient"</span>: <span class="string">"yarn"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>一样可以指定使用yarn来安装我们每个包所需要的依赖。</p>
+<h2 id="lerna-run"><a href="#lerna-run" class="headerlink" title="lerna run"></a>lerna run</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lerna run &lt; script &gt; -- [..args] # 运行所有包里面的有这个script的命令</span><br><span class="line">lerna run --scope cli-util test</span><br></pre></td></tr></table></figure>
+<h2 id="lerna-exec"><a href="#lerna-exec" class="headerlink" title="lerna exec"></a>lerna exec</h2><p>在每个包中运行我们的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lerna exec -- &lt; command &gt; [..args] # runs the command in all packages</span><br><span class="line">lerna exec -- rm -rf ./node_modules</span><br><span class="line">lerna exec --scope cli-util -- ls -la</span><br></pre></td></tr></table></figure>
+<h2 id="lerna-link"><a href="#lerna-link" class="headerlink" title="lerna link"></a>lerna link</h2><p>项目包建立软链，类似npm link</p>
+<h2 id="lerna-clean"><a href="#lerna-clean" class="headerlink" title="lerna clean"></a>lerna clean</h2><p>删除所有包的node_modules目录</p>
+<h2 id="lerna-changed"><a href="#lerna-changed" class="headerlink" title="lerna changed"></a>lerna changed</h2><p>列出下次发版lerna publish 要更新的包。</p>
+<p>原理：<br>需要先git add,git commit 提交。<br>然后内部会运行git diff –name-only v版本号 ，搜集改动的包，就是下次要发布的。</p>
+<h2 id="lerna-publish"><a href="#lerna-publish" class="headerlink" title="lerna publish"></a>lerna publish</h2><p>会打tag，上传git,上传npm。<br>如果你的包名是带scope的例如：”name”: “@gp0320/gpwebpack”,<br>那需要在packages.json添加</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"publishConfig": &#123;</span><br><span class="line">  "access": "public"</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+      
     </div>
+    
+    
+    
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>使用lerna管理多包JavaScript项目</p>
+  <p><span>文章作者:</span>Peanut</p>
+  <p><span>发布时间:</span>2021年01月07日 - 17:04:50</p>
+  <!-- <p><span>最后更新:</span>2021年01月18日 - 14:58:05</p> -->
+  <p><span>原始链接:</span><a href="/学习笔记/使用lerna管理多包JavaScript项目/" title="使用lerna管理多包JavaScript项目">http://www.peanutyu.site/学习笔记/使用lerna管理多包JavaScript项目/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/学习笔记/使用lerna管理多包JavaScript项目/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/npm/" rel="tag"># npm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/学习笔记/使用karma+mocha构建web测试环境/" rel="next" title="使用karma+mocha构建web测试环境">
+                <i class="fa fa-chevron-left"></i> 使用karma+mocha构建web测试环境
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -362,6 +604,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -382,8 +631,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -400,7 +658,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -422,7 +680,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -481,6 +739,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lerna入门"><span class="nav-number">1.</span> <span class="nav-text">lerna入门</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令"><span class="nav-number">2.</span> <span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna-init"><span class="nav-number">2.1.</span> <span class="nav-text">lerna init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna-create-loc"><span class="nav-number">2.2.</span> <span class="nav-text">lerna create  [loc]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna-add-version-–dev-–exact"><span class="nav-number">2.3.</span> <span class="nav-text">lerna add [@version] [–dev] [–exact]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna-bootstrap"><span class="nav-number">2.4.</span> <span class="nav-text">lerna bootstrap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna-run"><span class="nav-number">2.5.</span> <span class="nav-text">lerna run</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna-exec"><span class="nav-number">2.6.</span> <span class="nav-text">lerna exec</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna-link"><span class="nav-number">2.7.</span> <span class="nav-text">lerna link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna-clean"><span class="nav-number">2.8.</span> <span class="nav-text">lerna clean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna-changed"><span class="nav-number">2.9.</span> <span class="nav-text">lerna changed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lerna-publish"><span class="nav-number">2.10.</span> <span class="nav-text">lerna publish</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -498,7 +772,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -626,6 +900,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

@@ -91,8 +91,8 @@
 <meta name="description" content="什么是karmakarma是一个基于Node.js的JavaScript测试执行过程管理工具（Test Runner）。换句话说，karma为测试框架准备宿主环境，可以让测试用例在真正的浏览器中运行。">
 <meta name="keywords" content="学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单元测试框架-karma">
-<meta property="og:url" content="http://www.peanutyu.site/学习笔记/单元测试框架-karma/index.html">
+<meta property="og:title" content="使用karma+mocha构建web测试环境">
+<meta property="og:url" content="http://www.peanutyu.site/学习笔记/使用karma+mocha构建web测试环境/index.html">
 <meta property="og:site_name" content="Peanut&#39;s blog">
 <meta property="og:description" content="什么是karmakarma是一个基于Node.js的JavaScript测试执行过程管理工具（Test Runner）。换句话说，karma为测试框架准备宿主环境，可以让测试用例在真正的浏览器中运行。">
 <meta property="og:locale" content="zh-Hans">
@@ -105,9 +105,9 @@
 <meta property="og:image" content="http://www.peanutyu.site/uploads/单元测试框架-karma/reporter-webpack.jpg">
 <meta property="og:image" content="http://www.peanutyu.site/uploads/单元测试框架-karma/reporter-istanbul.jpg">
 <meta property="og:image" content="http://www.peanutyu.site/uploads/单元测试框架-karma/reporter-finally.jpg">
-<meta property="og:updated_time" content="2020-09-19T05:21:36.315Z">
+<meta property="og:updated_time" content="2020-09-19T05:39:26.504Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单元测试框架-karma">
+<meta name="twitter:title" content="使用karma+mocha构建web测试环境">
 <meta name="twitter:description" content="什么是karmakarma是一个基于Node.js的JavaScript测试执行过程管理工具（Test Runner）。换句话说，karma为测试框架准备宿主环境，可以让测试用例在真正的浏览器中运行。">
 <meta name="twitter:image" content="http://www.peanutyu.site/uploads/单元测试框架-karma/tips.jpg">
 
@@ -139,13 +139,13 @@
 
 
 
-  <link rel="canonical" href="http://www.peanutyu.site/学习笔记/单元测试框架-karma/">
+  <link rel="canonical" href="http://www.peanutyu.site/学习笔记/使用karma+mocha构建web测试环境/">
 
 
 
 
 
-  <title>单元测试框架-karma | Peanut's blog</title>
+  <title>使用karma+mocha构建web测试环境 | Peanut's blog</title>
   
 
 
@@ -315,7 +315,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/学习笔记/单元测试框架-karma/">
+    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/学习笔记/使用karma+mocha构建web测试环境/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Peanut">
@@ -332,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">单元测试框架-karma</h1>
+          <h1 class="post-title" itemprop="name headline">使用karma+mocha构建web测试环境</h1>
         
 
         <div class="post-meta">
@@ -385,8 +385,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/学习笔记/单元测试框架-karma/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/学习笔记/单元测试框架-karma/" itemprop="commentCount"></span>
+                <a href="/学习笔记/使用karma+mocha构建web测试环境/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/学习笔记/使用karma+mocha构建web测试环境/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -394,7 +394,7 @@
 
           
           
-             <span id="/学习笔记/单元测试框架-karma/" class="leancloud_visitors" data-flag-title="单元测试框架-karma">
+             <span id="/学习笔记/使用karma+mocha构建web测试环境/" class="leancloud_visitors" data-flag-title="使用karma+mocha构建web测试环境">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -540,12 +540,12 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
 
-  <p><span>本文标题:</span>单元测试框架-karma</p>
+  <p><span>本文标题:</span>使用karma+mocha构建web测试环境</p>
   <p><span>文章作者:</span>Peanut</p>
   <p><span>发布时间:</span>2020年09月18日 - 15:47:47</p>
-  <!-- <p><span>最后更新:</span>2020年09月19日 - 13:21:36</p> -->
-  <p><span>原始链接:</span><a href="/学习笔记/单元测试框架-karma/" title="单元测试框架-karma">http://www.peanutyu.site/学习笔记/单元测试框架-karma/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/学习笔记/单元测试框架-karma/" aria-label="复制成功！"></i></span>
+  <!-- <p><span>最后更新:</span>2020年09月19日 - 13:39:26</p> -->
+  <p><span>原始链接:</span><a href="/学习笔记/使用karma+mocha构建web测试环境/" title="使用karma+mocha构建web测试环境">http://www.peanutyu.site/学习笔记/使用karma+mocha构建web测试环境/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/学习笔记/使用karma+mocha构建web测试环境/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -599,6 +599,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/学习笔记/使用lerna管理多包JavaScript项目/" rel="prev" title="使用lerna管理多包JavaScript项目">
+                使用lerna管理多包JavaScript项目 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -680,7 +684,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -702,7 +706,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -794,7 +798,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
