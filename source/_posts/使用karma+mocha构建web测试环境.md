@@ -1,5 +1,5 @@
 ---
-title: 单元测试框架-karma
+title: 使用karma+mocha构建web测试环境
 copyright: true
 date: 2020-09-18 15:47:47
 tags: 学习笔记
