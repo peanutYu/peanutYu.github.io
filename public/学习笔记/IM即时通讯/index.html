@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习笔记,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Peanut's blog" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="即时通讯（Instant Messaging，IM）即实时通信系统，允许两人或多人使用网络实时的传递文字、图片、语音来交流。比如我们每天使用的微信就属于IM系统">
+<meta name="keywords" content="学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IM 即时通讯">
+<meta property="og:url" content="http://www.peanutyu.site/学习笔记/IM即时通讯/index.html">
+<meta property="og:site_name" content="Peanut&#39;s blog">
+<meta property="og:description" content="即时通讯（Instant Messaging，IM）即实时通信系统，允许两人或多人使用网络实时的传递文字、图片、语音来交流。比如我们每天使用的微信就属于IM系统">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.peanutyu.site/uploads/IM即时通讯/process.jpg">
+<meta property="og:updated_time" content="2022-04-07T10:24:32.574Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IM 即时通讯">
+<meta name="twitter:description" content="即时通讯（Instant Messaging，IM）即实时通信系统，允许两人或多人使用网络实时的传递文字、图片、语音来交流。比如我们每天使用的微信就属于IM系统">
+<meta name="twitter:image" content="http://www.peanutyu.site/uploads/IM即时通讯/process.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.peanutyu.site/学习笔记/IM即时通讯/">
+
+
+
+
+
+  <title>IM 即时通讯 | Peanut's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="indicator"></div>
+    <div class="headband"></div>
+    <a class="github-tags" style="position:absolute;top:0;right:0;border:0;z-index:100;" href="https://github.com/peanutYu"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_gray_6d6d6d.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Peanut's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.peanutyu.site/学习笔记/IM即时通讯/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Peanut">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Peanut's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">IM 即时通讯</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-04-06T15:56:37+08:00">
+                2022-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/学习笔记/IM即时通讯/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/学习笔记/IM即时通讯/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/学习笔记/IM即时通讯/" class="leancloud_visitors" data-flag-title="IM 即时通讯">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>即时通讯（Instant Messaging，IM）即实时通信系统，允许两人或多人使用网络实时的传递文字、图片、语音来交流。比如我们每天使用的微信就属于IM系统</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="IM-通信相关的业务场景"><a href="#IM-通信相关的业务场景" class="headerlink" title="IM 通信相关的业务场景"></a>IM 通信相关的业务场景</h1><ol>
+<li>IM 即时通讯（SaaS 中台客服端）</li>
+<li>Live 直播聊天室（直播）</li>
+<li>CS 在线客服（客服页面级）</li>
+</ol>
+<blockquote>
+<p>IM 不同业务场景通信的差异</p>
+</blockquote>
+<p>IM 聊天场景是以人为中心的通信系统。强调人与人之间的关系，因此才有好友与群的概念，这类系统如果用户量与用户活跃度不错的话，通常每天可以产生百万条消息，如果是群的话，消息还会扩散</p>
+<p>Live 直播场景是以群为中心的通信系统，通常称作聊天室。在IM场景中一个群的人数上限通常是 500，达到 1k 就非常高了，这是它的业务特点导致的。而在一个聊天室中，你需要在设计时考虑到一个房间可能有 10w+ 的在线用户，不过在聊天室场景中用户不可能同时在多个 room 中</p>
+<p>CS 客服场景是以会话为中心的通信系统。也就是沟通都是以会话为单位，在这个会话中，你可能首先与机器人扯了一会皮，然后与售前妹子沟通了一会，发现问题不对，被转给一个技术支持小哥了。可以看出系统的核心逻辑是基于会话的生命周期来设计，而聊天中的人与 AI 则是被调度的对象</p>
+<h1 id="实现-IM-通信的几种方式"><a href="#实现-IM-通信的几种方式" class="headerlink" title="实现 IM 通信的几种方式"></a>实现 IM 通信的几种方式</h1><ol>
+<li>WebSocket</li>
+<li>FlashSocket</li>
+<li>http轮询</li>
+</ol>
+<p>其中 1 和 2 是用 Tcp 长连接实现的，其消息的实时性很好理解，但这两种方案都存在一些局限性，不通用（服务器长期维护长连接需要一定的成本，各个浏览器支持程度不一）。方案 3 才算是 webim 实现消息推送的“正统”方案，用 http 短连接轮询的方式实现“伪长连接”</p>
+<h1 id="通过-WebSocket-呈现一个简单的-IM-通信过程"><a href="#通过-WebSocket-呈现一个简单的-IM-通信过程" class="headerlink" title="通过 WebSocket 呈现一个简单的 IM 通信过程"></a>通过 WebSocket 呈现一个简单的 IM 通信过程</h1><p><a href="https://www.eggjs.org/zh-CN/tutorials/socketio#%E5%AE%89%E8%A3%85-egg-socketio" target="_blank" rel="noopener">egg Socket.io</a><br><a href="https://socket.io/get-started/chat" target="_blank" rel="noopener">Socket.io</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.js</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">const</span> server = http.createServer(app);</span><br><span class="line"><span class="keyword">const</span> &#123; Server &#125; = <span class="built_in">require</span>(<span class="string">"socket.io"</span>);</span><br><span class="line"><span class="keyword">const</span> io = <span class="keyword">new</span> Server(server);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/huasheng'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  res.sendFile(__dirname + <span class="string">'/index.html'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/baiyang'</span>, (req, res) =&gt; &#123;</span><br><span class="line">  res.sendFile(__dirname + <span class="string">'/index.html'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">io.on(<span class="string">'connection'</span>, (socket) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'a user connected'</span>);</span><br><span class="line">  socket.broadcast.emit(<span class="string">'chat message'</span>, <span class="string">'有人进入了聊天室'</span>);</span><br><span class="line"></span><br><span class="line">  socket.on(<span class="string">'chat message'</span>, (msg) =&gt; &#123;</span><br><span class="line">    io.emit(<span class="string">'chat message'</span>, msg);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  socket.on(<span class="string">'disconnect'</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'user disconnected'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'listening on *:3000'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Socket.IO chat<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">      <span class="selector-tag">body</span> &#123; <span class="attribute">margin</span>: <span class="number">0</span>; <span class="attribute">padding-bottom</span>: <span class="number">3rem</span>; <span class="attribute">font-family</span>: -apple-system, BlinkMacSystemFont, <span class="string">"Segoe UI"</span>, Roboto, Helvetica, Arial, sans-serif; &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">      <span class="selector-id">#form</span> &#123; <span class="attribute">background</span>: <span class="built_in">rgba</span>(0, 0, 0, 0.15); <span class="attribute">padding</span>: <span class="number">0.25rem</span>; <span class="attribute">position</span>: fixed; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">display</span>: flex; <span class="attribute">height</span>: <span class="number">3rem</span>; <span class="attribute">box-sizing</span>: border-box; <span class="attribute">backdrop-filter</span>: <span class="built_in">blur</span>(10px); &#125;</span></span><br><span class="line"><span class="css">      <span class="selector-id">#input</span> &#123; <span class="attribute">border</span>: none; <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">1rem</span>; <span class="attribute">flex-grow</span>: <span class="number">1</span>; <span class="attribute">border-radius</span>: <span class="number">2rem</span>; <span class="attribute">margin</span>: <span class="number">0.25rem</span>; &#125;</span></span><br><span class="line"><span class="css">      <span class="selector-id">#input</span><span class="selector-pseudo">:focus</span> &#123; <span class="attribute">outline</span>: none; &#125;</span></span><br><span class="line"><span class="css">      <span class="selector-id">#form</span> &gt; <span class="selector-tag">button</span> &#123; <span class="attribute">background</span>: <span class="number">#333</span>; <span class="attribute">border</span>: none; <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">1rem</span>; <span class="attribute">margin</span>: <span class="number">0.25rem</span>; <span class="attribute">border-radius</span>: <span class="number">3px</span>; <span class="attribute">outline</span>: none; <span class="attribute">color</span>: <span class="number">#fff</span>; &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css">      <span class="selector-id">#messages</span> &#123; <span class="attribute">list-style-type</span>: none; <span class="attribute">margin</span>: <span class="number">0</span>; <span class="attribute">padding</span>: <span class="number">0</span>; &#125;</span></span><br><span class="line"><span class="css">      <span class="selector-id">#messages</span> &gt; <span class="selector-tag">li</span> &#123; <span class="attribute">padding</span>: <span class="number">0.5rem</span> <span class="number">1rem</span>; &#125;</span></span><br><span class="line"><span class="css">      <span class="selector-id">#messages</span> &gt; <span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(odd)</span> &#123; <span class="attribute">background</span>: <span class="number">#efefef</span>; &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"messages"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"form"</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"input"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span> /&gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>Send<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/socket.io/socket.io.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> socket = io();</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> enumsPeople = &#123;</span></span><br><span class="line"><span class="javascript">      <span class="string">'/huasheng'</span>: <span class="string">'花生'</span>,</span></span><br><span class="line"><span class="javascript">      <span class="string">'/baiyang'</span>: <span class="string">'白杨'</span>,</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> messages = <span class="built_in">document</span>.getElementById(<span class="string">'messages'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> form = <span class="built_in">document</span>.getElementById(<span class="string">'form'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> input = <span class="built_in">document</span>.getElementById(<span class="string">'input'</span>);</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    form.addEventListener(<span class="string">'submit'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">      e.preventDefault();</span></span><br><span class="line"><span class="javascript">      <span class="keyword">if</span> (input.value) &#123;</span></span><br><span class="line"><span class="javascript">        socket.emit(<span class="string">'chat message'</span>, <span class="string">`<span class="subst">$&#123;enumsPeople[location.pathname]&#125;</span>: <span class="subst">$&#123;input.value&#125;</span>`</span>);</span></span><br><span class="line"><span class="javascript">        input.value = <span class="string">''</span>;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    socket.on(<span class="string">'chat message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">msg</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">var</span> item = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</span></span><br><span class="line"><span class="undefined">      item.textContent = msg;</span></span><br><span class="line"><span class="undefined">      messages.appendChild(item);</span></span><br><span class="line"><span class="javascript">      <span class="built_in">window</span>.scrollTo(<span class="number">0</span>, <span class="built_in">document</span>.body.scrollHeight);</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="IM-在-SaaS-中台的应用"><a href="#IM-在-SaaS-中台的应用" class="headerlink" title="IM 在 SaaS 中台的应用"></a>IM 在 SaaS 中台的应用</h1><p>SaaS 中台通过使用腾讯云IM作为通信中间件来与服务端交互完成涂色或逆向交互与微信消息的打通，为完成前后端的业务数据传输需要在IM通信中间件协议上定制应用协议<br><img src="/uploads/IM即时通讯/process.jpg" alt="流程图"></p>
+<h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p><a href="https://cloud.tencent.com/document/product/269" target="_blank" rel="noopener">即时通信 IM</a><br><a href="https://web.sdk.qcloud.com/im/doc/zh-cn/SDK.html" target="_blank" rel="noopener">TIM SDK文档</a><br><a href="https://bigdata.taobao.com/api.htm?docId=24164&amp;docType=2" target="_blank" rel="noopener">阿里百川</a></p>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> TIM <span class="keyword">from</span> <span class="string">"tim-js-sdk"</span>;</span><br><span class="line"><span class="keyword">import</span> COS <span class="keyword">from</span> <span class="string">"cos-js-sdk-v5"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> SDK_READY = TIM.EVENT.SDK_READY;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Communication</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 必须参数注入</span></span><br><span class="line">  inject(communicationInfo = &#123;&#125;) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; sdkAppID, userID, userSig &#125; = communicationInfo;</span><br><span class="line">    <span class="keyword">if</span> (</span><br><span class="line">      utils.isNull(sdkAppID) ||</span><br><span class="line">      utils.isNull(userID) ||</span><br><span class="line">      utils.isNull(userSig)</span><br><span class="line">    ) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"sdkAppID、userId、userSign 为必须值"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.sdkAppID = sdkAppID;</span><br><span class="line">    <span class="keyword">this</span>.userID = userID;</span><br><span class="line">    <span class="keyword">this</span>.userSig = userSig;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 创建实例</span></span><br><span class="line">  create() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.instance) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.instance = TIM.create(&#123; <span class="attr">SDKAppID</span>: <span class="keyword">this</span>.sdkAppID &#125;);</span><br><span class="line">    <span class="keyword">this</span>.instance.registerPlugin(&#123; <span class="string">"cos-wx-sdk"</span>: COS &#125;);</span><br><span class="line">    <span class="keyword">this</span>.instance.setLogLevel(process.env.NODE_ENV === <span class="string">"development"</span> ? <span class="number">0</span> : <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 登录账号</span></span><br><span class="line">  <span class="keyword">async</span> login() &#123;</span><br><span class="line">    <span class="comment">// await this.instance.logout();</span></span><br><span class="line">    <span class="keyword">const</span> &#123; userID, userSig &#125; = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">this</span>.instance.login(&#123;</span><br><span class="line">      userID,</span><br><span class="line">      userSig</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 登出账号</span></span><br><span class="line">  <span class="keyword">async</span> logout() &#123;</span><br><span class="line">    <span class="keyword">this</span>.instance.logout();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> destory() &#123;</span><br><span class="line">    <span class="keyword">await</span> <span class="keyword">this</span>.logout();</span><br><span class="line">    <span class="keyword">this</span>.instance = <span class="literal">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 接收消息</span></span><br><span class="line">  consuIMMessage() &#123;</span><br><span class="line">    <span class="keyword">this</span>.instance.on(TIM.EVENT.MESSAGE_RECEIVED, <span class="keyword">this</span>.onMessageReceived, <span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 取消接受消息</span></span><br><span class="line">  cancelConsuIMMessage() &#123;</span><br><span class="line">    <span class="keyword">this</span>.instance.off(TIM.EVENT.MESSAGE_RECEIVED, <span class="keyword">this</span>.onMessageReceived, <span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 消息接受处理</span></span><br><span class="line">  onMessageReceived(event) &#123;</span><br><span class="line">    <span class="keyword">if</span> (event.name === <span class="string">"onMessageReceived"</span> &amp;&amp; event.data) &#123;</span><br><span class="line">      <span class="keyword">const</span> messageListFromIM = event.data;</span><br><span class="line">      messageListFromIM.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">        item._elements.forEach(<span class="function"><span class="params">jtem</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.parseImMessage(jtem?.content?.data);</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 解析消息</span></span><br><span class="line">  parseImMessage(messageString) &#123;</span><br><span class="line">    <span class="keyword">if</span> (messageString) &#123;</span><br><span class="line">      <span class="keyword">const</span> messageData = <span class="built_in">JSON</span>.parse(messageString);</span><br><span class="line">      <span class="keyword">const</span> &#123; protocol, protocolContent &#125; = messageData;</span><br><span class="line">      <span class="keyword">switch</span> (protocol) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"chat_msg"</span>:</span><br><span class="line">          <span class="keyword">this</span>.chatMessage(protocolContent);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"send_callback"</span>:</span><br><span class="line">          <span class="keyword">this</span>.sendCallback(protocolContent);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"recall_msg_callback"</span>:</span><br><span class="line">          <span class="keyword">this</span>.recallMsgCallback(protocolContent)</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"chat_error"</span>:</span><br><span class="line">          <span class="keyword">this</span>.chatError(protocolContent);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"miniprogram_cover_url_callback"</span>:</span><br><span class="line">          <span class="keyword">this</span>.miniprogramCallback(protocolContent);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"external_apply"</span>:</span><br><span class="line">          <span class="keyword">this</span>.externalApply(protocolContent);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 聊天消息</span></span><br><span class="line">  chatMessage(messageInfo) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 发送消息回调</span></span><br><span class="line">  sendCallback(messageInfo) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 撤回消息回调</span></span><br><span class="line">  recallMsgCallback(messageInfo) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 退出了群聊</span></span><br><span class="line">  chatError(messageInfo) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 小程序异步获取file体回调</span></span><br><span class="line">  miniprogramCallback(messageInfo) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 好友申请异步获取申请状态</span></span><br><span class="line">  externalApply(messageInfo) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="built_in">Reflect</span>.construct(Communication, []);</span><br></pre></td></tr></table></figure>
+<h2 id="IM-消息类型"><a href="#IM-消息类型" class="headerlink" title="IM 消息类型"></a>IM 消息类型</h2><table>
+<thead>
+<tr>
+<th>企微消息类型</th>
+<th>前端解析消息值</th>
+<th>是否支持</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>聊天消息</td>
+<td>chat_msg</td>
+<td>是</td>
+</tr>
+<tr>
+<td>发送消息回调</td>
+<td>send_callback</td>
+<td>是</td>
+</tr>
+<tr>
+<td>撤回消息回调</td>
+<td>recall_msg_callback</td>
+<td>是</td>
+</tr>
+<tr>
+<td>退群消息</td>
+<td>chat_error</td>
+<td>是</td>
+</tr>
+<tr>
+<td>异步获取小程序fileCode回调</td>
+<td>miniprogram_cover_url_callback</td>
+<td>是</td>
+</tr>
+<tr>
+<td>异步获取好友申请状态</td>
+<td>external_apply</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+<h2 id="IM-企微消息类型"><a href="#IM-企微消息类型" class="headerlink" title="IM 企微消息类型"></a>IM 企微消息类型</h2><table>
+<thead>
+<tr>
+<th>企微消息类型</th>
+<th>前端解析消息值</th>
+<th>是否支持</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>系统消息</td>
+<td>system</td>
+<td>是</td>
+</tr>
+<tr>
+<td>文本消息</td>
+<td>text</td>
+<td>是</td>
+</tr>
+<tr>
+<td>图片消息</td>
+<td>image</td>
+<td>是</td>
+</tr>
+<tr>
+<td>语音消息</td>
+<td>voice</td>
+<td>是</td>
+</tr>
+<tr>
+<td>视频消息</td>
+<td>video</td>
+<td>是</td>
+</tr>
+<tr>
+<td>图文链接</td>
+<td>image_text</td>
+<td>是</td>
+</tr>
+<tr>
+<td>文件消息</td>
+<td>file</td>
+<td>是</td>
+</tr>
+<tr>
+<td>小程序消息</td>
+<td>miniprogram</td>
+<td>是</td>
+</tr>
+<tr>
+<td>好友名片</td>
+<td>friend</td>
+<td>否</td>
+</tr>
+<tr>
+<td>视频号消息</td>
+<td>video_platform_live</td>
+<td>否</td>
+</tr>
+<tr>
+<td>视频号直播间消息</td>
+<td>video_platform_live</td>
+<td>否</td>
+</tr>
+<tr>
+<td>视频号名片消息</td>
+<td>video_platform_card</td>
+<td>否</td>
+</tr>
+<tr>
+<td>音乐消息</td>
+<td>music</td>
+<td>否</td>
+</tr>
+<tr>
+<td>其他消息</td>
+<td>other</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h2 id="后续规划-amp-未来展望"><a href="#后续规划-amp-未来展望" class="headerlink" title="后续规划 &amp; 未来展望"></a>后续规划 &amp; 未来展望</h2><ol>
+<li>接入更多的消息类型以及企微消息类型</li>
+<li>抽象IM方法、业务封装TIM包 以支持各个业务线使用 IM 能力</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+
+  <p><span>本文标题:</span>IM 即时通讯</p>
+  <p><span>文章作者:</span>Peanut</p>
+  <p><span>发布时间:</span>2022年04月06日 - 15:56:37</p>
+  <!-- <p><span>最后更新:</span>2022年04月07日 - 18:24:32</p> -->
+  <p><span>原始链接:</span><a href="/学习笔记/IM即时通讯/" title="IM 即时通讯">http://www.peanutyu.site/学习笔记/IM即时通讯/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://www.peanutyu.site/学习笔记/IM即时通讯/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/学习笔记/使用lerna管理多包JavaScript项目/" rel="next" title="使用lerna管理多包JavaScript项目">
+                <i class="fa fa-chevron-left"></i> 使用lerna管理多包JavaScript项目
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="Peanut">
+            
+              <p class="site-author-name" itemprop="name">Peanut</p>
+              <p class="site-description motion-element" itemprop="description">personal blog, web, fecomponent, The front-end development</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/peanutYu" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:287130319@qq.com" target="_blank" title="邮箱">
+                      
+                        <i class="fa fa-fw fa-globe"></i>邮箱</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3755396494" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/meng-meng-da-de-xiao-zheng-zi/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IM-通信相关的业务场景"><span class="nav-number">1.</span> <span class="nav-text">IM 通信相关的业务场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实现-IM-通信的几种方式"><span class="nav-number">2.</span> <span class="nav-text">实现 IM 通信的几种方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过-WebSocket-呈现一个简单的-IM-通信过程"><span class="nav-number">3.</span> <span class="nav-text">通过 WebSocket 呈现一个简单的 IM 通信过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IM-在-SaaS-中台的应用"><span class="nav-number">4.</span> <span class="nav-text">IM 在 SaaS 中台的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#技术选型"><span class="nav-number">4.1.</span> <span class="nav-text">技术选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心代码"><span class="nav-number">4.2.</span> <span class="nav-text">核心代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IM-消息类型"><span class="nav-number">4.3.</span> <span class="nav-text">IM 消息类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IM-企微消息类型"><span class="nav-number">4.4.</span> <span class="nav-text">IM 企微消息类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续规划-amp-未来展望"><span class="nav-number">4.5.</span> <span class="nav-text">后续规划 &amp; 未来展望</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+
+    <!-- <div id="music-163-player">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=26524290&auto=1&height=66"></iframe>
+    </div> -->
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Peanut</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '1Ssdo8xcXUxIAanEsIGct7VQ-gzGzoHsz',
+        appKey: 'jIYjMMjxJhwkpIazITgqr6x3',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'8' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("1Ssdo8xcXUxIAanEsIGct7VQ-gzGzoHsz", "jIYjMMjxJhwkpIazITgqr6x3");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300,"mobile":{"show":true}},"log":false});</script></body>
+</html>
