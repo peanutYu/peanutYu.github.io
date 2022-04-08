@@ -2,8 +2,8 @@
 title: 纯Css(Scroll Indicator)滚动指示器实现
 copyright: true
 date: 2019-08-05 19:11:52
-tags: Css
-category: Css
+tags: Style
+category: Style
 ---
 
 >Scroll Indicator称之为滚动指示器,是web页面中我们经常见到的一个效果。用户触发垂直方向上的滚动时，页面顶部会有一个类似进度条的效果，当内容滚动到页面最底部，则进度条填满页面的整个页面宽度。
