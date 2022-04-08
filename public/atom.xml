@@ -110,10 +110,10 @@
   
   <entry>
     <title>你想知道的清除浮动的方法都在这了</title>
-    <link href="https://peanutyu.github.io/Css/%E4%BD%A0%E6%83%B3%E7%9F%A5%E9%81%93%E7%9A%84%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95%E9%83%BD%E5%9C%A8%E8%BF%99%E4%BA%86/"/>
-    <id>https://peanutyu.github.io/Css/你想知道的清除浮动的方法都在这了/</id>
+    <link href="https://peanutyu.github.io/Style/%E4%BD%A0%E6%83%B3%E7%9F%A5%E9%81%93%E7%9A%84%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95%E9%83%BD%E5%9C%A8%E8%BF%99%E4%BA%86/"/>
+    <id>https://peanutyu.github.io/Style/你想知道的清除浮动的方法都在这了/</id>
     <published>2019-10-30T06:49:23.000Z</published>
-    <updated>2022-04-06T07:28:12.579Z</updated>
+    <updated>2022-04-08T07:04:43.656Z</updated>
     
     <summary type="html">
     
@@ -123,10 +123,10 @@
     
     </summary>
     
-      <category term="Css" scheme="https://peanutyu.github.io/categories/Css/"/>
+      <category term="Style" scheme="https://peanutyu.github.io/categories/Style/"/>
     
     
-      <category term="Css" scheme="https://peanutyu.github.io/tags/Css/"/>
+      <category term="Style" scheme="https://peanutyu.github.io/tags/Style/"/>
     
   </entry>
   
@@ -316,9 +316,9 @@
       <category term="Weex" scheme="https://peanutyu.github.io/categories/Weex/"/>
     
     
-      <category term="Weex" scheme="https://peanutyu.github.io/tags/Weex/"/>
-    
       <category term="Vue" scheme="https://peanutyu.github.io/tags/Vue/"/>
+    
+      <category term="Weex" scheme="https://peanutyu.github.io/tags/Weex/"/>
     
   </entry>
   
